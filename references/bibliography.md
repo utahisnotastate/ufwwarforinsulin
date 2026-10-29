@@ -192,8 +192,9 @@ confirmed. Check these before relying on them in anything consequential.
   Induced by Viral Gene Therapy, Reverses Autoimmune Diabetes.* Cell Stem Cell 2018;22(1):78–90
 - ✅ Saleh M, Gittes GK, Prasadan K. *Alpha-to-beta cell trans-differentiation for treatment of
   diabetes.* **Biochem Soc Trans 2021;49(6):2539–2548. PMID 34882233**
-- ⚠️ Reichman TW, et al. *Stem Cell-Derived, Fully Differentiated Islets for Type 1 Diabetes.*
-  NEJM 2025;393(9):858–868, doi:10.1056/NEJMoa2506549 *(PMID not independently confirmed)*
+- ✅ Reichman TW, Markmann JF, Odorico J, Witkowski P, Fung JJ, Wijkstrom M, et al. *Stem
+  Cell-Derived, Fully Differentiated Islets for Type 1 Diabetes.* **NEJM 2025;393(9):858–868.
+  PMID 40544428**, doi:10.1056/NEJMoa2506549
 - ✅ Herold KC, et al. *An Anti-CD3 Antibody, Teplizumab, in Relatives at Risk for Type 1
   Diabetes.* **NEJM 2019;381(7):603–613. PMID 31180194**
 - ⚠️ Ackeifi C, et al. *GLP-1 receptor agonists synergize with DYRK1A inhibitors to potentiate
@@ -217,10 +218,10 @@ confirmed. Check these before relying on them in anything consequential.
 
 ## Automated insulin delivery
 
-- ⚠️ Karges B, et al. *Hybrid closed-loop insulin therapy and risk of severe hypoglycaemia and
-  diabetic ketoacidosis in young people (aged 2–20 years) with type 1 diabetes: a
-  population-based study.* Lancet Diabetes Endocrinol 2024,
-  doi:10.1016/S2213-8587(24)00284-5
+- Karges B, Rosenbauer J, Stahl-Pehe A, Flury M, Biester T, Tauschmann M, et al. *Hybrid
+  closed-loop insulin therapy and risk of severe hypoglycaemia and diabetic ketoacidosis in
+  young people (aged 2–20 years) with type 1 diabetes: a population-based study.* Lancet
+  Diabetes Endocrinol 2025;13(2):88–96. **PMID 39701114**, doi:10.1016/S2213-8587(24)00284-5
 - ⚠️ *Automated insulin delivery vs usual care: systematic review and meta-analysis* (22 studies,
   n=2,376). PMCID PMC10537468
 - ⚠️ Hanson K, Kipnes M, Tran H. J Diabetes Sci Technol 2024, doi:10.1177/19322968231225676
@@ -252,23 +253,21 @@ confirmed. Check these before relying on them in anything consequential.
 
 Flagged for honesty rather than buried:
 
-1. **Reichman et al. NEJM 2025 PMID** — an aggregator gives 40544428; not confirmed against a
-   primary source.
-2. **The content of the December 2020 erratum** to Carter et al., *Cell Metabolism* 2020 could
+1. **The content of the December 2020 erratum** to Carter et al., *Cell Metabolism* 2020 could
    not be retrieved. The paper is corrected, not retracted.
-3. **USP numeric limits** (80 EU per 100 insulin units; HMWP NMT 1.7%) come from USP 32/35
+2. **USP numeric limits** (80 EU per 100 insulin units; HMWP NMT 1.7%) come from USP 32/35
    reproductions rather than the current USP–NF.
-4. **Residual host DNA guidance** is cited inconsistently across sources as ≤10 ng/dose
+3. **Residual host DNA guidance** is cited inconsistently across sources as ≤10 ng/dose
    (WHO/FDA, most common) versus 100 pg/dose (older, certain cell substrates). Cite the primary
    ICH Q5A(R2) / WHO TRS text.
-5. **HCP ≤100 ppm** is standard industry practice under ICH Q6B, not a hard numeric regulatory
+4. **HCP ≤100 ppm** is standard industry practice under ICH Q6B, not a hard numeric regulatory
    limit.
-6. **Open Insulin's position on individual self-administration** could not be located in any
+5. **Open Insulin's position on individual self-administration** could not be located in any
    public statement, and is therefore **not attributed to them** anywhere in this repository.
-7. **Receptor affinity of the specific 3-residue (AAK) single-chain precursor** — the reduced
+6. **Receptor affinity of the specific 3-residue (AAK) single-chain precursor** — the reduced
    affinity of short-linker single-chain insulins is well established in the design literature
    and implied by the existence of the industrial conversion step, but no percentage figure for
    the AAK construct specifically was retrieved.
-8. **NN1644**, a successor glucose-sensitive insulin referenced in Novo investor materials as
+7. **NN1644**, a successor glucose-sensitive insulin referenced in Novo investor materials as
    entering preliminary study in November 2024, has no confirmable ClinicalTrials.gov record.
    Treat as unverified.

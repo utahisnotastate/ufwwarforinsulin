@@ -67,9 +67,10 @@ dose:
 
 That is a functional cure, and it is the most important thing in this entire repository.
 
-**The catch is the whole catch.** It requires standard immunosuppression. One participant died
-of **cryptococcal meningitis** attributed to the regimen. It is still investigational — not
-approved. And the companion programme that tried to avoid immunosuppression by encapsulating
+**The catch is the whole catch.** It requires standard immunosuppression. **Two participants
+died** — one of **cryptococcal meningitis**, attributed to the regimen, and one of progression
+of preexisting neurocognitive impairment, which was not attributed to the therapy. It is still
+investigational — not approved. And the companion programme that tried to avoid immunosuppression by encapsulating
 the cells in a device, **VX-264, failed.**
 
 So: the field has solved *making* the cells and has **not** solved protecting them. Which is

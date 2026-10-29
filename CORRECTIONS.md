@@ -8,6 +8,172 @@ Newest first.
 
 ---
 
+## 2026-10-29 · The paper's headline statistic depended on an undisclosed analytic choice, and does not survive removing it
+
+**Severity:** the most serious error logged here. It is not a factual slip; it is the kind of
+analytic degree of freedom this project exists to object to, exercised by this project.
+**Found by:** an external hostile peer review commissioned before submission, which read the
+deposited analysis script rather than the manuscript's description of it.
+
+### What was wrong
+
+`paper/analysis-contingency.py` contains the line:
+
+```python
+sup = sum(1 for i in ids if V[i] in ("S","P"))
+```
+
+**"Supported" was defined as VERIFIED *or* PARTLY TRUE.** That definition appeared nowhere in
+the manuscript — not in the methods, not in the table legend, not in the abstract — and was
+never varied. Every reader of *"15 of 19 mechanism claims (79%) were supported"* would take
+"supported" to mean "true." It meant "true, or real-science-overstated-misattributed-or-out-of-date."
+
+The choice is maximally favourable to the hypothesis. Eight of the 19 mechanism claims are
+partly true; **none of the 8 outcome claims is.** The entire dichotomous effect lives in that
+one cell.
+
+### What happens when it is removed
+
+| Coding | Mechanism | Outcome | Fisher 2-sided |
+|---|---|---|---|
+| Lenient — as published | 15/19 (79%) | 0/8 | 2.2 × 10⁻⁴ |
+| **Strict — verified only** | **7/19 (37%)** | **0/8** | **0.068 — not significant** |
+| Strict, block-stratified (CMH) | — | — | 0.21 |
+| Strict, Bonferroni × 6 | — | — | 0.41 |
+
+The one-sided 95% lower bound on the odds ratio falls from 5.24 to **0.94**, crossing one.
+
+### What survives
+
+The zero does. **No therapeutic-outcome claim was supported under any coding, and no
+quantitative specification was.** And the comparison does not actually require a cut point:
+an exact ordinal permutation test on the verdict scale (verified 2 > partly true 1 > not true
+0) gives *p* = 4.5 × 10⁻⁴, surviving a miscoding correction (*p* = 1.2 × 10⁻³) and a
+deliberately hostile re-extraction (*p* = 1.6 × 10⁻²). That test is now the paper's primary
+analysis, and both dichotomisations are reported side by side.
+
+### Why it is logged this way
+
+The sensitivity analysis that found this is **one line of code.** It was not run, because the
+first coding produced a publishable number. That is textbook, and it happened here, in a paper
+whose argument is that unchecked claims should not be believed.
+
+The reviewer's recommendation was **reject**. The re-analysis, the cut-free primary test, the
+new sensitivity script (`paper/analysis-sensitivity.py`), and a rewritten Limitations section
+that leads with this problem are the response. A reader who thinks the response is inadequate
+has the data to check.
+
+### Four further findings from the same review, all verified and all acted on
+
+| Finding | Status |
+|---|---|
+| **κ is inflated by a label leak.** The file named `data-claims-unlabelled.txt` carried block-prefixed claim IDs. All 13 block-C claims were rated SPECIFICATION and all 17 block-X claims PHYSICS — **30 of 61 (49%) derivable from the prefix alone.** κ on the 31 contestable claims is **0.928**, not 0.977 | Confirmed; both now reported, restricted figure named as the honest one |
+| **κ is not inter-rater reliability.** Both raters were sessions of one model, so it measures stability under resampling; systematic errors are invisible to it by construction | Confirmed; relabelled throughout |
+| **B6 was miscoded.** The audit recorded "verified as citation / not true as the dominant mechanism," and the inventoried claim asserts the dominant-mechanism reading. It was scored PARTLY TRUE | Confirmed; recoded to NOT TRUE, and a sub-claim aggregation rule now stated |
+| **The denominator was unstable.** Table 1 reported 1 open claim; the analysis script expands B4/B5 into two. 61 claims carry 59 verdicts | Confirmed; unit of analysis now stated, Table 1 corrected to 2 open / 13 partly true |
+
+### Overclaims removed from the manuscript in the same pass
+
+- *"The same class of system surfaces the refuting trial"* — **false as written.** The
+  generator was Gemini; Gemini under neutral prompting was never tested. "Same class" meant
+  only "both are large language models."
+- *"It is also not a general consequence of speculative prompting"* — the persona was adopted
+  in **0 of 6** trials, so the manipulation was never delivered and the arm has no power in
+  either direction.
+- *"'Ask it again, plainly' is advice a clinician can give in the room"* — demoted to a
+  hypothesis. The re-query arm has **no positive controls**: every probed question had "no" as
+  its correct answer, so a model with a blanket sceptical prior scores 6/6 knowing nothing.
+- *"No boronate glucose-responsive insulin has entered human testing at all"* — accepted from
+  an AI experimental subject and never verified, **in a paper arguing that AI
+  therapeutic-outcome claims are categorically unreliable.** Now stated as "we searched and
+  found none," which is what is actually known.
+- The manuscript's opening clinical vignette was written in the simple present with no marker
+  of hypotheticality. It is now labelled.
+
+---
+
+## 2026-10-29 · "It circulates in patient communities." It does not; it was generated here.
+
+**Severity:** high — an unsupported empirical claim, about the premise of the whole project,
+on the first screen of the front page.
+**Found by:** the same external review, cross-reading the manuscript's methods against this
+repository's README.
+
+The README said of the audited document that **"it circulates in patient communities where
+nobody checks it."** The manuscript's methods section said, of the same document,
+**"no dissemination to patients was observed and none is claimed."** Both could not be true.
+
+The methods section is the accurate one. The document was generated in a private session, by
+the owner of this repository, under a persona prompt written for the purpose, and **was never
+published, shared, or shown to any patient.** The README sentence was a claim about the genre
+written as a claim about this artifact.
+
+Corrected on [`README.md`](README.md) and in `private/funding-case.md`. The manuscript now
+discloses authorship of the source document as a **competing interest** rather than as
+provenance, because authoring the stimulus of a study is an interest in its result — and
+because it changes what the result can mean. The dissociation reported may be a property of
+language models or a property of this prompt, and the study cannot distinguish them.
+
+How widely such documents circulate is a real and unanswered question. This repository does
+not answer it, and no longer implies that it does.
+
+---
+
+## 2026-10-29 · The zimislecel trial reported two deaths. This repository reported one.
+
+**Severity:** high — a safety understatement, in the direction that flattered the most
+optimistic finding in the repository.
+**Found by:** pulling the primary abstract from PubMed to confirm a PMID that had been flagged
+as unverified, and reading the results section rather than only the efficacy numbers.
+
+Four files — [`README.md`](README.md), [`disclosure4.md`](disclosure4.md),
+[`INTEGRITY_AUDIT.md`](INTEGRITY_AUDIT.md) and
+[`docs/endocrinology/README.md`](docs/endocrinology/README.md) — described the VX-880-101
+(FORWARD) trial as having **"one participant died of cryptococcal meningitis attributed to the
+regimen."**
+
+Reichman et al., *NEJM* 2025;393(9):858–868 reports **two deaths**:
+
+| Death | Attribution |
+|---|---|
+| Cryptococcal meningitis | Attributed to the immunosuppressive regimen |
+| Severe dementia with agitation, from progression of preexisting neurocognitive impairment | **Not** attributed to the therapy |
+
+The second death is not a therapy-attributed death, and omitting it is defensible as a
+judgement about causality. **It was not a judgement.** It was not noticed, because the
+efficacy numbers were checked and the safety paragraph was not. In a repository whose entire
+argument is that therapeutic-outcome claims need checking more carefully than mechanism
+claims, under-reporting a death count in the one unambiguously good result is the specific
+error this project exists to catch.
+
+Also added from the same abstract: **neutropenia was the most common serious adverse event,
+in 3 participants** — absent from every previous version.
+
+Efficacy figures were re-checked at the same time and are correct: 10 of 12 (83%)
+insulin-independent at day 365; all 12 free of severe hypoglycemic events with HbA1c <7% and
+time-in-range >70%.
+
+---
+
+## 2026-10-29 · Two citations carried wrong or unverified identifiers
+
+**Severity:** low — neither changed a verdict. Logged because the repository's claim is that
+its citations are checkable, and two of them were not checked.
+
+| Citation | Was | Is |
+|---|---|---|
+| Karges B et al., closed-loop DKA study | *Lancet Diabetes Endocrinol* **2024**, DOI only, flagged ⚠️ unverified | ***2025;13(2):88–96*, PMID 39701114** — epub ahead of print Dec 2024, which is where the wrong year came from |
+| Reichman TW et al., zimislecel | PMID 40544428 "from an aggregator, not confirmed" | **Confirmed** against PubMed: title, journal, volume, issue and pages all match |
+
+Every numeric claim drawn from Karges was re-verified against the abstract and is correct:
+n = 13,922, 250 centres, hypoglycaemic coma 0.62 vs 0.91 per 100 patient-years (IRR 0.68,
+0.48–0.97), DKA 1.74 vs 0.96 (IRR 1.81), TIR 64% vs 52%.
+
+The unresolved-item list in [`references/bibliography.md`](references/bibliography.md) is
+**seven items, down from eight.**
+
+---
+
 ## 2026-10-29 · Three errors in the manuscript's Eli Lilly paragraph
 
 **Severity:** high — one factual, one a pharmacology error in a medical manuscript, one an
@@ -138,7 +304,7 @@ Labels move with evidence, in either direction, including from ❌ back to ✅.
 
 Not errors, but gaps stated rather than hidden:
 
-- **Eight unresolved citations** listed at the end of
+- **Seven unresolved citations** listed at the end of
   [`references/bibliography.md`](references/bibliography.md)
 - **Two evidence gaps:** a national US insulin-rationing prevalence figure (Fang & Selvin,
   *JAMA* 2023, PMC10061307) and current HCUP DKA cost and volume data. The repository

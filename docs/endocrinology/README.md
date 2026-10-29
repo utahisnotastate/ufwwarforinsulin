@@ -119,9 +119,12 @@ Twelve participants at full dose (0.8 × 10⁹ cells, portal vein). At day 365:
 This is a functional cure, produced from a differentiated stem cell line rather than donor
 tissue — meaning supply is not the limit.
 
-**The catch is immunosuppression.** Standard regimen, required. One participant died of
-**cryptococcal meningitis** attributed to it, and most drug-related serious adverse events were
-attributed to it. **Still investigational — no BLA filed as of late 2026.** Any source claiming
+**The catch is immunosuppression.** Standard regimen, required. **Two participants died** —
+one of **cryptococcal meningitis**, attributed to the immunosuppressive regimen, and one of
+severe dementia with agitation from progression of preexisting neurocognitive impairment,
+which the investigators did not attribute to the therapy. Most drug-related serious adverse
+events were attributed to the immunosuppression; neutropenia was the most common serious
+adverse event, in 3 participants. **Still investigational — no BLA filed as of late 2026.** Any source claiming
 FDA approval is wrong.
 
 And critically: the companion programme **VX-264**, the same cells in an immunosuppression-free
@@ -174,7 +177,7 @@ Worth stating plainly because the source dismisses it as transitional "Generatio
 
 - Meta-analysis, 22 studies / 2,376 participants: **+10.9 percentage points time in range**,
   **HbA1c −0.37%** vs usual care
-- Karges B et al., *Lancet Diabetes Endocrinol* 2024 — DPV registry, 250 centres,
+- Karges B et al., *Lancet Diabetes Endocrinol* 2025;13(2):88–96 — DPV registry, 250 centres,
   **n = 13,922**: **hypoglycemic coma 0.62 vs 0.91 per 100 patient-years, IRR 0.68
   (0.48–0.97)**. TIR 64% vs 52%
 - **The real caveat:** DKA was **higher** — 1.74 vs 0.96 per 100 patient-years, IRR 1.81 —

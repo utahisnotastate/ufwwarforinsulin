@@ -8,6 +8,72 @@ falsified by its own first test.**
 
 ---
 
+## Experiment 5 — Sensitivity analyses (added after external peer review)
+
+Run 29 October 2026, after a commissioned hostile peer review of the manuscript recommended
+**reject** and identified that the headline statistic depended on an undisclosed analytic
+choice. Reproduced by `analysis-sensitivity.py`.
+
+### The finding
+
+`analysis-contingency.py` defined "supported" as **VERIFIED or PARTLY TRUE**. The manuscript
+never stated this and never varied it.
+
+| Coding | Mechanism | Outcome | Fisher 2-sided | OR lower bound (1-sided 95%) |
+|---|---|---|---|---|
+| Lenient — as published | 15/19 (79%) | 0/8 | 2.2 × 10⁻⁴ | 5.24 |
+| **Strict — verified only** | **7/19 (37%)** | **0/8** | **0.068** | **0.94** |
+
+Eight of 19 mechanism claims are partly true; **none of the 8 outcome claims is.** The entire
+dichotomous effect sits in that cell.
+
+Under the strict coding: the block-stratified CMH test gives *p* = 0.21, Bonferroni across
+the six possible pairwise comparisons gives *p* = 0.41, and the odds-ratio lower bound
+crosses one.
+
+### What survives, and the analysis that should have been primary from the start
+
+The zero survives everything: **no therapeutic-outcome claim and no quantitative
+specification was supported under any coding.**
+
+And the comparison does not need a cut point. An **exact ordinal permutation test** on the
+verdict scale (verified 2 > partly true 1 > not true / no basis 0), enumerating all 2,220,075
+assignments:
+
+| Analysis | Mechanism mean | Outcome mean | *p* two-sided |
+|---|---|---|---|
+| As coded | 1.16 / 2 | 0.00 / 2 | **4.5 × 10⁻⁴** |
+| B6 recoded to NOT TRUE | 1.11 / 2 | 0.00 / 2 | **1.2 × 10⁻³** |
+| B6 recoded **and** A3 split, crediting its one verified sub-claim to OUTCOME | 1.11 / 2 | 0.22 / 2 | **1.6 × 10⁻²** |
+
+The third row is the most hostile re-extraction we could construct against ourselves. It
+holds.
+
+### Other review findings, verified
+
+| Claim | Verified? |
+|---|---|
+| κ is inflated: `data-claims-unlabelled.txt` carried block prefixes; all 13 C-claims rated SPECIFICATION, all 17 X-claims rated PHYSICS, so 30/61 (49%) were derivable without reading | **Yes.** κ on the 31 contestable claims = **0.928** (30/31 agreement) |
+| κ is not inter-rater reliability — both raters were sessions of one model | **Yes.** It measures stability under resampling |
+| B6 was coded P against the audit's own verdict line and the stated aggregation rule | **Yes.** Recoded to N |
+| Tables 1 and 2 disagree on the open count (1 vs 2); 61 claims carry 59 verdicts | **Yes.** Unit of analysis now stated; Table 1 corrected |
+| The re-query arm has no positive controls, so it measures sensitivity without specificity | **Yes.** Every probed question had "no" as its correct answer |
+| "Same class of system" is false — the generator was Gemini and was never tested neutrally | **Yes.** Sentence removed |
+| The persona arm had no manipulation (0/6 adoption), so no conclusion follows from it | **Yes.** Two abstract sentences removed |
+| The oral-insulin Phase 3 figure (n=710) was uncited | **Yes.** It is Oramed ORMD-0801, NCT04606576, terminated. Now cited |
+
+### Outstanding, not fixable by re-analysis
+
+These require new data collection and are stated as limitations rather than resolved:
+
+1. **Independent blinded re-extraction** of claims from the source document.
+2. **Human raters** with clinical training applying the §2.3 rubric.
+3. **Positive controls** in the re-query arm — concepts whose correct outcome answer is *yes*
+   (AID vs MDI, CGM, DCCT/EDIC, teplizumab, VX-880).
+4. **Gemini under neutral prompting**, to fill the empty cell of the 2 × 2.
+
+---
+
 # Experiment 1 — Blinded classification
 
 ## Method

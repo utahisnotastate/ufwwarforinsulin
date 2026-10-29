@@ -512,7 +512,7 @@ transplantation.
 
 - **Meta-analysis, 22 studies / 2,376 participants:** AID vs usual care gives **+10.9 percentage
   points time in range** and **HbA1c −0.37%**.
-- **Karges B et al., *Lancet Diabetes Endocrinol* 2024** — DPV registry, 250 centres,
+- **Karges B et al., *Lancet Diabetes Endocrinol* 2025;13(2):88–96** — DPV registry, 250 centres,
   **n = 13,922** young people: **hypoglycemic coma 0.62 vs 0.91 per 100 patient-years,
   IRR 0.68 (0.48–0.97) — significantly LOWER with closed loop.** TIR 64% vs 52%.
 - Real-world: MiniMed 780G TIR ≈ 73% (4,120 users); Omnipod 5 TIR ≈ 64% with <1% time
@@ -591,7 +591,7 @@ difference is that it comes with a cost the source refuses to acknowledge.
 
 | Therapy | Status | The catch |
 |---|---|---|
-| **Zimislecel (VX-880)**, stem-cell-derived islets — Reichman TW et al., *NEJM* 2025;393(9):858–868 | **10 of 12 insulin-independent at 1 year**; all 12 free of severe hypoglycemia, HbA1c <7%, TIR >70% | **Requires standard immunosuppression.** One death from cryptococcal meningitis attributed to the regimen. **Still investigational — not FDA-approved** |
+| **Zimislecel (VX-880)**, stem-cell-derived islets — Reichman TW et al., *NEJM* 2025;393(9):858–868 | **10 of 12 insulin-independent at 1 year**; all 12 free of severe hypoglycemia, HbA1c <7%, TIR >70% | **Requires standard immunosuppression.** **Two deaths in the trial** — one cryptococcal meningitis (attributed to the regimen), one from progression of preexisting neurocognitive impairment (not attributed to the therapy). **Still investigational — not FDA-approved** |
 | **VX-264**, same cells in an immunosuppression-free device | **Failed** — insufficient insulin production | The field has *not* solved immune protection |
 | **Lantidra (donislecel)** | **FDA-approved 28 June 2023**, first allogeneic islet cell therapy | Lifelong immunosuppression; available at essentially one center |
 | **Teplizumab (Tzield)** — Herold KC et al., *NEJM* 2019;381:603–613 (**PMID 31180194**) | Delays stage 3 onset: **48.4 vs 24.4 months**. Label expanded to age 1 (April 2026) and to newly diagnosed stage 3 in children (June 2026) | Delays; does not cure or reverse |

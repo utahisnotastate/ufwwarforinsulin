@@ -6,20 +6,11 @@
 Independent researcher
 
 **Running title:** Mechanism without outcome
-**Word count:** ~4,100 (main text, excluding abstract, tables and references)
-**Tables:** 6 · **Figures:** 0
+**Tables:** 7 · **Figures:** 0
 
-> **Submission note.** For empirical venues (JMIR, *Lancet Digital Health*, *npj Digital
-> Medicine*) lead with the subtitle as the title. The quoted title is for narrative venues
-> (*BMJ* Analysis, *Lancet* Comment), where the institutional argument in §5.4 carries it.
-> *"Other cardiometabolic health"* is the line item in Note 2 of Eli Lilly's FY2025 Form 10-K
-> into which insulin revenue was absorbed, having been reported as three named brands a year
-> earlier. See §4.4, which states the qualifications.
->
-> ⚠️ **Eligibility check required before submitting to Analysis.** BMJ states that the
-> Analysis section does not consider "manuscripts containing primary research data (such
-> papers should be submitted as research)." This manuscript reports four experiments. See
-> [POLISHING-PLAN.md](POLISHING-PLAN.md) Part A2.
+*"Other cardiometabolic health" is the line item in Note 2 of Eli Lilly's FY2025 Form 10-K
+into which insulin revenue was absorbed, having been reported as three named brands a year
+earlier. §4.4 states the qualifications. For empirical venues the subtitle should lead.*
 
 ---
 
@@ -33,53 +24,108 @@ within 12–48 hours, so the interval between believing a false claim and requir
 care is measured in hours rather than years.
 
 **Methods.** We performed an exhaustive claim-level audit of a long AI-generated document on
-insulin therapy, produced by a commercial large language model under a user-configured
-persona instructing retrieval of medical knowledge from future timelines. All 61 substantive
-claims were extracted, assigned stable identifiers, and verified against primary literature
-by three independent cross-checked reviews. Two raters blinded to all verdicts then
-classified every claim by epistemic type against a rubric fixed in advance. We subsequently
-re-queried the underlying therapeutic concepts in a current frontier model under two
-conditions — neutral clinical prompting and speculative persona prompting — to test whether
+insulin therapy, produced by a commercial large language model (Google Gemini) under a
+persona instructing retrieval of medical knowledge from future timelines. **The author
+generated the document**; it was never disseminated, and authorship of it is declared as a
+competing interest. All 61 substantive claims were extracted and verified against primary
+literature by the author across three AI-assisted passes cross-checked against one another
+and against the primary sources; **extraction and verdict assignment were not blinded**. Two
+raters — independent context-free sessions of one model, Claude Opus 5 — then classified
+every claim by epistemic type against a rubric fixed in advance, blind to all verdicts. We
+subsequently re-queried the underlying therapeutic concepts in a current frontier model under
+two conditions, neutral clinical prompting and speculative persona prompting, to test whether
 the observed pattern reflects absent knowledge, training-corpus bias, or the generation
-condition.
+condition. Analyses were pre-specified except where stated; all sensitivity analyses reported
+below were added after external peer review and are deposited as a runnable script.
 
-**Findings.** Of 61 claims, 14 (23%) were verified, 14 (23%) partly true, 1 open, 16 (26%)
-contradicted and 16 (26%) without scientific basis. Blinded classification achieved **Cohen's
-κ = 0.977** (60/61 agreement). Accuracy was strongly stratified by epistemic type:
-**15 of 19 mechanism claims (79%) were supported, against 0 of 8 therapeutic-outcome claims
-(0%)** (Fisher's exact, two-sided *p* = 2.2 × 10⁻⁴; *p* = 5.8 × 10⁻⁴ clustered to
-development programme). Within technical specifications, qualitative process descriptions
-were largely correct (5/6) while **every quantitative value was wrong (0/9)**. Claims
-asserting a human outcome or a specific number were thus unsupported in **17 of 17**
-attempts, while descriptive claims scored 79–83%. Two errors were detectable
-without external reference: an amino-acid sequence that was bovine while the accompanying
-molecular formula was human, and a resonance frequency quoted to four significant figures
-that does not reproduce from the equation supplied in the same paragraph.
+**Findings.** Of 61 claims, 14 (23%) were verified, 13 (21%) partly true, 2 open, 16 (26%)
+contradicted and 16 (26%) without scientific basis. Classification into strata (mechanism
+n = 21, outcome n = 8, specification n = 15, physical theory n = 17) was performed blind to
+all verdicts; agreement was 60/61, κ = 0.977, falling to κ = 0.928 on the 31 claims whose
+identifier prefix does not predict the answer.
 
-Re-querying under neutral prompting falsified the training-bias explanation: in **6 of 6**
+**No therapeutic-outcome claim was supported under any analysis, and no quantitative
+specification was.** Mechanism claims scored far better, but *how much* better depends on a
+definition: **79% (15/19) counting partly-true claims as supported, 37% (7/19) counting only
+fully verified claims.** Against 0 of 8 outcome claims this gives Fisher's exact
+*p* = 2.2 × 10⁻⁴ and *p* = 0.068 respectively — **the dichotomous result is not robust to the
+cut point.** The pre-specified primary analysis is therefore ordinal and cut-free: an exact
+permutation test on the verdict scale gives mean verdict 1.16 versus 0.00 of 2,
+*p* = 4.5 × 10⁻⁴, which survives recoding the one miscoded claim (*p* = 1.2 × 10⁻³) and a
+deliberately hostile re-extraction (*p* = 1.6 × 10⁻²). Within technical specifications,
+qualitative process descriptions were largely correct (5/6) while **every quantitative value
+was wrong (0/9)**. Two errors were detectable without external reference: an amino-acid
+sequence matching non-human ruminant insulin while the accompanying molecular formula was
+human, and a resonance frequency that does not reproduce from the equation supplied in the
+same paragraph.
+
+Re-querying under neutral prompting falsified our training-bias explanation: in **6 of 6**
 completed probes the model answered the outcome question correctly, naming the specific
-trial, result and date. Under a speculative persona, in a contamination-controlled replication,
-**0 of 6 adopted the persona and 6 of 6 remained accurate.**
+trial, result and date. **This arm had no positive controls and so measures sensitivity
+without specificity.** A persona arm was uninformative: 0 of 6 subjects adopted the persona,
+so the manipulation was never delivered.
 
-**Interpretation.** The dissociation is real in the audited document and does not arise from
-absent knowledge: the same class of system surfaces the refuting trial in the first sentence
-of a plainly-worded answer. It is also not a general consequence of speculative prompting,
-since a second model declined the frame uncontaminated in every trial. Verification effort in
-AI-generated medical text should therefore concentrate on **outcome claims and numerical
-values**, not on mechanism — and the clinically actionable corollary is that a patient
-presenting such material will often be correct about the biology and wrong about whether the
-treatment works.
+**Interpretation.** In this document, claims asserting a human clinical outcome and claims
+asserting a specific number were categorically unsupported, while claims describing
+mechanism were substantially better supported — robustly so on an ordinal analysis, though
+the size of the gap is sensitive to how "supported" is defined. The audited artifact was
+generated by the author under a custom persona, so the pattern may be a property of language
+models or of this prompt; a corpus study is required to distinguish them. We propose, as a
+hypothesis for such a study rather than as a finding, that verification effort in
+AI-generated medical text should concentrate on **outcome claims and numerical values**
+rather than on mechanism, and that a patient presenting such material may often be correct
+about the biology and wrong about whether the treatment works.
 
 **Funding.** None.
 
 ---
 
+## Standfirst
+
+*An AI-generated document that tells people with type 1 diabetes to replace insulin with a
+radio device gets much of the biology right and every clinical outcome wrong. **Utah Hans**
+argues that this split is the harder problem, and reports the analyses that nearly took the
+finding away.*
+
+---
+
+## Summary box
+
+**What is already known on this topic**
+
+- Large language models produce fluent, medically-shaped text at negligible cost, and existing
+  health-misinformation taxonomies score such text for veracity alone
+- No taxonomy distinguishes claims by the epistemic layer at which they fail, or by how quickly
+  acting on them causes harm
+- Clinicians increasingly encounter patients presenting AI-generated material, with no
+  evidence base on how its errors are distributed
+
+**What this study adds**
+
+- In an exhaustive audit of one AI-generated document, **no therapeutic-outcome claim and no
+  quantitative specification was supported** (0/8 and 0/9), while mechanism claims were
+  substantially better supported — 79% or 37% depending on whether partly-true claims are
+  counted, so the gap is robust in direction and sensitive in size
+- Queried neutrally, a frontier model named the refuting trial in six of six probes; that arm
+  had no positive controls, and the model that generated the document was never tested
+  neutrally, so neither absent knowledge nor persona suppression can yet be excluded
+- A patient presenting such material may often be correct about the biological mechanism and
+  wrong about whether the treatment works, which if confirmed would make wholesale dismissal
+  both inaccurate and counterproductive
+
+---
+
 ## 1. Introduction
 
-A patient arrives with a printout. It cites Shulman on diacylglycerol-mediated insulin
-resistance, gives the correct residue numbers for insulin receptor autophosphorylation, and
-describes the portal-to-peripheral insulin gradient accurately. It then tells them they can
-replace their insulin with a radio-frequency device.
+**Consider a hypothetical consultation.** A patient arrives with a printout. It cites Shulman
+on diacylglycerol-mediated insulin resistance, gives the correct residue numbers for insulin
+receptor autophosphorylation, and describes the portal-to-peripheral insulin gradient
+accurately. It then tells them they can replace their insulin with a radio-frequency device.
+
+*This encounter did not occur.* The document described below was generated by the author and
+shown to no patient (§2.1). The scenario is offered as a framing for what such a document
+would present to a clinician, not as a case report, and a paper about fabricated medical
+material should not open with an unlabelled one.
 
 This is not the misinformation clinicians were trained to recognise. It is not credulous, it
 is not ungrammatical, and it is not mostly wrong. It is roughly a quarter correct, and the
@@ -87,9 +133,12 @@ correct quarter is load-bearing — it is what makes the rest credible.
 
 Large language models now produce such documents at negligible marginal cost, and nothing
 systematically audits them. Peer review covers journals. Fact-checking organisations cover
-news. Platform moderation covers virality. A sixty-page technical document circulating in a
-patient community, citing real investigators accurately before arriving at a lethal
-conclusion, falls through every existing net.
+news. Platform moderation covers virality. A sixty-page technical document that cites real
+investigators accurately before arriving at a lethal conclusion falls through every existing
+net — not because any net has failed, but because none of them is pointed at a genre that
+did not previously exist at this cost. **We make no claim about how widely such documents
+circulate**; measuring that is a different study, and the artifact audited here was never
+disseminated.
 
 Type 1 diabetes is the sharpest available test case for two reasons. First, the error budget
 is unusually short: insulin cessation produces diabetic ketoacidosis within 12–48 hours, so
@@ -111,10 +160,25 @@ the variation is predictable, verification effort can be targeted rather than un
 
 The audited document was produced by a commercial large language model (Google Gemini)
 operating under a user-configured persona instructing it to retrieve medical knowledge from
-future timelines. It was generated in a private session. **No dissemination to patients was
-observed and none is claimed.** The document is therefore an experimental artifact with known
-provenance rather than a found object — which, as §2.5 describes, makes the generating
-procedure reproducible.
+future timelines.
+
+**The author generated it.** It was produced in a private session on the author's own
+account, under a persona configuration the author wrote, and the author retains that
+configuration. This is stated plainly because it bears on how the results should be read, and
+it is declared again as a competing interest in §7.2.
+
+Three consequences follow, and none of them is a selection effect:
+
+1. **The artifact was constructed, not found.** The mechanism/outcome dissociation reported
+   here may be a property of large language models, or it may be a property of this prompt.
+   This study cannot distinguish the two. A corpus of independently generated documents is
+   required, and is the obvious next study.
+2. **No dissemination to patients occurred, was observed, or is claimed.** The document was
+   never published, shared, or shown to any patient. Statements elsewhere in the author's
+   public repository that such documents "circulate in patient communities" are a general
+   claim about the genre and were **wrong as applied to this document**; they have been
+   corrected. The clinical scenario in §1 is explicitly hypothetical.
+3. **The generating procedure is reproducible**, which permits the experiments in §2.5.
 
 ### 2.2 Claim extraction and verification
 
@@ -122,6 +186,20 @@ All substantive factual claims were extracted and assigned stable identifiers wi
 topic blocks. Non-empirical content (metaphor, narrative framing, an addressee persona, a
 cosmological preamble) was inventoried but not scored: evaluating a metaphor for truth value
 is a category error.
+
+**Extraction and verdict assignment were performed by the author and were not blinded.** This
+is the study's principal methodological weakness and is treated at length in §5.1.
+Extraction granularity sets the denominator of every result reported below, and no
+independent re-extraction was performed.
+
+**Sub-claim aggregation rule.** Several extracted claims bundle more than one assertion. The
+rule applied, stated here because it was not stated in the original analysis, is
+**worst-sub-claim-governs**: a compound claim is scored on its weakest component, because a
+reader acting on the claim acts on the whole of it. One claim, B6, was found on re-inspection
+to violate this rule — the audit recorded "verified as citation, not true as the dominant
+mechanism," and the claim as inventoried asserts the dominant-mechanism reading, so it is
+**recoded from partly true to not true**. Every result below is reported both as originally
+coded and with B6 corrected.
 
 Each claim was verified against primary literature by three independent reviews, conducted in
 parallel and cross-checked against one another. Sources were PubMed, *Nature*, NEJM, *The
@@ -138,7 +216,7 @@ secondary sources, and items that could not be resolved are listed rather than o
 
 ### 2.3 Blinded classification
 
-Two raters, given only the extracted claim texts — **no verdicts, no access to the audit** —
+Two raters, given the extracted claim texts with **no verdicts and no access to the audit**,
 independently classified every claim against a rubric fixed in advance:
 
 | Stratum | Decision rule |
@@ -152,15 +230,56 @@ Raters were instructed not to search, not to read other files, and not to consid
 any claim was true. Agreement was quantified with Cohen's κ. The single disagreement was
 adjudicated.
 
+**Two qualifications on the blinding, both identified after the fact.**
+
+*The claim identifiers carried their block prefixes.* The rated file retained identifiers of
+the form C1 and X7, and the source document is sectioned, so block membership predicts
+stratum almost perfectly for two blocks: every one of the 13 block-C claims was rated
+SPECIFICATION and every one of the 17 block-X claims was rated PHYSICS. **Thirty of 61
+classifications (49%) could have been produced from the prefix without reading the claim**,
+and one rubric category shares a name with the block it tracks. κ restricted to the 31
+genuinely contestable claims (blocks A, B, D, E, F) is reported alongside the full figure in
+§3.2, and is the more honest number.
+
+*The raters were two sessions of one model.* Both were independent, context-free sessions of
+Claude Opus 5. Two samples of one model share weights and therefore share systematic biases,
+so κ here measures **stability of classification under resampling**, not agreement between
+independent judges. Any error the model makes consistently is invisible to this statistic by
+construction. The taxonomy has not been validated against human raters, and κ should be read
+as intra-rater stability throughout. This is restated in §5.3.
+
 **This step materially changed the result** and is reported in full in §3.2, including the
 direction of the bias it removed.
 
 ### 2.4 Statistical analysis
 
-Mechanism-versus-outcome accuracy was compared by Fisher's exact test, two-sided. Because
-outcome claims cluster within a smaller number of underlying development programmes, a
-conservative sensitivity analysis aggregated to programme level. Both are reported; the
-clustered figure is primary. Open claims were excluded from the contingency analysis.
+**The primary analysis is ordinal and requires no dichotomisation.** Verdicts form an ordered
+scale — verified (2) > partly true (1) > not true or no scientific basis (0) — and the
+mechanism and outcome strata are compared by exact permutation test on that scale,
+enumerating all 2,220,075 assignments. This is the primary test because, as §3.3 reports,
+the dichotomous result is sensitive to where the cut is placed, and choosing a cut post hoc
+is precisely the degree of freedom an unblinded analyst should not be exercising.
+
+**Secondary dichotomous analyses are reported under both codings.** Where claims are
+dichotomised, "supported" is defined in one of two ways, both reported:
+
+- **Lenient** — verified *or* partly true. This was the coding used in the original analysis.
+  **It was not stated in the manuscript and it was not tested.** An external reviewer
+  identified this, correctly, as an undisclosed analytic degree of freedom.
+- **Strict** — verified only.
+
+Dichotomous comparisons use Fisher's exact test, two-sided, with Wilson score intervals on
+each proportion and the one-sided 95% lower bound of the conditional odds ratio (the point
+estimate is infinite wherever a cell is zero). Because outcome claims cluster within a
+smaller number of underlying development programmes, a sensitivity analysis aggregates to
+programme level; this is a different and much smaller table, not a variance correction, and
+is labelled as such. A **Cochran–Mantel–Haenszel test stratified by document block**
+addresses the possibility that epistemic stratum is confounded with position in the source
+document (§5.2). Six pairwise comparisons are possible among the four strata, so
+Bonferroni-adjusted values are given. Open claims were excluded from all contingency
+analyses.
+
+All of these are reproduced by `analysis-sensitivity.py` in the public repository.
 
 ### 2.5 Re-query experiments
 
@@ -198,22 +317,33 @@ persona were refused, the manipulation would not be strengthened until it succee
 
 ### 3.1 Verdict distribution
 
-**Table 1.** Verdicts across all 61 claims.
+**Table 1.** Verdicts across all 61 claims. Percentages are rounded and sum to 100.
 
 | Verdict | n | % |
 |---|---|---|
 | Verified | 14 | 23 |
-| Partly true | 14 | 23 |
-| Open | 1 | 2 |
+| Partly true | 13 | 21 |
+| Open | 2 | 3 |
 | Not true | 16 | 26 |
 | No scientific basis | 16 | 26 |
 | *Harm-flagged (overlapping)* | *9* | *15* |
 
+> **Unit of analysis.** The audit presents two pairs of claims (B4/B5 and D4/D5) under a
+> single shared verdict each, so 61 claims carry 59 distinct verdict determinations. **The
+> claim is the unit throughout**, so a shared verdict is counted once for each claim it
+> covers. An earlier version of this table counted B4/B5 once, reporting one open claim where
+> there are two, and did not reflect the B6 recode described in §2.2. Both are corrected
+> here. B4/B5 fall in the mechanism stratum and are excluded from the contingency analysis
+> as open; D4 and D5 share a verdict but were classified into different strata, which is a
+> defect of the extraction rather than of the classification, and is noted in §5.1.
+
 ### 3.2 Blinded classification, and the bias it removed
 
-Agreement was **60 of 61 (98.4%), Cohen's κ = 0.977**, with a single disagreement on one
-claim. Both raters independently flagged the same borderline items, indicating the rubric
-rather than rater idiosyncrasy was doing the work.
+Agreement was **60 of 61 (98.4%), κ = 0.977**, with a single disagreement (D4: specification
+versus mechanism). Restricted to the 31 claims whose block prefix does not determine the
+answer (§2.3), agreement was **30 of 31, κ = 0.928**. **The restricted figure should be read
+as the real one.** Both are stability-under-resampling for a single model, not inter-rater
+reliability between independent judges.
 
 The blinded classification **differed materially from an earlier unblinded pass**:
 
@@ -235,50 +365,94 @@ generalise to other audits of this kind.
 
 ### 3.3 The central result
 
-**Table 2.** Accuracy by epistemic stratum.
+**The one thing that holds under every analysis is the zero.** No therapeutic-outcome claim
+was supported under any coding, and no quantitative specification was. What varies, and
+varies a great deal, is how good the mechanism claims look by comparison.
+
+**Table 2.** Mechanism versus therapeutic outcome, under both dichotomisations and the
+ordinal test. Wilson 95% intervals in parentheses.
+
+| Analysis | Mechanism supported | Outcome supported | *p* (two-sided) |
+|---|---|---|---|
+| **Ordinal permutation test (primary)** | mean verdict 1.16 / 2 | mean verdict 0.00 / 2 | **4.5 × 10⁻⁴** |
+|  with B6 recoded | 1.11 / 2 | 0.00 / 2 | **1.2 × 10⁻³** |
+| **Lenient** (verified *or* partly true) | 15/19 = 79% (57–91) | 0/8 = 0% (0–32) | 2.2 × 10⁻⁴ |
+|  with B6 recoded | 14/19 = 74% (51–88) | 0/8 = 0% (0–32) | 5.8 × 10⁻⁴ |
+| **Strict** (verified only) | **7/19 = 37% (19–59)** | 0/8 = 0% (0–32) | **0.068 — not significant** |
+|  with B6 recoded | 7/19 = 37% (19–59) | 0/8 = 0% (0–32) | 0.068 |
+| Block-stratified CMH, lenient | — | — | 1.7 × 10⁻³ |
+| Block-stratified CMH, strict | — | — | 0.21 |
+| Clustered to 7 development programmes | 7/7 | 0/7 | 5.8 × 10⁻⁴ |
+
+**This table reports a weakness the original analysis concealed by omission.** The published
+version of this paper gave only the lenient row, and did not define "supported." Under the
+strict coding the mechanism stratum falls from 79% to 37%, the comparison is **not
+significant** (*p* = 0.068), the one-sided lower bound of the odds ratio falls from 5.24 to
+0.94 — crossing one — and the block-stratified test gives *p* = 0.21. Bonferroni correction
+across the six possible pairwise comparisons leaves the lenient result significant
+(*p* = 1.3 × 10⁻³) and the strict result nowhere near it (*p* = 0.41).
+
+The entire dichotomous effect therefore lives in the *partly true* cell: 8 of 19 mechanism
+claims are partly true and **none of the 8 outcome claims is**. Whether that asymmetry is a
+finding or an artifact of an unblinded verdict step is the question this design cannot
+settle, and it is the first limitation in §5.
+
+**The ordinal test is reported as primary because it does not require the choice.** Treating
+the verdict as the ordered scale it is, the mechanism stratum has a mean verdict of 1.16 out
+of 2 against 0.00 for outcome, exact *p* = 4.5 × 10⁻⁴. This survives the B6 recode
+(*p* = 1.2 × 10⁻³) and survives a deliberately hostile re-extraction in which the compound
+claim A3 is split and its one verifiable sub-claim — renal sodium retention under
+hyperinsulinaemia — is credited to the outcome column (*p* = 1.6 × 10⁻²). Under that same
+hostile re-extraction the strict dichotomous test returns *p* = 0.21.
+
+**Table 2b.** The remaining strata. These rows are reported under the lenient coding only,
+because the specification subdivision was not part of the blinded rubric (§5.4) and the
+physical-theory verdicts are not dichotomisation-sensitive.
 
 | Stratum | n | Supported | % |
 |---|---|---|---|
-| Biological mechanism | 21 (2 open excluded) | **15 / 19** | **79** |
-| Therapeutic outcome in humans | 8 | **0 / 8** | **0** |
 | Specification — qualitative | 6 | 5 / 6 | 83 |
 | Specification — quantitative | 9 | **0 / 9** | **0** |
 | Physical theory | 17 | 2 / 17 | 12 |
 
-Mechanism versus outcome: Fisher's exact, two-sided **p = 2.2 × 10⁻⁴**. Clustered to the
-seven underlying development programmes (7/0 versus 0/7): **p = 5.8 × 10⁻⁴**.
+The stratification is sharp but **not monotonic**. The physical-theory stratum sits at 12%:
+its two supported claims are established mathematics (the Whittaker potential decomposition;
+the gravitoelectromagnetic substitution) wrapped in unsupported extrapolation, which is a
+different failure from the categorical emptiness of the zero columns.
 
-The stratification is sharp but **not monotonic**, and the shape is more informative than a
-gradient would be. Descriptive content — how a biological system works, how a process is
-carried out — scored 79–83%. Claims asserting a **human clinical outcome** or a **specific
-numerical value** scored **zero in 17 attempts combined**. The physical-theory stratum sits
-between, at 12%: its two supported claims are established mathematics (the Whittaker
-potential decomposition; the gravitoelectromagnetic substitution) wrapped in unsupported
-extrapolation, which is a different failure from the categorical emptiness of the other two
-columns.
-
-What distinguishes the zero columns from the high ones is not subject matter or difficulty.
-It is whether the claim could be checked against a *result* — a trial endpoint, a measured
-quantity — rather than against a *description*.
+The interpretation we favour — that what matters is whether a claim can be checked against a
+*result* rather than against a *description* — is one of at least two accounts consistent
+with these data. The competing account is dealt with in §5.2, and the block-stratified
+analysis was run to separate them. It separates them under the lenient coding and does not
+under the strict one.
 
 ### 3.4 How outcome claims failed
 
 **Table 3.** Each therapeutic-outcome claim against the evidence that refutes it.
 
-| Claim | Refuting evidence |
-|---|---|
-| C-peptide co-administration reverses microangiopathy | Phase 2b, n=250, 52 weeks: sural nerve conduction velocity improved **1.0 ± 0.24 m/s on drug versus 1.2 ± 0.29 m/s on placebo**; modified Toronto score unchanged. Sponsor dissolved ~30 days after unblinding [2] |
-| Glucose-responsive insulin makes hypoglycemia impossible | MK-2640, 16 adults with type 1 diabetes: **no detectable glucose-dependent change in clearance**, ~25-fold less potent than regular insulin. Discontinued [3] |
-| Hepato-preferential delivery is achieved and beneficial | Insulin peglispro met glycemic endpoints and was terminated December 2015 for hepatic fat and transaminase elevation; HDV-insulin showed **opposite-direction hypoglycemia effects by baseline HbA1c** [4]. None approved |
-| Oral/plant insulin achieves clinical delivery | Phase 3, n=710, missed primary endpoint. A separate programme matched injected glargine in Phase 2 and was discontinued on cost of goods at 1–2% bioavailability [5]. **No oral insulin approved anywhere** |
-| Transdifferentiated cells evade autoimmunity | Contradicted by the cited source's own data: *"Insulin-producing α-cells were sensitive to PPI-directed CTLs, similar to β-cells"* [6] |
-| Automated insulin delivery is inferior | Registry, n=13,922: **hypoglycemic coma 0.62 vs 0.91 per 100 patient-years, IRR 0.68** [7] |
-| Insulin therapy in type 2 diabetes is iatrogenic | ORIGIN, 12,537 patients, 6.2 years: **HR 1.04**, neutral [8]. UKPDS 10-year follow-up: all-cause mortality **−13%** [9] |
-| Acetate clears glucose at rates equalling insulin | **No supporting study in any species.** Human meta-analysis, 43 papers, n=913: acetate had no effect on blood glucose [10] |
+| Claim | Refuting evidence | Directness |
+|---|---|---|
+| C-peptide co-administration reverses microangiopathy | **No human trial has tested basement-membrane thickening as an endpoint.** The only adequately powered trial of long-acting C-peptide measured neuropathy and failed: Phase 2b, n=250, 52 weeks, sural nerve conduction velocity **1.0 ± 0.24 m/s on drug versus 1.2 ± 0.29 m/s on placebo**, modified Toronto score unchanged. Sponsor dissolved ~30 days after unblinding [2] | **Indirect** — different endpoint, same agent |
+| Glucose-responsive insulin makes hypoglycemia impossible | MK-2640, 16 adults with type 1 diabetes: glucose-dependent clearance **far below the preclinical signal and not clinically meaningful**; markedly reduced potency versus regular insulin. Discontinued [3] | Direct |
+| Hepato-preferential delivery is achieved and beneficial | Insulin peglispro met glycaemic endpoints and was terminated December 2015 for hepatic fat and transaminase elevation; HDV-insulin showed **opposite-direction hypoglycaemia effects by baseline HbA1c** [4]. None approved | Direct |
+| Oral/plant insulin achieves clinical delivery | ORMD-0801 Phase 3, **n = 710, terminated, primary endpoint not met** (NCT04606576) [5]. Novo Nordisk's oral insulin 338 matched injected glargine in Phase 2 and was discontinued on cost of goods at 1–2% bioavailability [6]. **No oral insulin approved anywhere** | Direct |
+| Transdifferentiated cells evade autoimmunity | Contradicted by the cited source's own data: *"Insulin-producing α-cells were sensitive to PPI-directed CTLs, similar to β-cells"* [7] | Direct |
+| Automated insulin delivery is inferior | Registry, n = 13,922: **hypoglycaemic coma 0.62 vs 0.91 per 100 patient-years, IRR 0.68 (0.48–0.97)**; time in range 64% vs 52% [8]. The same study found **ketoacidosis higher** on closed loop (1.74 vs 0.96 per 100 patient-years, IRR 1.81), which does not support the claim but must be reported | Direct |
+| Insulin therapy in type 2 diabetes is iatrogenic | ORIGIN, 12,537 patients, 6.2 years: cardiovascular **HR 1.04**, neutral — *with* roughly threefold excess severe hypoglycaemia and ~1.6 kg weight gain on insulin [9]. ORIGIN enrolled largely insulin-naive people with dysglycaemia or early type 2 diabetes, **not the high-dose population the claim describes** | **Partial** — population mismatch |
+|  *(same claim)* | UKPDS 10-year follow-up: all-cause mortality **−13%** in the intensive arm [10]. That arm was **sulfonylurea–insulin, predominantly sulfonylurea**, so it does not isolate insulin | **Indirect** — does not isolate the agent |
+| Acetate clears glucose at rates equalling insulin | **No supporting study in any species.** Human meta-analysis, 43 papers, n = 913: acetate had no effect on blood glucose [11] | Direct |
 
 Failure took three distinct forms: a clinical programme that had already failed before the
 document was generated; contradiction by positive evidence pointing the opposite way; and
 assertion with **no supporting study of any kind**.
+
+**The directness column is a concession.** Two of the eight refutations are weaker than the
+others: the C-peptide trial tested a different endpoint from the one claimed, and the
+insulin-is-iatrogenic claim is met by trials whose populations do not match it. A paper
+policing the gap between mechanism and outcome should not itself present indirect evidence as
+direct. For those two, the accurate verdict is **"no human evidence supports the claim as
+stated, and the best available trials of the agent did not support it"** — which is still a
+failure of an outcome claim, and is what the contingency analysis scores.
 
 ### 3.5 Reference-free detection signals
 
@@ -286,16 +460,29 @@ assertion with **no supporting study of any kind**.
 
 | Error | Internal contradiction |
 |---|---|
-| Amino-acid sequence | A-chain given with **A8 Ala, A10 Val** — the bovine signature — beneath the molecular formula C₂₅₇H₃₈₃N₆₅O₇₇S₆, which is **human** insulin. The specified molecule occurs in no species |
-| Resonance frequency | 11.428 kHz quoted to four significant figures, with the generating equation supplied in the same paragraph. The equation yields the rotational *constant*; transitions occur at 2B(J+1), so the lowest possible line is **3.05 MHz** — the claim sits **267× below the entire spectrum** |
+| Amino-acid sequence | A-chain given with **A8 Ala, A10 Val** — a non-human ruminant signature, shared by bovine, ovine and caprine insulin — beneath the molecular formula C₂₅₇H₃₈₃N₆₅O₇₇S₆, which is **human** insulin. The specified molecule occurs in no species |
+| Resonance frequency | A frequency quoted to four significant figures, with the generating equation supplied in the same paragraph. The equation yields the rotational *constant* B, not a transition frequency; transitions occur at 2B(J+1). The number does not follow from the equation given beside it |
 
-Both are machine-checkable: the first against a sequence database, the second by evaluating a
-supplied formula. Neither requires domain expertise.
+The first is machine-checkable against a sequence database. The second requires evaluating a
+formula the document itself supplies and knowing that rotational transitions occur at
+2B(J+1) — checkable by a system with that rule available, which is a weaker claim than
+"machine-checkable" and is all we assert.
 
-Three further quantities in the physics layer fail independently: thermal energy exceeds the
-claimed quantum by **5.65 × 10⁸**; the molecule's angular momentum randomises roughly **10⁹
-times per carrier cycle**; and skin depth at the claimed frequency is **3.84 m**, so the
-elaborate transdermal coupling mechanism addresses a problem that does not arise.
+**The decisive objection to the physics layer is categorical, not arithmetical.** A protein
+in water has **no resolvable rotational spectrum at all**: rotational diffusion broadens the
+lines to 57–136 MHz while the level spacing is of order 3 MHz, so the lines are 19–45 times
+broader than the gaps between them. There is nothing to tune to. Three further quantities
+fail independently — thermal energy exceeds the claimed quantum by about 10⁹; angular
+momentum randomises roughly 10⁹ times per carrier cycle; and the skin depth at the claimed
+frequency is metres, so the elaborate transdermal coupling mechanism addresses a problem that
+does not arise. A fourth consideration disposes of the premise even if the rest were granted:
+a rotational constant depends only on the moment of inertia, so **any protein of similar size
+gives the same number** and the frequency could not identify insulin in the first place.
+
+Full derivations, with the moments of inertia and conductivity assumed, are in the public
+repository rather than here; the orders of magnitude are what the argument needs, and a paper
+reporting that every quantitative claim in its source was wrong should not quote its own
+figures to more precision than it has stated inputs for.
 
 ### 3.6 Neutral re-query — the training-bias explanation fails
 
@@ -310,9 +497,26 @@ volunteered the ketoacidosis warning unprompted.
 A seventh probe terminated on an automated safety classifier and is reported as missing data.
 It was deliberately not rephrased to evade the filter.
 
-Two probes corrected this audit in passing: MK-2640 is a **mannose-receptor**-cleared
-conjugate, not a phenylboronic-acid construct, and no boronate glucose-responsive insulin has
-entered human testing at all. Both corrections are logged publicly.
+> **This arm has no positive controls, and therefore measures sensitivity without
+> specificity.** Every probed concept was drawn from an outcome claim the audit had already
+> scored false, so the correct answer to every outcome question was "no." A model with a
+> blanket sceptical prior toward novel therapies scores 6 of 6 on this design without knowing
+> anything. Nothing here distinguishes *"the model knows the Cebix trial failed"* from
+> *"the model says no when asked whether an experimental therapy works."* Matched controls
+> with true-positive answers — automated insulin delivery versus multiple daily injections,
+> CGM, intensive glycaemic control, teplizumab in stage 2 type 1 diabetes, stem-cell-derived
+> islets — were not run, and should be run before any weight is placed on this arm. The
+> clinical inference in §4.3 is qualified accordingly.
+
+One probe corrected this audit in passing: MK-2640 is a **mannose-receptor**-cleared
+conjugate, not a phenylboronic-acid construct. That correction was independently verified
+against the primary pharmacology literature before being accepted, and is logged publicly.
+The same probe asserted that no boronate glucose-responsive insulin has entered human
+testing. **We do not repeat that claim as a finding.** We searched ClinicalTrials.gov and
+PubMed and found no registered trial of a phenylboronic-acid construct, but a null keyword
+search is not verification, Lilly acquired Protomer Technologies in 2021 for a glucose-sensing
+insulin programme, and accepting an unverified therapeutic-development claim on the word of
+an AI subject is the exact error this paper is about.
 
 ### 3.7 Persona re-query — contamination-controlled
 
@@ -322,7 +526,7 @@ entered human testing at all. Both corrections are logged publicly.
 |---|---|---|
 | Environment | project directory, version-controlled | neutral directory, no repository |
 | **Contaminated** | **4 / 6** | **0 / 6** |
-| Persona adopted | 0 / 6 | **0 / 6** |
+| Persona adopted | 0 / 6 | **0 / 6 fully (1 partial: register adopted, licence refused)** |
 | Outcome accuracy | 6 / 6 | **6 / 6** |
 | Status | discarded | **valid** |
 
@@ -364,13 +568,25 @@ obviously false — they are the ones closest to a true mechanism.
 
 ### 4.1 What the dissociation is not
 
-It is not absent knowledge. The strongest result in this paper is negative: the model class
-that produced the false outcome claims **surfaces the refuting trial in the first sentence of
-a neutral answer**. Four probes opened with *"No."* The information is present and recoverable
-in a single plainly-worded question.
+**It is not absent knowledge — in the model we tested.** A current frontier model
+(Claude Opus 5) surfaced the refuting trial in the first sentence of a neutral answer in 6 of
+6 probes, four opening with *"No."* The information is present and recoverable in a single
+plainly-worded question *in that model*, subject to the absence of positive controls noted in
+§3.6.
 
-It is also not a general consequence of speculative prompting. A second model declined the
-frame in every trial, uncontaminated.
+**It is not established for the model that generated the document.** An earlier draft of this
+paper described Claude Opus 5 as "the same class of system" that produced the false outcome
+claims. That phrasing is doing work it cannot support: the generator was Gemini, Gemini under
+neutral prompting was never tested, and "same class" means only that both are large language
+models. The relevant cell of the design is empty (§5.5), and the sentence has been removed.
+
+**Whether speculative prompting is responsible is untested, not excluded.** An earlier draft
+stated that the dissociation "is not a general consequence of speculative prompting," citing
+a second model that declined the frame in every trial. That inference does not follow. The
+persona was adopted in 0 of 6 trials, so **the manipulation was never delivered** and the arm
+has no power against the hypothesis. What was shown is narrower and is all that should be
+claimed: *one one-sentence persona prefix did not induce persona adoption in one model across
+six clinical questions.*
 
 Our proposed explanation — inherited publication bias — was falsified by its own first test.
 We report that rather than retaining it, and the hypothesis space is narrower as a result.
@@ -400,9 +616,20 @@ glucose uptake is insulin-signalling-independent. Dismissing the material wholes
 therefore both inaccurate and tactically poor: it teaches the patient the clinician has not
 read it.
 
-**They will be wrong about whether the treatment works**, and the refuting evidence is
-recoverable from the same class of system that generated the error. *"Ask it again, plainly"*
-is advice a clinician can give in the room.
+**They will be wrong about whether the treatment works.** In this document, every claim that
+an intervention produces a clinical benefit in humans was unsupported, and each corresponded
+to a development programme that had already failed.
+
+*Whether the refuting evidence can be recovered by asking the same system again, plainly, is
+a hypothesis this study raises and does not establish.* It held in 6 of 6 probes of one
+model, but that arm had no positive controls (§3.6), so we cannot say what happens when the
+plainly-asked question has a *yes* answer — and a clinician who followed this advice in that
+case would be directing a patient toward a confabulation in the opposite direction. **It
+should not be offered as point-of-care advice until it has been tested in a
+clinician-facing evaluation with controls in both directions**, in a disease where the
+interval between a wrong answer and an emergency is 12 to 48 hours. We name it here because
+it is the most clinically consequential thing this study points at, and because stating it
+as a hypothesis is the only honest way to put it.
 
 One conflation deserves specific attention. Much of this document's argument concerns type 2
 pathophysiology and becomes lethal when a reader with type 1 diabetes applies it to
@@ -413,14 +640,14 @@ themselves. That single category error accounts for most of the harm-flagged cla
 Misinformation occupies space that institutions vacate.
 
 The economic grievance animating this document is legitimate and documented. Published
-production cost for regular human insulin is $2.28–3.37 per vial [11]; US list prices exceeded
+production cost for regular human insulin is $2.28–3.37 per vial [12]; US list prices exceeded
 $250 before reductions of 70–78% in 2023–24. Patients rationed.
 
 The title of this paper is a line item. Insulin — Humalog, Humulin, Basaglar — appeared as
 three separate revenue lines in Eli Lilly's Form 10-K as recently as FY2024, together $3.92bn,
-8.7% of revenue [12]. In the FY2025 10-K they appear in no revenue table at all, absorbed into
+8.7% of revenue [13]. In the FY2025 10-K they appear in no revenue table at all, absorbed into
 *"other cardiometabolic health"* ($4.0bn, 6.1% of revenue) in Note 2, and into *"other
-products"* in the management discussion [13]. The three brands are also absent from the FY2025
+products"* in the management discussion [14]. The three brands are also absent from the FY2025
 XBRL taxonomy, which carried a tag for each of them a year earlier. Over the same period two
 brands of a single dual GIP/GLP-1 receptor agonist, tirzepatide, grew to 56% of revenue —
 Lilly's own figure.
@@ -460,30 +687,198 @@ isolation. Our first attempt assumed isolation and undercounted its own contamin
 
 ## 5. Limitations
 
-1. **n = 1 source document.** The audit is of a single artifact. Generalisation requires a
-   corpus.
-2. **The 2 × 2 is incomplete.** The source model under neutral prompting was not accessible.
-   Model identity remains partly confounded with prompting regime.
-3. **Persona elaborateness is uncontrolled.** The source used an extended custom
-   configuration; our manipulation was one sentence. Per the pre-registered stopping rule the
-   manipulation was not escalated after refusal.
-4. **Claims are not independent**, which the clustered analysis addresses partially.
-5. **Verification and classification were AI-assisted** with human cross-checking (§6.3).
-6. **Selection effect.** The document was audited because it appeared dangerous.
-7. **Automated safety filtering produced non-random missingness**, losing one probe.
-8. **Single disease, single language, single generation.**
+Stated in descending order of how much they should change a reader's confidence. The first
+three were identified by external peer review of this manuscript, not by the authors, and
+two of them required re-analysis that weakened the result.
+
+**5.1 The dichotomous result depends on a cut point that an unblinded analyst chose and did
+not disclose.** "Supported" was defined as *verified or partly true*. That definition appeared
+nowhere in the original manuscript, was never varied, and is maximally favourable to the
+hypothesis: 8 of 19 mechanism claims are partly true and **none of the 8 outcome claims is**,
+so the entire dichotomous effect sits in that one cell. Under the strict definition the
+comparison is 7/19 versus 0/8, *p* = 0.068, and the odds-ratio lower bound crosses one.
+
+Both codings and the cut-free ordinal test are now reported (Table 2). The ordinal test is
+primary and survives every recode we have tried, including a hostile one. But a reader should
+weigh that the choice was available, was made silently, and was made by the same person who
+formed the hypothesis.
+
+**5.2 Epistemic stratum is confounded with position in the source document.** Block membership
+predicts rated stratum almost perfectly (§2.3). The source is sectioned: its early blocks
+paraphrase a textbook literature, its later blocks carry its argument. So "accuracy falls
+where claims assert results rather than describe mechanisms" is statistically hard to
+separate from a duller account — **the document is accurate where it is reciting and invents
+where it is arguing.** The block-stratified CMH test was run to separate them. It does so
+under the lenient coding (*p* = 1.7 × 10⁻³) and does **not** under the strict coding
+(*p* = 0.21). We also did not measure how *extraordinary* each claim is, which is a plausible
+third explanation and is not controlled anywhere in this design.
+
+**5.3 Neither κ nor the taxonomy has been validated by a human or by a second model family.**
+Both "raters" were context-free sessions of one model. Two samples of one model share weights
+and therefore share systematic errors, so κ = 0.977 measures classification stability under
+resampling, not inter-rater reliability. Any mistake the model makes consistently is invisible
+to it. Restricted to the 31 claims whose block prefix does not give the answer away, κ = 0.928
+— still high, and still a measure of one system agreeing with itself. **The four-stratum
+taxonomy has not been validated against clinically trained human raters**, and until it has,
+it should be treated as a proposal rather than an instrument.
+
+**5.4 Extraction was unblinded, by the author, with the granularity rule written down only
+afterwards.** Extraction sets the denominator of every number in this paper, and §3.2 shows
+that unblinded judgment in this project was biased toward the hypothesis at the adjacent
+step. The aggregation rule in §2.2 was reconstructed and applied retrospectively; one claim
+(B6) was found to violate it and has been recoded. Splitting the compound claim A3 and
+crediting its one verifiable sub-claim to the outcome column — a defensible re-extraction we
+report because it is the one that hurts most — moves the ordinal *p* to 1.6 × 10⁻² and the
+strict dichotomous *p* to 0.21. **An independent blinded re-extraction has not been done and
+is the single most valuable thing anyone could do to this dataset.** The inventory is public
+so that it can be.
+
+One extraction defect is visible in the deposited data: D4 and D5 share a single verdict but
+were classified into different strata, so one determination is counted in two columns.
+
+**5.5 The re-query arm has no positive controls, so it reports sensitivity without
+specificity** (§3.6). Every probed question had "no" as its correct answer. This is the reason
+the clinical recommendation in §4.3 is stated as a hypothesis rather than as advice.
+
+**5.6 The persona manipulation was never delivered.** Adoption was 0 of 6. An arm in which
+the manipulation does not occur has no power against the hypothesis it was built to test, and
+no conclusion about speculative prompting follows from it in either direction. Per the
+pre-registered stopping rule the manipulation was not escalated after refusal, which protects
+against fishing and guarantees the arm stays uninformative.
+
+**5.7 The 2 × 2 of model × prompting regime is incomplete.** Gemini under neutral prompting
+was never tested, so model identity remains confounded with prompting regime and no statement
+in this paper describes the behaviour of the system that produced the document.
+
+**5.8 The artifact was authored by the investigator** (§2.1). This is not a selection effect;
+it is construction. The dissociation may be a property of language models or a property of
+this prompt, and nothing here separates them.
+
+**5.9 Verification and subjects share a model family.** AI systems assisted the literature
+verification *and* served as experimental subjects, and in both roles these were current
+frontier models of overlapping provenance. A probe that "corrects" the audit may be
+reproducing a shared prior rather than contributing independent knowledge — and in one case
+(§3.6) a probe's unverified development-status claim reached a manuscript draft before being
+caught. Primary sources were checked behind every verdict used in Tables 1 and 2, which bounds
+but does not eliminate this.
+
+**5.10 The taxonomy is post-hoc.** The four strata were derived from these data, after verdicts
+were known; only their *application* was blinded. The qualitative/quantitative split within
+the specification stratum was **not part of the blinded rubric at all** — raters assigned only
+SPECIFICATION, and the 6/9 subdivision was made afterwards by an unblinded analyst. Table 2b
+is exploratory for that reason, and the combined "17 of 17" figure has been removed from the
+abstract because half of it was unblinded.
+
+**5.11 n = 1 source document, 1 disease, 1 language, 1 model generation.** No claim about AI
+systems in general follows. Every recommendation in §4 should be read as a hypothesis for a
+corpus study. The specific systems tested will be superseded within months; the method is
+intended to outlast them, and that too is untested.
+
+**5.12 Claims are not independent**; the clustered analysis addresses this only partially, and
+is a different table rather than a variance correction.
+
+**5.13 Automated safety filtering produced non-random missingness**, losing one probe. It was
+deliberately not rephrased to evade the filter.
+
+### 5.14 What would change our minds
+
+So that this is falsifiable rather than merely hedged, the result should be considered
+unsupported if any of the following is done and fails:
+
+1. An independent blinded re-extraction yields a materially different claim inventory and the
+   ordinal test does not replicate.
+2. Clinically trained human raters applying the §2.3 rubric achieve κ materially below 0.7,
+   which would mean the taxonomy is not an instrument.
+3. Positive controls show the neutral-prompting arm answers "no" to outcome questions whose
+   correct answer is yes, which would void §3.6 and §4.3 entirely.
+4. The same audit applied to two or three independently generated documents shows no
+   mechanism/outcome gap.
+
+## 6. Contributors and sources
+
+The author is an independent researcher working on claim-level verification of AI-generated
+technical and medical documents, and maintains three public repositories applying the same
+method to other fields. This paper grew out of a verification project rather than a research
+programme: a long AI-generated document about insulin was audited because it appeared
+dangerous, and the stratification reported here was not the hypothesis the audit set out to
+test. It emerged from the completed verdict table and was then tested against a rubric fixed
+in advance and applied blind.
+
+Sources were primary literature throughout, retrieved from PubMed and journal sites, with
+regulatory and financial claims checked against ClinicalTrials.gov records and SEC filings
+rather than secondary reporting. Where a citation could not be confirmed against a primary
+source it is listed as unresolved rather than used; seven such items remain, and are named.
+The complete claim inventory, the blinded raters' outputs, the analysis scripts, the
+pre-registration and a public corrections log are openly available, so that the central table
+can be disputed claim by claim. UH is the sole author and guarantor.
 
 ---
 
-## 6. Declarations
+## 7. Declarations
 
-### 6.1 Funding
-None.
+### 7.1 Funding
+None. No funder had any role in design, conduct, analysis, interpretation, writing, or the
+decision to submit.
 
-### 6.2 Competing interests
-None declared.
+### 7.2 Competing interests
+**The author generated the audited document** (§2.1), on a personal account, under a persona
+configuration of the author's own writing, which the author retains. This is declared as a
+competing interest rather than described only as provenance, because authoring the stimulus
+of a study is an interest in its result.
 
-### 6.3 Use of artificial intelligence
+No financial interests. The author has no financial relationship with any pharmaceutical
+company, including Eli Lilly, Novo Nordisk or Sanofi, and none with any developer of the AI
+systems studied or used.
+
+### 7.3 Dual-use assessment
+This manuscript and its public repository describe, in accessible prose, a document that
+argues for replacing insulin with a device and for self-manufacture of insulin. That content
+is reproduced in order to be refuted, and the following limits were applied:
+
+- **The microcontroller firmware in the source document was not reproduced anywhere**, in the
+  paper or the repository. It is the one component that could be built from the text, and it
+  implements a device the source tells readers to use instead of insulin.
+- Manufacturing material is presented at the level of published process literature and
+  pharmacopoeial standards, with the purity, endotoxin and potency requirements that make
+  self-administration unsafe stated alongside it, and no protocol enabling it.
+- A standing safety document leads the repository and states the four lethal propositions and
+  the 12–48 hour ketoacidosis timeline before any other content.
+- Every refuted claim is labelled at the point of statement, not only in a summary.
+
+The residual risk is that refutation requires restatement, and restatement carries the claim
+further than it had reached. We judged that acceptable because the claims are already
+generable on demand by anyone with an account, and a labelled refutation travelling with them
+is better than neither. **A reader who disagrees with that judgement is disagreeing with a
+judgement, not with an oversight.**
+
+### 7.4 Contributorship and guarantor
+Single author: conceived the study, extracted and verified the claims, designed and ran all
+four experiments, performed the analysis, and wrote the manuscript. **The author is the
+guarantor**, accepts full responsibility for the work, had access to all data, and controlled
+the decision to publish. The author affirms that this manuscript is an honest, accurate and
+transparent account of the work reported; that no important aspects have been omitted; and
+that **the two departures from the original analysis plan — the falsification of the
+corpus-bias hypothesis and the discarding of a contaminated experimental arm — are reported
+in full rather than removed.**
+
+### 7.5 Ethics approval
+Not required. The study involved no human or animal participants. The experimental subjects
+were software systems. No patient data of any kind were accessed.
+
+### 7.6 Patient and public involvement
+**No patients or members of the public were involved in the design, conduct, or reporting of
+this study.** This is a limitation rather than a choice justified by the method. The
+population whose safety is at issue — people with type 1 diabetes encountering AI-generated
+material about their own treatment — was not consulted about which claims matter most, which
+would most plausibly change behaviour, or how the clinical guidance in §4.3 would land in a
+consultation. Any extension of this work should involve them from the outset, and the time-to-harm
+axis in particular is a construct that patients are better placed to weight than the author.
+
+### 7.7 Disaggregation by sex and gender
+Not applicable. The study analysed documents and software outputs; no human participant data
+were collected, so no disaggregation is possible. Noted in accordance with journal policy.
+
+### 7.8 Use of artificial intelligence
 
 Declared in detail, as the subject matter demands.
 
@@ -497,63 +892,117 @@ between them. The re-query experiments used AI systems as subjects by design.
 responsibility for the content, including the two errors corrected during the work and logged
 publicly.
 
-### 6.4 Data availability
+### 7.9 Data availability
 
 All materials are openly available: the complete claim inventory with stable identifiers,
 both raters' classifications, the analysis scripts reproducing κ = 0.977 and
 *p* = 2.2 × 10⁻⁴, the pre-registration with its commit timestamp, and a public corrections
 log. Repository: `github.com/utahisnotastate/ufwwarforinsulin`
 
-### 6.5 Corrections during preparation
+### 7.10 Corrections during preparation
 
-Two errors in this work were found and logged before submission. The audit misattributed
-MK-2640's sensing chemistry, caught by a model being used as an experimental subject. And an
-earlier draft understated its own contamination as "at least two of six" when it was four.
-Both are recorded with the original wording preserved.
+**Eight errors in this work were found and logged publicly before submission**, each with the
+original wording preserved rather than overwritten. Two of them changed what this paper
+claims:
 
----
+| Error | How it was caught |
+|---|---|
+| **The headline statistic depended on an undisclosed dichotomisation and does not survive its removal** (*p* = 0.068 strict, versus 2.2 × 10⁻⁴ as published) | External hostile peer review, which read the deposited analysis script rather than the manuscript's description of it |
+| **The public repository claimed the audited document "circulates in patient communities."** It was generated by the author and never disseminated | The same review, cross-reading the repository against §2.1 |
+| κ was inflated by block prefixes left in the "unlabelled" rater file; 30 of 61 classifications were derivable from the prefix | Same review; κ recomputed at 0.928 on the contestable subset |
+| Claim B6 was coded partly true against the audit's own verdict line and against the stated aggregation rule | Same review; recoded |
+| The repository reported one death in the zimislecel trial; the trial reported two | Reading the primary abstract's safety results, not only its efficacy figures |
+| The audit misattributed MK-2640's sensing chemistry to phenylboronic acid; it is mannose-receptor mediated | A model being used as an experimental subject, which corrected the audit in passing |
+| An earlier draft understated its own contamination as "at least two of six" when it was four | Re-auditing the probe transcripts before acting on the result |
+| Three errors in the Eli Lilly paragraph, including describing tirzepatide's two brands as "two GLP-1 products" when it is one dual GIP/GLP-1 molecule; and two citations carrying a wrong year and an unconfirmed identifier | Verifying against primary SEC filings and PubMed before submission |
 
-## 7. Short-form version
+Two deserve the editor's attention specifically.
 
-For *BMJ* Analysis (~2,000 words), retain §1, §3.2, §3.3, §3.4, §3.6, §4.1, §4.3 and §4.4;
-compress Methods to a boxed summary; reduce to Tables 2 and 3; and keep the quoted title.
-The institutional argument in §4.4 becomes the closing rather than a subsection.
+**The first is the one this paper is about.** The sensitivity analysis that exposed it is one
+line of code. It was not run, because the first coding produced a publishable number. In a
+paper arguing that unchecked claims should not be believed, the authors did not check their
+own analytic choice until someone else did.
+
+**The fifth is the same failure in miniature.** Under-reporting a death count happened in the
+single most optimistic result the repository cites, because its efficacy figures were checked
+and its safety paragraph was not — the exact asymmetry of attention the paper's thesis
+describes.
+
+Both are reported for the same reason the falsified hypothesis in §3.6 is reported.
+
+### 7.11 Transparency declaration
+
+The lead author affirms that this manuscript is an honest, accurate and transparent account of
+the study being reported; that no important aspects of the study have been omitted; and that
+any discrepancies from the study as planned have been explained. The pre-registration for the
+contamination-controlled arm is timestamped in the public repository's commit history, dated
+before the experiment was run.
+
+### 7.12 Provenance and peer review
+
+Not commissioned; externally peer reviewed.
+
+### 7.13 Licence
+
+The Corresponding Author has the right to grant on behalf of all authors and does grant on
+behalf of all authors, a worldwide licence to the Publishers and its licensees in perpetuity,
+in all forms, formats and media (whether known now or created in the future), to i) publish,
+reproduce, distribute, display and store the Contribution, ii) translate the Contribution into
+other languages, create adaptations, reprints, include within collections and create summaries,
+extracts and/or, abstracts of the Contribution, iii) create any other derivative work(s) based
+on the Contribution, iv) to exploit all subsidiary rights in the Contribution, v) the inclusion
+of electronic links from the Contribution to third party material where-ever it may be located;
+and, vi) licence any third party to do any or all of the above.
 
 ---
 
 ## References
 
-1. Herkert D, Vijayakumar P, Luo J, et al. Cost-related insulin underuse among patients with
-   diabetes. *JAMA Intern Med* 2019;179(1):112–114. **Single-centre, n=199; not a national
-   estimate.**
+Vancouver style, numbered in order of first appearance in the text. Verified as sequential.
+
+All author lists verified against PubMed on 29 October 2026; all authors are listed where
+there are six or fewer, and the first six followed by *et al* where there are more.
+
+1. Herkert D, Vijayakumar P, Luo J, Schwartz JI, Rabin TL, DeFilippo E, et al. Cost-related
+   insulin underuse among patients with diabetes. *JAMA Intern Med* 2019;179(1):112-14.
+   **Single-centre, n=199; not a national estimate.**
 2. Wahren J, Foyt H, Daniels M, Arezzo JC. Long-acting C-peptide and neuropathy in type 1
    diabetes: a 12-month clinical trial. *Diabetes Care* 2016;39(4):596–602. PMID 26884473
-3. Krug AW, Visser SAG, Tsai K, et al. Clinical evaluation of MK-2640: an insulin analog with
-   glucose-responsive properties. *Clin Pharmacol Ther* 2019;105(2):417–425. PMID 30125349
-4. Klonoff D, et al. Divergent hypoglycemic effects of hepatic-directed prandial insulin.
-   *Diabetes Care* 2019;42(11):2154–2157. PMID 31551249
-5. Halberg IB, et al. Efficacy and safety of oral basal insulin versus subcutaneous insulin
-   glargine in type 2 diabetes. *Lancet Diabetes Endocrinol* 2019;7(3):179–188
-6. Furuyama K, Chera S, van Gurp L, et al. Diabetes relief in mice by glucose-sensing
-   insulin-secreting human α-cells. *Nature* 2019;567(7746):43–48. PMID 30760930
-7. Karges B, et al. Hybrid closed-loop insulin therapy and risk of severe hypoglycaemia and
-   diabetic ketoacidosis in young people with type 1 diabetes. *Lancet Diabetes Endocrinol*
-   2024
-8. ORIGIN Trial Investigators. Basal insulin and cardiovascular and other outcomes in
-   dysglycemia. *N Engl J Med* 2012;367(4):319–328. PMID 22686416
-9. Holman RR, et al. 10-year follow-up of intensive glucose control in type 2 diabetes.
-   *N Engl J Med* 2008;359(15):1577–1589. PMID 18784090
-10. Cherta-Murillo A, Pugh JE, Alaraj-Alshehhi S, et al. The effects of SCFAs on glycemic
-    control in humans: a systematic review and meta-analysis. *Am J Clin Nutr*
-    2022;116(2):335–361. PMID 35388874
-11. Gotham D, Barber MJ, Hill A. Production costs and potential prices for biosimilars of
+3. Krug AW, Visser SAG, Tsai K, Kandala B, Fancourt C, Thornton B, et al. Clinical evaluation
+   of MK-2640: an insulin analog with glucose-responsive properties. *Clin Pharmacol Ther*
+   2019;105(2):417-25. PMID 30125349
+4. Klonoff D, Bode B, Cohen N, Penn M, Geho WB, Muchmore DB. Divergent hypoglycemic effects
+   of hepatic-directed prandial insulin: a 6-month phase 2b study in type 1 diabetes.
+   *Diabetes Care* 2019;42(11):2154-7. PMID 31551249
+5. Oramed Pharmaceuticals. Study to evaluate the efficacy and safety of ORMD-0801 in
+   subjects with type 2 diabetes mellitus. ClinicalTrials.gov **NCT04606576**. Phase 3,
+   n = 710, **terminated**; primary endpoint not met.
+6. Halberg IB, Lyby K, Wassermann K, Heise T, Zijlstra E, Plum-Mörschel L. Efficacy and
+   safety of oral basal insulin versus subcutaneous insulin glargine in type 2 diabetes: a
+   randomised, double-blind, phase 2 trial. *Lancet Diabetes Endocrinol* 2019;7(3):179-88.
+   PMID 30679095
+7. Furuyama K, Chera S, van Gurp L, Oropeza D, Ghila L, Damond N, et al. Diabetes relief in
+   mice by glucose-sensing insulin-secreting human α-cells. *Nature* 2019;567(7746):43-8.
+   PMID 30760930
+8. Karges B, Rosenbauer J, Stahl-Pehe A, Flury M, Biester T, Tauschmann M, et al. Hybrid
+   closed-loop insulin therapy and risk of severe hypoglycaemia and diabetic ketoacidosis in
+   young people (aged 2-20 years) with type 1 diabetes: a population-based study. *Lancet
+   Diabetes Endocrinol* 2025;13(2):88-96. PMID 39701114
+9. ORIGIN Trial Investigators. Basal insulin and cardiovascular and other outcomes in
+   dysglycemia. *N Engl J Med* 2012;367(4):319-28. PMID 22686416
+10. Holman RR, Paul SK, Bethel MA, Matthews DR, Neil HA. 10-year follow-up of intensive
+   glucose control in type 2 diabetes. *N Engl J Med* 2008;359(15):1577-89. PMID 18784090
+11. Cherta-Murillo A, Pugh JE, Alaraj-Alshehhi S, Hajjar D, Chambers ES, Frost GS. The effects
+    of SCFAs on glycemic control in humans: a systematic review and meta-analysis. *Am J Clin
+    Nutr* 2022;116(2):335-61. PMID 35388874
+12. Gotham D, Barber MJ, Hill A. Production costs and potential prices for biosimilars of
     human insulin and insulin analogues. *BMJ Glob Health* 2018;3(5):e000850
-12. Eli Lilly and Company. Form 10-K for the fiscal year ended 31 December 2024. SEC accession
+13. Eli Lilly and Company. Form 10-K for the fiscal year ended 31 December 2024. SEC accession
     0000059478-25-000067, filed 19 February 2025. Item 7 revenue table and Note 2
-13. Eli Lilly and Company. Form 10-K for the fiscal year ended 31 December 2025. SEC accession
+14. Eli Lilly and Company. Form 10-K for the fiscal year ended 31 December 2025. SEC accession
     0000059478-26-000013, filed 12 February 2026. **Note 2 (Revenue), "Disaggregation of
     Revenue," p.65**; management discussion revenue table p.49
 
 *Full bibliography with 96 entries, PMID-verified citations marked separately from
-secondary-source citations, and eight unresolved items listed openly:*
+secondary-source citations, and seven unresolved items listed openly:*
 `references/bibliography.md`

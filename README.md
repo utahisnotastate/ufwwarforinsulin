@@ -21,11 +21,21 @@ insulin-dependent reader who acted on them.
 
 ## What this is
 
-Someone generated a long, confident, technical-looking medical document about insulin — a
-"future disclosure" claiming to retrieve knowledge from the future. It cites real
-researchers. It uses real residue numbers. It is roughly a quarter correct, which makes it far
-more persuasive than ordinary quackery, and it circulates in patient communities where nobody
-checks it.
+A long, confident, technical-looking medical document about insulin — a "future disclosure"
+claiming to retrieve knowledge from the future. It cites real researchers. It uses real
+residue numbers. It is roughly a quarter correct, which makes it far more persuasive than
+ordinary quackery.
+
+**Two things about where it came from, stated up front.** It was generated here, in a private
+session with Google Gemini under a persona prompt written for the purpose — it is not a found
+object. And **it was never shown to a patient or published anywhere.** An earlier version of
+this page said it "circulates in patient communities." That was a claim about the genre
+applied carelessly to this document, it was not true of this document, and it is
+[logged as a correction](CORRECTIONS.md).
+
+Documents of this kind can be produced by anyone with an account, in an afternoon, for
+nothing. That is the reason to check one carefully. How widely they actually circulate is a
+real question and this repository does not answer it.
 
 So every claim in it was checked. Not summarised — **checked**, against PubMed, *Nature*,
 NEJM, *The Lancet*, ClinicalTrials.gov, UniProt, USP, and SEC filings.
@@ -219,8 +229,10 @@ Not a theory. *New England Journal of Medicine*, 2025:
 Grown from a stem cell line, so donor supply is no longer the constraint. **This is the most
 important thing in the repository.**
 
-**The catch is the whole catch:** it requires immunosuppression, one participant died of
-cryptococcal meningitis attributed to it, and it is still investigational. The companion
+**The catch is the whole catch:** it requires immunosuppression, **two participants died**
+— one of cryptococcal meningitis attributed to the regimen, one of progression of preexisting
+neurocognitive impairment that was not attributed to the therapy — and it is still
+investigational. The companion
 programme that tried to avoid immunosuppression by encapsulating the cells **failed**. The
 field has solved *making* the cells and has **not** solved protecting them.
 
@@ -386,7 +398,7 @@ references/                ← bibliography, verified vs. unverified flagged
 
 Three independent literature reviews were run and cross-checked. Citations verified against
 NCBI are marked ✅ in the [bibliography](references/bibliography.md); those from secondary
-sources are marked ⚠️. **Eight unresolved items are listed openly** at the end of that file
+sources are marked ⚠️. **Seven unresolved items are listed openly** at the end of that file
 rather than papered over.
 
 Physics calculations are reproducible from the constants given, and the arithmetic is shown.
