@@ -62,10 +62,16 @@ reproduced nowhere. **The source document is retained but not published, and is 
 you and to reviewers on request, in full and unredacted.** Its SHA-256 is published so any
 copy supplied can be verified as the one audited.
 
-**Use of AI.** AI systems were used for literature search, verification, blinded
-classification, and as experimental subjects. No AI system is an author. The circularity this
-creates is treated as a limitation, including that both raters were sessions of one model, so
-κ measures stability under resampling and not inter-rater reliability.
+**Use of AI, in five roles.** Google Gemini generated the audited document, under a persona
+prompt I wrote. Claude Opus 5 served as experimental subject in three arms, as a blinded
+measurement instrument for the classification and for the two independent re-extractions, and
+as a research assistant for the literature verification. It was also used, through Claude
+Code, to draft manuscript prose under my direction and to write the analysis scripts and build
+pipelines — every commit in the public repository records that, and I would rather declare it
+than leave it to be found. **No AI system is an author.** The circularity all this creates is
+treated as a limitation, including that both raters were sessions of one model, so κ measures
+stability under resampling and not inter-rater reliability. §7.8 gives the full breakdown, and
+the verbatim prompts and raw outputs are available to you on request.
 
 **Open materials.** The complete claim inventory, the canonical verdict file, both raters'
 classifications, both independent re-extractions, all five analysis scripts, four

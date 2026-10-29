@@ -1125,7 +1125,12 @@ judgement, not with an oversight.**
 
 ### 7.4 Contributorship and guarantor
 Single author: conceived the study, extracted and verified the claims, designed and ran all
-four experiments, performed the analysis, and wrote the manuscript. **The author is the
+five experiments, performed the analysis, and wrote the manuscript.
+
+**AI assistance, acknowledged here as well as declared in §7.8.** Claude Opus 5, used through
+Claude Code, drafted and revised manuscript prose under the author's direction and wrote the
+analysis scripts and the build pipelines. No AI system is an author; every analytic and
+editorial decision was the author's. **The author is the
 guarantor**, accepts full responsibility for the work, had access to all data, and controlled
 the decision to publish. The author affirms that this manuscript is an honest, accurate and
 transparent account of the work reported; that no important aspects have been omitted; and
@@ -1152,17 +1157,29 @@ were collected, so no disaggregation is possible. Noted in accordance with journ
 
 ### 7.8 Use of artificial intelligence
 
-Declared in detail, as the subject matter demands.
+Declared in full, as the subject matter demands. AI appears in this work in five distinct
+roles, and all five are declared.
 
-AI systems were used for literature search, claim verification, blinded classification, and
-as experimental subjects. Three parallel AI-assisted literature reviews were cross-checked
-against one another and against primary sources by the author. Blinded classification was
-performed by two AI raters in independent sessions with no access to verdicts; κ is reported
-between them. The re-query experiments used AI systems as subjects by design.
+| Role | System | Task |
+|---|---|---|
+| **Object of study** | Google Gemini, under a user-configured persona | Generated the audited document (§2.1) |
+| **Experimental subject** | Claude Opus 5 | The neutral, persona, positive-control and discarded arms (§2.5, §2.6, §3.7) |
+| **Measurement instrument** | Claude Opus 5, in independent context-free sessions | Blinded classification of all 61 claims (§2.3); two independent blinded re-extractions (§3.8) |
+| **Research assistant** | Claude Opus 5, with literature search | Three parallel verification passes, cross-checked against one another and against the primary sources (§2.2) |
+| **Drafting and analysis** | Claude Opus 5, through Claude Code | Manuscript prose under the author's direction; the five analysis scripts; the build pipelines; adversarial internal review |
 
-**No AI system is an author**, consistent with ICMJE guidance. The author takes full
-responsibility for the content, including the two errors corrected during the work and logged
-publicly.
+A sixth arm pre-registered Claude Sonnet 5 as a cross-model rater and was **abandoned** when
+its isolation check failed; the abandonment is published rather than omitted.
+
+The drafting role is declared because the alternative is to leave it discoverable rather than
+disclosed: every commit in the public repository carries an AI co-authorship trailer. The
+author directed the work, made every analytic and editorial decision, and resolved every
+citation to its primary source.
+
+**No AI system is an author**, consistent with ICMJE guidance and with the journal's policy.
+The author takes full responsibility for all content, **including AI-assisted content** — its
+accuracy, its attribution of sources and its originality — and for the errors corrected during
+the work and logged publicly in §7.10, two of which materially weakened the result.
 
 ### 7.9 Data availability
 
