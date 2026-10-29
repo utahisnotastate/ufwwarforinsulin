@@ -29,8 +29,8 @@ ClinicalTrials.gov, UniProt, USP, and SEC filings. PMIDs are given where confirm
 | D | Delivery and next-generation molecules | 2 | 2 | 0 | 2 | 1 | 2 |
 | E | Regeneration and cure | 1 | 0 | 0 | 3 | 0 | 1 |
 | F | Insulin receptor | 1 | 0 | 0 | 0 | 0 | 0 |
-| X | The physics layer | 0 | 0 | 0 | 0 | 17 | 1 |
-| | **Total (61 claims)** | **14** | **12** | **1** | **16** | **18** | **9** |
+| X | The physics layer | 0 | 2 | 0 | 0 | 15 | 1 |
+| | **Total (61 claims)** | **14** | **14** | **1** | **16** | **16** | **9** |
 
 **Roughly a quarter of the source's claims survive contact with the literature. Another fifth
 are real science overstated. The remainder are wrong, and nine of them are wrong in ways that
@@ -595,10 +595,62 @@ not, but it is right.
 
 ## Block X — The physics layer
 
-**⛔ NO BASIS — all 17 claims (X1–X17).** ☠️ for X9 specifically.
+**⛔ NO BASIS — 15 of 17 claims.** **🟡 PARTLY TRUE — X8 and X13**, which have a genuine
+established kernel wrapped in an unsupported extrapolation. ☠️ for X9 specifically.
 
 Full quantitative treatment, with reproducible arithmetic:
 [`docs/technical/why-the-physics-layer-fails.md`](docs/technical/why-the-physics-layer-fails.md).
+
+### The two with a real kernel
+
+- **X8 (scalar/longitudinal waves).** The **Whittaker decomposition is established mathematics**
+  (1903–04) — a scalar potential in a source-free region can be written as paired
+  counter-propagating wave sets. A bifilar coil really does cancel the far-field magnetic
+  dipole. What is unsupported is that the remainder constitutes a channel carrying power or
+  information; that is **testable with an expected null**, and a protocol exists (E005 below).
+- **X13 (Q = G^(1/2)M).** Substituting √G·M for charge in Coulomb's law **does** reproduce
+  Newton's law — legitimate algebra, and the basis of gravitoelectromagnetism, a real weak-field
+  approximation of GR. What fails is the triple equality E = mc² = (c²/√G)Q, which is
+  dimensionally inconsistent unless Q is given ad hoc units, and the reading of Q as
+  "consciousness" in an interconversion law.
+
+### Real physics adjacent to four other claims
+
+Noted because a debunk that erases the real neighbors is less useful and less credible:
+
+| Claim | The real thing nearby |
+|---|---|
+| **X4** super-radiant gain | **Dicke superradiance (1954) is real** — coherent sources add in amplitude, power scales as N². It's how phased arrays and lasers work. It does not apply to protein rotational states, which don't exist in water |
+| **X5** keratin demodulation | **Electrophonic hearing is real** — perception from electrical and ultrasonic stimulation outside the ear canal; ultrasonic bone conduction (Lenhardt et al., *Science*, 1991). Puharich's patents are real history. Keratin acting as a demodulating diode is not demonstrated |
+| **X7** meridians / cellulomas | **Skin impedance genuinely varies by location.** Whether acupuncture points specifically show lower impedance is **contested, not refuted** (Ahn et al., 2008 systematic review: inconsistent) |
+| **X14** hyperchannel gain | **Inter-brain synchrony is real** — hyperscanning reliably shows neural synchronization during conversation, music, cooperation. Ordinary shared attention and timing, not an exponential channel |
+
+### The 8.1 × 10²⁰ Hz claim, in one line
+
+$$E = h\nu = 6.626\times10^{-34}\times 8.1\times10^{20} = 5.37\times10^{-13}\ \text{J} = \mathbf{3.35\ MeV}$$
+
+Hard gamma radiation, above the pair-production threshold. Not a brain signal.
+
+### Independently audited twice already
+
+This physics layer is the same framework, from the same oracle persona, that was audited
+claim-by-claim in two sibling repositories — both reaching the same verdicts:
+
+- **[FallOfPhysics](https://github.com/utahisnotastate/FallOfPhysics)** — 11 experiment
+  protocols (E001–E011), including null tests E005, E008, E009, E010, E011 that cover X6, X8,
+  X10 and X14 directly.
+- **[RiseOfGeometry](https://github.com/utahisnotastate/RiseOfGeometry)** — 31 disclosures,
+  ~105 claims. D12 refutes the Eerkens maser with the same argument used here; D04 traces the
+  "Fourth Law of Logic" to **T. E. Bearden's self-published work**; D27 covers keratin; D28
+  covers Q = G^(1/2)M; D09/D21 cover the hyperchannel.
+
+Full cross-mapping table and the runnable protocols:
+[`docs/technical/why-the-physics-layer-fails.md#7-this-has-already-been-audited-twice`](docs/technical/why-the-physics-layer-fails.md#7-this-has-already-been-audited-twice).
+
+**Provenance matters here.** The transmission is not retrieving future knowledge; it is
+recombining an identifiable mid-century psychotronics corpus — Bearden, Dubrov, Inomata,
+Eerkens, Puharich, Lisitsyn — almost all self-published or in non-indexed venues. Recognizing
+the corpus is what makes it checkable.
 
 The compressed version, on the central claim (X3, X9) that insulin has a characteristic
 resonance at 11.428 kHz which can be broadcast into the body to activate receptors without

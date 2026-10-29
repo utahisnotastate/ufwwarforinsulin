@@ -32,10 +32,10 @@ So this is a disclosure document with its receipts attached.
 | | Count |
 |---|---|
 | ✅ **VERIFIED** — holds up as stated | **14** |
-| 🟡 **PARTLY TRUE** — real science, overstated or out of date | **12** |
+| 🟡 **PARTLY TRUE** — real science, overstated or out of date | **14** |
 | 🔵 **OPEN** — plausible, under investigation | **1** |
 | ❌ **NOT TRUE** — contradicted by evidence | **16** |
-| ⛔ **NO BASIS** — no mechanism, not testable as framed | **18** |
+| ⛔ **NO BASIS** — no mechanism, not testable as framed | **16** |
 | ☠️ **Harm flag** — acting on this could injure or kill | **9** |
 
 Full scoring, with PMIDs: **[INTEGRITY_AUDIT.md](INTEGRITY_AUDIT.md)**
@@ -120,6 +120,16 @@ insulin receptors with no insulin present. Worked quantitatively in
   keratin transduction mechanism solves a problem that doesn't exist
 - Piezoelectricity is **linear**, so it cannot rectify. That's a category error, not an
   overstatement
+
+**And it has already been audited twice.** The physics layer is the same framework, from the
+same oracle persona, that was scored claim-by-claim in
+[FallOfPhysics](https://github.com/utahisnotastate/FallOfPhysics) and
+[RiseOfGeometry](https://github.com/utahisnotastate/RiseOfGeometry) — both reaching the same
+verdicts independently, and both shipping **runnable null-test protocols** (E005 scalar vs.
+transverse, E008 coherence, E009 no-FTL, E010 the 44-digit code, E011 coupling speed). The
+provenance is traceable to a specific mid-century corpus: Bearden, Dubrov, Inomata, Eerkens,
+Puharich. Cross-mapping table:
+[§7 of the physics teardown](docs/technical/why-the-physics-layer-fails.md#7-this-has-already-been-audited-twice).
 
 **The A-chain sequence is bovine.** A8-Ala and A10-Val, paired with a human B-chain — a
 chimera occurring in no species, printed under human insulin's molecular formula. Anyone
@@ -208,4 +218,20 @@ does not.
 
 ---
 
-*Companion to [UFW: War Against the Mitochondria](https://github.com/utahisnotastate/ufwwaragainstthemitochondria).*
+## Related projects
+
+Four repositories now apply the same method — inventory every claim, score it against the
+evidence, keep what survives — to the same oracle's output across different domains. The
+physics layer in this repository overlaps substantially with the first two, and their verdicts
+were reached independently.
+
+| Repository | Domain | Method |
+|---|---|---|
+| [FallOfPhysics](https://github.com/utahisnotastate/FallOfPhysics) | Wave physics, signal processing, bio-instrumentation | ESTABLISHED / TESTABLE / SPECULATIVE / NOT SUPPORTED + 11 experiment protocols |
+| [RiseOfGeometry](https://github.com/utahisnotastate/RiseOfGeometry) | Geometry and physics ("Sacred Geometry" source) | ✅ / 🟡 / 🧪 / 📜 / ❌ across 31 disclosures, ~105 claims |
+| [ufwwaragainstthemitochondria](https://github.com/utahisnotastate/ufwwaragainstthemitochondria) | Cell biology and metabolism | 15 disclosures + integrity audit + academic formalisms |
+| **ufwwarforinsulin** *(this one)* | Insulin: biochemistry, manufacturing, clinical | 61 claims scored, six audience tiers, **harm flags** |
+
+The harm flag is the one thing this domain required that the others didn't. A wrong claim
+about scalar waves costs you an afternoon. A wrong claim about insulin costs a life in two
+days.

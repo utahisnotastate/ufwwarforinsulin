@@ -2,7 +2,10 @@
 
 **Audience:** anyone with undergraduate physics or physical chemistry.
 **Claims addressed:** X1–X17 in the [claim inventory](../../archive/source-claim-inventory.md).
-**Verdict:** all of them, NO SCIENTIFIC BASIS.
+**Verdict:** 15 of 17 have no scientific basis. Two — X8 (the Whittaker decomposition) and X13
+(the gravitoelectromagnetic algebra) — have a genuine established kernel wrapped in an
+unsupported extrapolation, and this document is careful to separate those. Four others have
+real physics adjacent to them that deserves credit.
 
 This document does not dismiss the physics layer by assertion. It works the numbers, using the
 source's own equations wherever it supplies them, and shows where each argument breaks. Every
@@ -188,16 +191,33 @@ transduction path.
 
 ## 5. The subsidiary claims
 
-**Scalar / longitudinal waves from a bifilar coil (X8).** A reverse-wound bifilar coil does
-largely cancel the far-field magnetic dipole — that part is true and is why such windings are
-used for low-inductance resistors. What remains is not a new kind of wave. Source-free Maxwell
-equations admit only transverse radiative solutions; the longitudinal and scalar potential
-components are gauge artifacts and can be removed entirely by choosing Coulomb gauge without
-changing any measurable field. What a cancelled coil actually produces is a weak conventional
-near field — capacitive **E**, plus whatever **B** survives imperfect cancellation. The
-Aharonov–Bohm effect is sometimes invoked here; it is a quantum *phase* effect requiring a
-non-simply-connected region around enclosed flux, and it transfers no energy and carries no
-signal.
+**Scalar / longitudinal waves from a bifilar coil (X8).** This one needs to be split into
+three statements, because they have three different truth values and collapsing them is how
+the argument gets its credibility.
+
+1. **The Whittaker decomposition is established mathematics.** Whittaker showed in 1903–04
+   that a scalar potential in a source-free region can be written as a superposition of paired
+   counter-propagating wave sets. That is real, it is in the literature, and it is a
+   *representation* — a change of bookkeeping, not new physics.
+2. **A reverse-wound bifilar coil does largely cancel the far-field magnetic dipole.** Also
+   true, and it is why such windings are used for low-inductance resistors.
+3. **That the remainder constitutes a separate channel carrying power or information is
+   neither established nor demonstrated** — and it is testable. Source-free Maxwell equations
+   admit only transverse radiative solutions; the longitudinal and scalar components are
+   gauge-dependent and removable in Coulomb gauge without changing any measurable field. What
+   a cancelled coil actually produces is a weak conventional near field: capacitive **E**,
+   plus whatever **B** survives imperfect cancellation.
+
+The honest label on (3) is therefore not "nonsense" but **testable, with a strongly expected
+null** — and a protocol already exists:
+[FallOfPhysics E005](https://github.com/utahisnotastate/FallOfPhysics/tree/main/experiments/E005-scalar-vs-transverse)
+measures received power against the Friis baseline while applying the claimed scalar-enhancing
+configuration without increasing drive current. See [§7](#7-this-has-already-been-audited-twice).
+
+The Aharonov–Bohm effect is often invoked at this point. It is real and was confirmed in 1986,
+and it genuinely shows that potentials have measurable consequences — but it is a quantum
+*phase* effect requiring a non-simply-connected region around enclosed flux. It transfers no
+energy and carries no signal.
 
 **Keratin piezoelectric rectification (X5).** Keratin *is* weakly piezoelectric — this is real
 and measured (Fukada, Zimmerman & Mascarenhas, *BBRC* 1975, on bovine horn). Three things kill
@@ -227,23 +247,95 @@ for the keratin mechanism to solve — and if a VLF carrier did what the source 
 already be doing it to everyone standing near a switching power supply, a CRT flyback
 transformer, or a naval VLF transmitter.
 
+> **The real phenomenon nearby, which deserves credit.** There *is* a genuine effect in this
+> neighborhood, and the source is distantly echoing it. **Electrophonic hearing** is well
+> documented: people really do perceive sound from electrical and ultrasonic stimulation
+> outside the ear canal, and ultrasonic bone-conduction hearing is established (Lenhardt et
+> al., *Science*, 1991). Puharich and Lawrence, whom the source cites, really did file
+> hearing-device patents. So transdermal and transcranial energy *can* produce perception.
+>
+> What has never been demonstrated is the specific mechanism claimed here — keratin acting as
+> a biological crystal diode that demodulates a carrier. Perception of a stimulus is not
+> demodulation of an encoded molecular signature, and bone conduction into the cochlea is not
+> receptor activation in peripheral tissue.
+
+
+
+**Meridians, cellulomas, and $J_{elec} = (1/c)\nabla\Phi$ (X7).** The conversion formula is
+not a recognized relation and is dimensionally unmotivated; "anenergy," "second bioframe," and
+"celluloma" are not terms with referents in anatomy or physiology.
+
+But one component deserves a more careful label than the rest. **Skin impedance genuinely does
+vary by location** — that is established and measurable, and there is a straightforward
+protocol for it
+([FallOfPhysics E006](https://github.com/utahisnotastate/FallOfPhysics/tree/main/experiments/E006-skin-impedance)).
+Whether *acupuncture points specifically* show reliably lower impedance is **contested rather
+than refuted**: the systematic review by Ahn et al. (2008) found the evidence inconsistent
+across studies. So the correct reading is a real, variable physical quantity with a disputed
+mapping onto meridian points — and no support whatever for the orthogonal-frame machinery
+built on top of it.
+
 **The 44-digit Lisitsyn code (X6).** The given value `0x2A9C4F1B3E7` is 11 hex digits, so a
 44-bit field, but the actual value has `bit_length` 42 — it encodes **42 bits, 5.25 bytes** of
 information. The human *INS* promoter region spans thousands of base pairs, and PDX1 binds it by
 reading the DNA major groove through protein–DNA contacts. There is no demodulator in the
 nucleus. Transcription factor binding is molecular recognition, not packet reception.
 
-**Complex thermodynamics and vacuum negative entropy (X11–X13).** Introducing an imaginary
+The companion claim — that biological information rides on bands "extending up to
+8.1 × 10²⁰ Hz" — has a one-line refutation worth doing explicitly:
+
+$$E = h\nu = 6.626\times10^{-34} \times 8.1\times10^{20} = 5.37\times10^{-13}\ \text{J} = \mathbf{3.35\ MeV}$$
+
+That is hard **gamma radiation**, far above the 1.022 MeV pair-production threshold. It is not
+a brain signal; it is the energy scale of nuclear transitions, and tissue emitting it would be
+a radiological emergency.
+
+There is a runnable null test for the code claim itself:
+[FallOfPhysics E010](https://github.com/utahisnotastate/FallOfPhysics/tree/main/experiments/E010-impedance-code-test)
+quantizes skin impedance across sites, computes per-site Shannon entropy, and tests retest
+reliability across days — distinguishing a fixed low-entropy 44-symbol message from
+sweat-and-noise physiology.
+
+**Complex thermodynamics and vacuum negative entropy (X11–X12).** Introducing an imaginary
 temperature $T_2$ and asserting $\Delta S_2 < 0$ does not produce free energy; it relabels the
 second law and then ignores it. The Dirac sea is not an energy reservoir — it is a historical
 interpretation of the negative-energy solutions of the Dirac equation, superseded by quantum
 field theory, in which the vacuum is the ground state and by construction has no extractable
-energy. $Q = G^{1/2}M$ is dimensionally inconsistent as written.
+energy. A claim that Gibbs free energy spontaneously increases in an isolated system is a
+second-law violation however it is notated.
 
-**Hyperchannel gain (X14).** The geometric series $E_o/E_i \approx A_0^n + A_0^{n+1}I_k$ is
-algebraically fine and physically empty: it is a cascade-gain formula with an invented coupling
-term $I_k$ that is never defined operationally or measured. The threshold "n ≈ 60–100" is
-unmotivated by anything in the derivation.
+**$Q = G^{1/2}M$ (X13) — more subtle than it looks, and worth getting right.** Substituting
+$\sqrt{G}\,M$ for charge in Coulomb's law does reproduce Newton's law of gravitation. That is
+**legitimate algebra**, and it is the basis of gravitoelectromagnetism, a real weak-field
+approximation of general relativity. So the manipulation itself is not a blunder, and saying
+so flatly would be wrong.
+
+What fails is everything built on top of it:
+
+- The **triple equality** $E = mc^2 = (c^2/\sqrt{G})Q$ is not dimensionally consistent. $E$ and
+  $mc^2$ are joules; $c^2/\sqrt{G}$ carries units of m³/(kg·s²), so the equality holds only if
+  $Q$ is assigned custom units chosen to make it work — and no single $Q$ satisfies all three
+  equalities at once without being defined into existence.
+- Reading $Q$ as "virtual charge" or "consciousness," and the relation as an **interconversion
+  law**, adds a physical claim that the algebra never contained. An analogy between two
+  inverse-square laws is not a conversion mechanism between matter and mind.
+
+**Hyperchannel gain (X14) — likewise.** The underlying physics the source is reaching for is
+**real**: coherent sources add in amplitude, so power scales as $N^2$. That is Dicke
+superradiance (1954), and it is how phased-array antennas and lasers work.
+
+What fails is the extrapolation. $E_o/E_i \approx A_0^n + A_0^{n+1}I_k$ is a standard geometric
+series applied to an undefined quantity: the coupling term $I_k$ is never defined
+operationally or measured, and the threshold "n ≈ 60–100" is unmotivated by anything in the
+derivation. Coherent addition requires a **physical coupling channel**, which is exactly what
+is missing.
+
+And here too there is a real phenomenon nearby: **inter-brain synchrony is genuine**.
+Hyperscanning studies reliably show neural synchronization between people during conversation,
+music, and cooperation. It is an ordinary consequence of shared attention and shared timing,
+not an exponential channel — but it exists, and the honest version is more interesting than
+the invented one. Null protocol:
+[FallOfPhysics E008](https://github.com/utahisnotastate/FallOfPhysics/tree/main/experiments/E008-coherence-null-test).
 
 ---
 
@@ -286,6 +378,39 @@ So: a weak signal for pain, a mouse study with a different mechanism and differe
 and nothing at all on blood glucose in humans. That is the honest state of the field, and it
 is a long way from ligand-free receptor activation.
 
+### Where the real biomolecular resonance frontier actually is
+
+This is the constructive version of the question, and it is worth answering because a reader
+who finds the 11.428 kHz idea appealing is interested in something real.
+
+| Degree of freedom | Frequency | Energy vs. kT (310 K) |
+|---|---|---|
+| **Claimed "insulin resonance"** | **11.428 kHz** | **1.8 × 10⁻⁹ kT** |
+| Insulin rigid-rotor J=0→1 (gas phase, hypothetical) | 3.05 MHz | 5 × 10⁻⁷ kT |
+| Insulin rotational relaxation in water (Debye) | 57–136 MHz | not a transition |
+| Small-molecule rotational spectroscopy (real) | 1 GHz – 1 THz | 10⁻⁴ – 10⁻¹ kT |
+| **Protein collective modes, H-bond network** | **0.1 – 10 THz** | **10⁻² – 1.5 kT** |
+| Molecular vibrations (IR) | 10 – 100 THz | 1.5 – 15 kT |
+| Electronic transitions (UV/vis) | 400 – 1500 THz | 60 – 230 kT |
+
+**Proteins do have collective vibrational modes, and they are measurable** — by terahertz
+time-domain spectroscopy and Raman. That is established. Whether those modes support
+*coherent* long-range behavior is the **Fröhlich condensation** question: proposed in 1968,
+still debated, with some suggestive THz evidence in lysozyme (Lundholm et al., 2015). Label
+it 🟡 open.
+
+Note where it sits: **0.1–10 THz is seven to nine orders of magnitude above the claimed
+figure**, and it is the only band where the quantum is comparable to kT — which is precisely
+why it is the only band where coherent molecular effects are even arguable. The source picked
+a frequency eight orders of magnitude below the one place something interesting might be
+happening.
+
+If you want the honest version of "biomolecules have resonances that matter," that is the
+literature to read. See also
+[mitochondria/academic/formalisms/03_protein_folding_thz.md](https://github.com/utahisnotastate/ufwwaragainstthemitochondria/blob/main/academic/formalisms/03_protein_folding_thz.md),
+which treats THz-TDS as a genuine probe (tier B) while rejecting the therapeutic
+"hydration-shell clamping" extrapolation — the same split this document keeps making.
+
 ---
 
 ## 6. How to test it, if you want to
@@ -311,6 +436,85 @@ consists mostly of low-powered studies with inconsistent endpoints, and reports 
 resembling ligand-free receptor activation. If you build the device, run this assay before you
 believe anything it appears to do — and never, under any circumstances, run it on yourself in
 place of insulin.
+
+---
+
+## 7. This has already been audited twice
+
+The physics layer in the insulin transmission is not new material. It is the **same framework,
+from the same oracle persona, with the same citations**, that appears in two other source
+documents — and both have already been audited claim-by-claim in sibling repositories:
+
+- **[FallOfPhysics](https://github.com/utahisnotastate/FallOfPhysics)** — wave physics, signal
+  processing, bio-instrumentation. Labels: ESTABLISHED / TESTABLE / SPECULATIVE / NOT SUPPORTED.
+  Ships **eleven experiment protocols (E001–E011)**, including null tests for the extraordinary
+  claims.
+- **[RiseOfGeometry](https://github.com/utahisnotastate/RiseOfGeometry)** — "Future Disclosure:
+  Sacred Geometry," 31 disclosures, ~105 individual claims. Labels: ✅ established / 🟡 open /
+  🧪 testable / 📜 historical / ❌ not supported.
+
+**Both reach the same verdict this document reaches, independently.** That convergence is worth
+more than any single analysis, so the mapping is given in full:
+
+| Insulin claim | FallOfPhysics | RiseOfGeometry | Verdict there |
+|---|---|---|---|
+| **X2/X3/X4** Eerkens VLF macromolecular maser | — | **D12** | ❌ *"Molecules in liquid water don't hold rotational states. Collisions destroy them in picoseconds."* |
+| **X5** Keratin diode demodulation | — | **D27** | ❌ not demonstrated — though electrophonic hearing ✅ and Puharich patents ✅ are real |
+| **X6** 44-digit biological code | **E010** | **D06** | ❌ no such finding; 8.1 × 10²⁰ Hz = 3.35 MeV gamma |
+| **X7** Acupuncture meridians / cellulomas | **E006** | **D24** | 🟡 impedance varies; point-specificity contested (Ahn 2008) |
+| **X8** Scalar / longitudinal channel | **E005** | **D01** | Whittaker math ✅ (1903); extra power channel 🧪 testable, expected null |
+| **X10** Damplifier topology | **E005** | **D07** | ❌ radionics; no blinded replication |
+| **X11/X12** Inomata complex thermodynamics, ΔS₂ < 0 | concept doc | **D05, D11** | ❌ second-law violation |
+| **X13** Q = G^(1/2)M | concept doc | **D28** | ✅ as GEM algebra; ❌ as interconversion law |
+| **X14** Hyperchannel exponential gain | **E008** | **D09, D21** | ❌ — though N² coherent scaling ✅ (Dicke) and inter-brain synchrony ✅ |
+| **X15** Dubrov biogravitation / conformons | — | **D04, D12** | ❌ no independent confirmation |
+| **X16** Seven-stage biospheric evolution | — | **D26** | ❌ speculative |
+| **X17** Fourth Law of Logic [A₁ ≡ Ā₂]₃ | claims doc | **D04** | ❌ not a recognized law — **T. E. Bearden, self-published** |
+| Non-local / instantaneous transmission | **E009, E011** | **D17** | ❌ phase velocity carries no information |
+
+Two things follow from this table.
+
+**First, the provenance is now traceable.** The "Fourth Law of Logic" is Bearden's; the
+"biogravitation" is Dubrov's; the complex thermodynamics is Inomata's; the macromolecular
+maser is Eerkens'; the transdermal work is Puharich's. These are real people who published
+real documents, almost all self-published or in non-indexed venues, mostly in the 1970s–80s
+psychotronics literature. The transmission is not retrieving future knowledge — it is
+recombining a specific, identifiable mid-century corpus. Recognizing the corpus is what lets
+you check it.
+
+**Second, there are runnable protocols.** The single biggest gap in a document like this is
+that "no mechanism exists" is unfalsifiable-sounding even when correct. It isn't, and the
+tests are cheap:
+
+| Test | What it settles | Cost |
+|---|---|---|
+| [E005](https://github.com/utahisnotastate/FallOfPhysics/tree/main/experiments/E005-scalar-vs-transverse) — scalar vs. transverse power | Does a bifilar/scalar configuration deliver power beyond the Friis baseline? | $$$ (lab) |
+| [E008](https://github.com/utahisnotastate/FallOfPhysics/tree/main/experiments/E008-coherence-null-test) — coherence null | Does group phase-locking produce super-linear output? | ~$5 |
+| [E009](https://github.com/utahisnotastate/FallOfPhysics/tree/main/experiments/E009-no-ftl-signaling) — no FTL signaling | Can any "instant channel" beat a light-speed RF link? | $$ |
+| [E010](https://github.com/utahisnotastate/FallOfPhysics/tree/main/experiments/E010-impedance-code-test) — 44-digit code entropy | Is skin impedance a fixed low-entropy code or sweat + noise? | ~$25 |
+| [E011](https://github.com/utahisnotastate/FallOfPhysics/tree/main/experiments/E011-resonant-coupling-speed) — coupling speed | Does resonant transfer scale with distance (finite) or not (instant)? | ~$15–30 |
+| [RoG E007](https://github.com/utahisnotastate/RiseOfGeometry/blob/main/experiments/E007-blinded-radionics-test.md) — blinded radionics | Does a drawn/symbolic circuit do anything a sham doesn't? | low |
+| **§6 above** — 2-DG uptake / phospho-Akt | Does the VLF field trigger glucose uptake in insulin-responsive cells? | lab |
+
+The last row is the one specific to insulin, and it is the one nobody has run. The other six
+already have protocols written.
+
+### A note on label harmonization
+
+This repository's status key is a superset of the other two. For anyone cross-reading:
+
+| Here | FallOfPhysics | RiseOfGeometry |
+|---|---|---|
+| ✅ VERIFIED | ESTABLISHED | ✅ established |
+| 🟡 PARTLY TRUE | (split across labels) | 🟡 open / 📜 historical |
+| 🔵 OPEN | SPECULATIVE | 🟡 open · 🧪 testable |
+| ❌ NOT TRUE | NOT SUPPORTED | ❌ not supported |
+| ⛔ NO BASIS | NOT SUPPORTED | ❌ not supported |
+| ☠️ harm flag | *(no equivalent — this repo adds it)* | *(no equivalent)* |
+
+The harm flag is the one thing the insulin domain needs that the physics repos didn't: a wrong
+claim about scalar waves wastes your afternoon, and a wrong claim about insulin kills you in
+two days.
 
 ---
 
