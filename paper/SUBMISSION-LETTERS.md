@@ -137,8 +137,12 @@ only if you want a steer; otherwise go straight to **B** or **C**.
 > with its commit timestamp, and the corrections log are at
 > github.com/utahisnotastate/ufwwarforinsulin.
 >
-> **Prior publication.** A full-length version will be posted to medRxiv at submission. No part
-> has been published elsewhere.
+> **Prior publication, stated in full.** The manuscript and all its materials are **already
+> publicly available** in an open repository at `github.com/utahisnotastate/ufwwarforinsulin`.
+> That repository is how the work is auditable, so I have not taken it down. I take this to
+> fall under your preprint policy rather than to constitute prior publication, but I am
+> flagging it explicitly rather than letting you find it. A version will also go to medRxiv at
+> submission. It is not under consideration anywhere else.
 >
 > This work received no funding and I have no financial competing interests.
 >

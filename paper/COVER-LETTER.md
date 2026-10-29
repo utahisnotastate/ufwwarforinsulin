@@ -77,8 +77,21 @@ reproduced verbatim in the supplementary material.
 checklist uses STROBE as the closest available frame and states plainly where it does not
 fit, rather than stretching items to appear compliant.
 
-**Prior publication.** A version will be posted to medRxiv at submission. No part has been
-published elsewhere, and the manuscript is not under consideration by another journal.
+**Prior publication, stated in full.** The manuscript, its data, its analysis scripts and
+its corrections log are **already publicly available** in an open repository at
+`github.com/utahisnotastate/ufwwarforinsulin`, and have been since the work was done. The
+repository is the mechanism by which this work is auditable, and taking it down would defeat
+the paper's central claim, so I have not done so.
+
+I take this to fall under BMJ's preprint policy rather than to constitute prior publication,
+since it is an author-posted version that has not been peer reviewed or published by any
+journal. **I am flagging it explicitly rather than letting you discover it**, because the
+required declaration asks whether the manuscript duplicates already-published material and I
+would rather you rule on that than have me assume the answer. A version will also be posted
+to medRxiv at submission.
+
+**It has not been submitted to, accepted by, or is under consideration at any other journal**,
+and The BMJ is the only journal considering it.
 
 This work received no funding and I have no financial competing interests.
 

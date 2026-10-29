@@ -13,7 +13,7 @@ Last checked 29 October 2026, against the current `MANUSCRIPT.md`.
 | Author lists complete per Vancouver (all ≤6, else first 6 + *et al*) | ✅ verified against PubMed |
 | Every PMID confirmed against PubMed | ✅ |
 | Every statistic reproduced by a deposited script | ✅ 4 scripts |
-| Body word count | ~11,000 |
+| Main-text word count (BMJ convention: excl. abstract, references, tables, boxes) | **9,282** |
 | Word (.docx) for submission | [manuscript.docx](manuscript.docx) — 49pp, double-spaced, continuous line numbers; schema-validated |
 | PDF for reading / preprint | [manuscript.pdf](manuscript.pdf) — 27pp, typeset |
 
@@ -41,7 +41,7 @@ transparency declaration · provenance and peer review · licence.
 
 ## Venue
 
-**BMJ Analysis is ruled out** — ~11,000 words against a 2,000 limit, and BMJ states Analysis
+**BMJ Analysis is ruled out** — 9,282 words of main text against a 2,000 limit, and BMJ states Analysis
 does not consider manuscripts containing primary research data. This reports five experiments.
 
 Target **BMJ Research** or **JMIR / npj Digital Medicine**. Letters for all three are drafted
