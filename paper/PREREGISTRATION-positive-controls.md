@@ -110,3 +110,43 @@ It does not address the other outstanding gaps: claim extraction remains unblind
 taxonomy remains unvalidated by human raters, and Gemini under neutral prompting remains
 untested. Specificity on seven concepts in one model is a narrow result and will be reported
 as one.
+
+---
+
+## Addendum, 2026-10-29 — isolation verified instrumentally before the run
+
+**Written and committed before any probe was run.** Disclosed as an amendment rather than
+folded silently into the text above.
+
+The persona arm of this study was voided because subjects inferred the hypothesis from
+passive context — the working directory name and version-control history — with no subject
+reading a file. That arm was re-run from a neutral directory and came back clean, and we
+treated the problem as solved.
+
+Before running this arm we **checked that assumption instead of repeating it**. A throwaway
+agent, given none of the seven concepts, was asked only to report what it could see of its
+own environment. It reported:
+
+- primary working directory 
+- a version-control status block, branch 
+
+The directory change requested for this run had **not yet taken effect**. Had the probes been
+launched at that moment they would have inherited the project name and a commit log whose
+entries include *"Persona arm re-run clean: 0/6 contaminated, 0/6 adopted, 6/6 accurate"* —
+an explicit description of an experiment on model subjects, which is a stronger cue than the
+one that contaminated the first attempt.
+
+**The probes were therefore held** until the working directory had moved, and the isolation
+check will be repeated immediately before they run. The contamination check in the stopping
+rules above still applies to the transcripts afterwards.
+
+We record this because it changes the recommendation in the manuscript's §4.5. Executing from
+a neutral environment is not sufficient on its own: **isolation must be verified from inside
+the subject's context at the moment of the run, because the environment a researcher believes
+they have configured and the environment the subject actually receives can differ.** Ours did.
+
+### Ground truth
+
+The correct answer for each of the seven concepts, with its primary citation and key figures,
+is fixed in [](data-positive-controls-groundtruth.md),
+verified against PubMed and committed before the run.
