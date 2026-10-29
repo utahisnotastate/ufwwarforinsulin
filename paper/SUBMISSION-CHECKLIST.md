@@ -65,6 +65,42 @@ points at them.
 6. No patient or clinician was involved, which §7.6 states as a limitation rather than a
    justification.
 
+## Keywords
+
+The keyword step decides who reviews this, so the set has to say *methods paper about
+AI-generated health claims, anchored in diabetes* — not filed under diabetes. Pick in this
+order; where a term is not in the portal's list, take the first fallback that is.
+
+| # | First choice | Fallbacks, in order |
+|---|---|---|
+| 1 | Health misinformation | Misinformation · Health communication · Patient information |
+| 2 | Large language models | Artificial intelligence · Machine learning · Health informatics |
+| 3 | Type 1 diabetes | Diabetes mellitus · Diabetes · Endocrinology |
+| 4 | Insulin | Drugs: endocrine system · Diabetes treatment |
+| 5 | Patient–clinician communication | Patient centred care · Doctor–patient relationship |
+| 6 | Reproducibility | Research methods · Research integrity · Evidence based medicine |
+
+Capped at five, drop 6. Capped at three, keep 1, 2 and 3 — the clinical anchor has to
+survive, or the paper reads as informatics and gets redirected to a specialist title.
+
+**Do not pick these**, however well they describe the content:
+
+- **Diabetic ketoacidosis** — routes to emergency medicine, and there is no DKA data here.
+  The 12–48 hour figure is a cited risk window, not a finding of this study.
+- **Drug development · Pharmacology** — makes the insulin programmes the subject rather than
+  the object. They are the material being audited, not the thing under study.
+- **Ethics** — authorship of the stimulus is declared, but it is a limitation of the design,
+  not the topic of the paper.
+- **Medical education** — §4.3 is one paragraph of implication, not a teaching intervention.
+
+Two failure modes: an all-AI set gets triaged to a digital-health title instead of The BMJ,
+and an all-diabetes set draws a diabetologist who will correctly say this is not a diabetes
+paper.
+
+**medRxiv**, which the cover letter commits to: subject category **Health Informatics**,
+free-text keywords *health misinformation, large language models, type 1 diabetes, insulin,
+claim verification, reproducibility*.
+
 ## Before you hit send
 
 - [ ] Decide the title. `"Other Cardiometabolic Health"` suits a narrative venue; for an
