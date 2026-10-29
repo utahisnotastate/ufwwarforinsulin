@@ -1,8 +1,19 @@
 # UFW: War For Insulin
 
-**61 claims about insulin, checked one at a time against the published literature.**
-14 held up. 16 were contradicted by trials that already ran. 9 would kill an
-insulin-dependent reader who acted on them.
+**Claims about insulin, checked one at a time against the published literature.**
+This repository extracted **61**. Of those, 14 held up, 17 were contradicted by trials that
+already ran, and 9 would kill an insulin-dependent reader who acted on them.
+
+> **Read 61 as "how this repository cut it up," not as a property of the document.** Two
+> independent extractors, blind to this inventory and to everything downstream, cut the same
+> document into **258** and **237** claims — agreeing with each other to within 8.5% while both
+> landing near four times our count. Our segmentation was systematically coarse. Every count
+> and percentage below inherits that, and
+> [the measurement is published](paper/data-reextraction.md) along with
+> [both](paper/data-extraction-1.md) [extractions](paper/data-extraction-2.md) in full.
+>
+> What survived the re-extraction is the *pattern*, not the arithmetic: claims about what a
+> treatment does to a person were wrong at every granularity tried.
 
 ---
 

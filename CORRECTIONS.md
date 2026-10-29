@@ -8,6 +8,73 @@ Newest first.
 
 ---
 
+## 2026-10-29 · Three files in this repository carried three different verdict codings
+
+**Severity:** moderate. One claim moved consequentially, and it moved **against** this
+repository's argument. The rest was bookkeeping that nonetheless made the published
+scoreboard wrong.
+**Found by:** a consistency pass after external review flagged that the audit and the
+deposited analysis script disagreed about at least one verdict. They disagreed about more
+than one, and the audit disagreed with itself.
+
+| Source | Block B | Block D | Totals |
+|---|---|---|---|
+| The audit's scoreboard | S3 P4 O1 N3 | S2 P2 N2 X1 | 14 / 14 / 1 / 16 / 16 |
+| The audit's own per-claim sections | S3 P3 O2 N3 | S3 P1 N2 X1 | 15 / 12 / 2 / 16 / 16 |
+| `paper/analysis-contingency.py` | S2 P4 O2 N3 | S2 P1 N3 | — |
+| **Canonical, after correction** | **S2 P3 O2 N4** | **S3 P1 N2 X1** | **14 / 12 / 2 / 17 / 16** |
+
+### The one that matters: B6
+
+The audit's section for B6 opens **"✅ VERIFIED as citation / ❌ NOT TRUE as the dominant
+mechanism."** The claim as inventoried asserts the dominant-mechanism reading. Under the
+worst-sub-claim-governs rule it is **not true**.
+
+The scoreboard read the first symbol and scored it **verified**. The analysis script scored it
+**partly true**. Three readings of one claim, none of them agreeing.
+
+Canonical is **not true**, which is the reading that **weakens** this repository's central
+result: mechanism claims supported falls from 15/19 to 14/19.
+
+### The others
+
+**Block D, one claim.** The scoreboard recorded D1 as partly true where its own section scores
+it verified. Canonical follows the section.
+
+**D6, no effect.** The section marks ⛔ no scientific basis, the script marks ❌ not true. Both
+are unsupported and both rank zero, so no reported figure changes.
+
+**Block B's missing open.** The scoreboard counted the shared B4/B5 verdict once and balanced
+the block with an extra partly-true. That is how 61 claims came to show a single open verdict,
+and it is the arithmetic behind the "Table 1 says 1 open, Table 2 says 2 open" contradiction
+an external reviewer spotted.
+
+### What changed on the page
+
+| | Was | Now |
+|---|---|---|
+| Verified | 14 | 14 |
+| Partly true | **14** | **12** |
+| Open | **1** | **2** |
+| Not true | **16** | **17** |
+| No scientific basis | 16 | 16 |
+
+Corrected in [`INTEGRITY_AUDIT.md`](INTEGRITY_AUDIT.md), [`README.md`](README.md),
+[`paper/MANUSCRIPT.md`](paper/MANUSCRIPT.md) and [`paper/PROPOSAL.md`](paper/PROPOSAL.md).
+
+**A single authoritative verdict list now exists**, which is what the reviewer asked for:
+[`paper/data-verdicts-canonical.md`](paper/data-verdicts-canonical.md). Where any other file
+disagrees with it, that file is wrong.
+
+### The uncomfortable part
+
+This repository's claim is that its verdicts are checkable. Three of its own files disagreed
+about what those verdicts were, and the disagreement survived every previous pass, including
+the one that produced the paper. It was found only because someone outside the project read
+the deposited script instead of the prose describing it.
+
+---
+
 ## 2026-10-29 · The claim count is not reproducible. Two blind extractors found ~250, not 61.
 
 **Severity:** high. It does not overturn the paper's central comparison, but it invalidates
@@ -71,9 +138,20 @@ A repository whose entire argument is that claims should be checkable had made i
 step uncheckable, and nobody noticed for the whole of its existence.
 
 The document has been recovered in full from the session record (20,089 words, unaltered).
-Archiving it publicly, redacted of the device-construction and firmware sections per
-[SAFETY.md](SAFETY.md), is **pending** — it is a publication decision about dual-use material
-and belongs to the repository owner, not in a commit made on the owner's behalf.
+
+**Resolved: it is retained, not published.** A redacted copy was prepared — eleven regions
+removed, about 500 lines — and the redaction verified. It was withheld anyway. A redaction is
+a judgement and a single miss is irreversible, and what a miss would distribute is device-build
+instructions to insulin-dependent readers. The cost of withholding is a gap that can be stated;
+the cost of a miss cannot be undone.
+
+The document's **SHA-256 is published** so any copy supplied can be verified as the one
+audited, and it goes to journal editors and peer reviewers on request, in full. See
+[archive/SOURCE-DOCUMENT.md](archive/SOURCE-DOCUMENT.md).
+
+Most of the auditability is restored without it: the two independent extractions, published in
+full, state **495 claims** in their own words, written by parties who had never seen this
+repository's inventory.
 
 ---
 

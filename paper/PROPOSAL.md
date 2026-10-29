@@ -69,7 +69,7 @@ were then stratified by epistemic type into four pre-specified categories: **bio
 mechanism**, **therapeutic outcome in humans**, **technical specification**, and **physical
 theory**.
 
-**Findings.** Of 61 claims, 14 (23%) were verified, 14 (23%) partly true, 1 open, 16 (26%)
+**Findings.** Of 61 claims, 14 (23%) were verified, 12 (20%) partly true, 2 open, 17 (28%)
 contradicted and 16 (26%) without scientific basis. Two independent raters, blinded to all
 verdicts, classified every claim by epistemic type with **Cohen's κ = 0.977** (60/61
 agreement). Accuracy was strongly stratified by type:

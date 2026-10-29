@@ -24,13 +24,25 @@ ClinicalTrials.gov, UniProt, USP, and SEC filings. PMIDs are given where confirm
 | Block | Subject | ✅ | 🟡 | 🔵 | ❌ | ⛔ | ☠️ |
 |---|---|---|---|---|---|---|---|
 | A | Pathophysiology, portal delivery, C-peptide | 2 | 3 | 0 | 3 | 0 | 2 |
-| B | Lipid lesion, non-insulin glucose disposal | 3 | 4 | 1 | 3 | 0 | 2 |
+| B | Lipid lesion, non-insulin glucose disposal | 2 | 3 | 2 | 4 | 0 | 2 |
 | C | Decentralized manufacturing | 5 | 3 | 0 | 5 | 0 | 1 |
-| D | Delivery and next-generation molecules | 2 | 2 | 0 | 2 | 1 | 2 |
+| D | Delivery and next-generation molecules | 3 | 1 | 0 | 2 | 1 | 2 |
 | E | Regeneration and cure | 1 | 0 | 0 | 3 | 0 | 1 |
 | F | Insulin receptor | 1 | 0 | 0 | 0 | 0 | 0 |
 | X | The physics layer | 0 | 2 | 0 | 0 | 15 | 1 |
-| | **Total (61 claims)** | **14** | **14** | **1** | **16** | **16** | **9** |
+| | **Total (61 claims)** | **14** | **12** | **2** | **17** | **16** | **9** |
+
+> **Corrected 29 October 2026.** An earlier version of this scoreboard read **14 / 14 / 1 /
+> 16 / 16** and did not reconcile with the audit's own per-claim sections. Blocks B and D are
+> corrected here, and claim B6 is recoded from verified to not true: its section opens
+> *"✅ VERIFIED as citation / ❌ NOT TRUE as the dominant mechanism,"* and the claim as
+> inventoried asserts the dominant-mechanism reading. The single authoritative verdict list is
+> [`paper/data-verdicts-canonical.md`](paper/data-verdicts-canonical.md); where any other file
+> disagrees with it, that file is wrong.
+>
+> **And read every number here as conditional on how this repository cut the document into
+> claims.** Two independent extractors found 258 and 237 claims where this audit has 61.
+> See [`paper/data-reextraction.md`](paper/data-reextraction.md).
 
 **Roughly a quarter of the source's claims survive contact with the literature. Another fifth
 are real science overstated. The remainder are wrong, and nine of them are wrong in ways that

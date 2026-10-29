@@ -27,9 +27,10 @@ care is measured in hours rather than years.
 insulin therapy, produced by a commercial large language model (Google Gemini) under a
 persona instructing retrieval of medical knowledge from future timelines. **The author
 generated the document**; it was never disseminated, and authorship of it is declared as a
-competing interest. All 61 substantive claims were extracted and verified against primary
-literature by the author across three AI-assisted passes cross-checked against one another
-and against the primary sources; **extraction and verdict assignment were not blinded**. Two
+competing interest. All 61 substantive claims — a count that **does not reproduce**, as
+reported below — were extracted and verified against primary literature by the author across
+three AI-assisted passes cross-checked against one another and against the primary sources;
+**extraction and verdict assignment were not blinded**. Two
 raters — independent context-free sessions of one model, Claude Opus 5 — then classified
 every claim by epistemic type against a rubric fixed in advance, blind to all verdicts. We
 subsequently re-queried the underlying therapeutic concepts in a current frontier model under
@@ -38,7 +39,7 @@ the observed pattern reflects absent knowledge, training-corpus bias, or the gen
 condition. Analyses were pre-specified except where stated; all sensitivity analyses reported
 below were added after external peer review and are deposited as a runnable script.
 
-**Findings.** Of 61 claims, 14 (23%) were verified, 13 (21%) partly true, 2 open, 16 (26%)
+**Findings.** Of 61 claims, 14 (23%) were verified, 12 (20%) partly true, 2 open, 17 (28%)
 contradicted and 16 (26%) without scientific basis. Classification into strata (mechanism
 n = 21, outcome n = 8, specification n = 15, physical theory n = 17) was performed blind to
 all verdicts; agreement was 60/61, κ = 0.977, falling to κ = 0.928 on the 31 claims whose
@@ -336,24 +337,31 @@ persona were refused, the manipulation would not be strengthened until it succee
 ### 3.1 Verdict distribution
 
 **Table 1.** Verdicts across all 61 claims. Percentages are rounded and sum to 100.
+**Every figure in this table is conditional on our segmentation, which independent extractors
+did not reproduce (§3.8).**
 
 | Verdict | n | % |
 |---|---|---|
 | Verified | 14 | 23 |
-| Partly true | 13 | 21 |
+| Partly true | 12 | 20 |
 | Open | 2 | 3 |
-| Not true | 16 | 26 |
+| Not true | 17 | 28 |
 | No scientific basis | 16 | 26 |
 | *Harm-flagged (overlapping)* | *9* | *15* |
 
 > **Unit of analysis.** The audit presents two pairs of claims (B4/B5 and D4/D5) under a
 > single shared verdict each, so 61 claims carry 59 distinct verdict determinations. **The
 > claim is the unit throughout**, so a shared verdict is counted once for each claim it
-> covers. An earlier version of this table counted B4/B5 once, reporting one open claim where
-> there are two, and did not reflect the B6 recode described in §2.2. Both are corrected
-> here. B4/B5 fall in the mechanism stratum and are excluded from the contingency analysis
+> covers. B4/B5 fall in the mechanism stratum and are excluded from the contingency analysis
 > as open; D4 and D5 share a verdict but were classified into different strata, which is a
-> defect of the extraction rather than of the classification, and is noted in §5.1.
+> defect of the extraction rather than of the classification, and is noted in §5.4.
+>
+> **Three files in this project carried three different codings of the same claims**, which
+> external review identified and which is now resolved. A single authoritative verdict list
+> is deposited (`data-verdicts-canonical.md`); the figures above derive from it, and the
+> reconciliation is itemised there. One claim moved consequentially — B6, from partly true to
+> not true — and that change **weakens** the central result, from 15/19 to 14/19 mechanism
+> claims supported.
 
 ### 3.2 Blinded classification, and the bias it removed
 
@@ -934,6 +942,12 @@ found to violate it and has been recoded. One further extraction defect is visib
 deposited data: D4 and D5 share a single verdict but were classified into different strata, so
 one determination is counted in two columns.
 
+**And until this work was prepared, the source document had not been archived at all** — the
+repository held only our own extraction of it, so the step that sets the denominator was not
+checkable by anyone. It is now retained with a published hash and supplied to reviewers on
+request (§7.9), which is a remedy and not a substitute for having archived it from the
+start.
+
 **5.5 The positive controls were selected by the author, unblinded, and number seven.**
 Specificity is 7/7 (§3.6a), which excludes blanket scepticism, but the concepts were chosen
 by the person holding the hypothesis. Three were picked specifically to sound like the
@@ -1108,9 +1122,26 @@ publicly.
 ### 7.9 Data availability
 
 All materials are openly available: the complete claim inventory with stable identifiers,
-both raters' classifications, the analysis scripts reproducing κ = 0.977 and
-*p* = 2.2 × 10⁻⁴, the pre-registration with its commit timestamp, and a public corrections
-log. Repository: `github.com/utahisnotastate/ufwwarforinsulin`
+both raters' classifications, **both independent blinded re-extractions in full (495 claims
+between them)**, every analysis script including all sensitivity analyses, three
+pre-registrations with their commit timestamps, and a public corrections log. Repository:
+`github.com/utahisnotastate/ufwwarforinsulin`
+
+**The source document itself is retained but not published.** It contains construction and
+programming detail for the transdermal device it presents as a replacement for injected
+insulin, and the readers most likely to build one are insulin-dependent. A redacted copy was
+prepared and verified; it was withheld anyway, because a redaction is a judgement and a single
+miss is irreversible, whereas the cost of withholding is a stated gap.
+
+**It is available to editors and peer reviewers on request, in full and unredacted.** Its
+SHA-256 is published — `2b91e172326b0da9a59548b22fa8b8fd049da34cde033b9e7271bf88dffce470`,
+158,053 bytes, 20,089 words — so that any copy supplied can be verified as the document that
+was audited, unaltered.
+
+Most of what the source would let a reader check is checkable without it: the two independent
+extractions state 495 claims in their own words, written by parties who had never seen our
+inventory. What cannot be checked without it is whether all three extractions missed the same
+thing.
 
 ### 7.10 Corrections during preparation
 
