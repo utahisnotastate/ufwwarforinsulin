@@ -76,27 +76,31 @@ Everything below is a consequence of that structure.
 
 ---
 
-## 1. Insulin is a key, not a fuel
+## 1. One machine, two completely different ways to break it
 
-The single most common misunderstanding. Insulin doesn't give you energy and doesn't contain
-energy. It's a signal.
+Follow the structure above and you can predict this: a system with a key and a lock has
+exactly two failure modes. Lose the key, or stop responding to it. Those would be different
+diseases needing different treatments.
 
-When you eat, your blood fills with glucose — simple sugar, which is what all food eventually
-becomes. Glucose in your blood is useless; it has to get *inside* your cells to be burned. Cells
-keep their glucose doors shut by default.
+They are, and medicine gave them confusingly similar names.
 
-Insulin is the signal that opens them. Your pancreas releases it when it detects glucose rising,
-cells open up, glucose moves in, blood levels fall. It's a thermostat, running constantly, with
-a response time measured in minutes.
+**Type 1 diabetes** is the autoimmune destruction of the beta cells that make insulin. The
+signal is gone entirely. Glucose piles up in the blood while cells starve in the middle of
+it — and then the body, reading starvation, begins emergency fat-burning that floods the
+blood with acidic **ketones**. That is diabetic ketoacidosis, and it is what actually kills,
+within **12 to 48 hours** of insulin stopping.
 
-**Type 1 diabetes** is the autoimmune destruction of the cells that make insulin. The signal is
-gone. Glucose piles up in the blood while cells starve. It is not caused by diet or lifestyle,
-it usually appears in childhood or young adulthood, and it is not survivable without injected
-insulin.
+It is not caused by diet or lifestyle. It usually appears in childhood or young adulthood. It
+is not survivable without injected insulin, and no diet, device, or frequency substitutes.
 
-**Type 2 diabetes** is a different disease that unfortunately shares a name. The signal is
-usually present — often in excess — but cells stop responding to it. That's the next item, and
-it's the one that will change how you think about this.
+**Type 2 diabetes** is a different disease wearing the same name. The key is usually present —
+often in excess. The locks have stopped responding. Nobody is starving; the opposite. That is
+the next item, and it is the one most likely to change how you think about this.
+
+Hold the difference clearly, because much of the dangerous material in the source document is
+an argument about **Type 2** physiology that becomes lethal when a reader with **Type 1**
+applies it to themselves. That single category error accounts for most of the harm flags in
+the audit.
 
 ---
 
