@@ -1,9 +1,19 @@
-# Paper proposal — v2
+# Paper proposal — v3
 
-**Status:** proposal and draft abstract. Not submitted.
-**Changes in v2:** rebuilt after external review. Four substantive changes, listed in
-[What changed and why](#what-changed-in-v2). One of them is a correction to an overstatement
-in v1's own abstract, which is noted here rather than quietly fixed.
+**Status:** proposal plus two completed experiments. Not submitted.
+
+**Changes in v3:** the two gating objections from review — unblinded classification and
+n = 1 — were addressed by running the experiments rather than promising them. Full data in
+**[RESULTS.md](RESULTS.md)**. Two consequences:
+
+1. **The core observation survived blinding, attenuated.** κ = 0.977 between independent
+   blinded raters, but their classification differs materially from the unblinded one. The
+   contingency table weakens from 93% vs 0% (p = 7.5 × 10⁻⁷) to **79% vs 0%
+   (p = 2.2 × 10⁻⁴)**. The outcome column stays empty.
+2. **The explanation was falsified by its own first test.** v2 predicted the dissociation
+   would persist under neutral prompting because it comes from corpus publication bias. It
+   did not persist in any of six probes. That hypothesis is dead and the paper is better for
+   it.
 
 ---
 
@@ -55,42 +65,45 @@ mechanism**, **therapeutic outcome in humans**, **technical specification**, and
 theory**.
 
 **Findings.** Of 61 claims, 14 (23%) were verified, 14 (23%) partly true, 1 open, 16 (26%)
-contradicted and 16 (26%) without scientific basis. Accuracy was strongly and
-interpretably stratified by epistemic type:
+contradicted and 16 (26%) without scientific basis. Two independent raters, blinded to all
+verdicts, classified every claim by epistemic type with **Cohen's κ = 0.977** (60/61
+agreement). Accuracy was strongly stratified by type:
 
 | Stratum | n | Supported |
 |---|---|---|
-| Biological mechanism | 14 | **13 (93%)** |
-| Therapeutic outcome in humans | 13 | **0 (0%)** |
+| Biological mechanism | 21 | **15 / 19 (79%)**, 2 open |
+| Therapeutic outcome in humans | 8 | **0 (0%)** |
 | Technical specification — qualitative | 6 | 5 (83%) |
-| Technical specification — quantitative | 11 | **0 (0%)** |
+| Technical specification — quantitative | 9 | **0 (0%)** |
 | Physical theory | 17 | **0 (0%)** |
 
-Mechanism versus outcome: Fisher's exact two-sided **p = 7.5 × 10⁻⁷** at claim level;
-**p = 5.8 × 10⁻⁴** in a conservative sensitivity analysis clustered to the seven underlying
-development programmes.
+Mechanism versus outcome: Fisher's exact two-sided **p = 2.2 × 10⁻⁴**. Two error classes were
+detectable **without external reference**: an amino-acid sequence that was bovine while the
+accompanying molecular formula was human, and a resonance frequency quoted to four
+significant figures that does not reproduce from the equation supplied in the same paragraph.
 
-Failure of outcome claims took three distinct forms: a clinical programme that had already
-failed before the document was generated (C-peptide replacement, glucose-responsive insulin,
-hepato-preferential insulin, oral insulin, alpha-to-beta transdifferentiation); contradiction
-by positive evidence pointing the opposite way (automated insulin delivery, insulin therapy in
-type 2 diabetes); and **assertion with no supporting study of any kind** in any species
-(acetate as an insulin substitute).
+**We then tested whether this pattern reflects training-corpus publication bias**, by
+re-querying the seven underlying therapeutic concepts in a current frontier model using
+neutral clinical prompts without any persona, from parametric knowledge only. **The
+prediction failed. In six of six completed probes the model answered the outcome question
+correctly**, naming the specific trial, its result and its date — the Cebix Phase 2b that
+missed both primary endpoints, insulin peglispro halted in December 2015 for hepatic
+steatosis, MK-2640 discontinued for insufficient glucose-dependent clearance. Four answers
+opened with an explicit *"No."*
 
-Two error classes were detectable **without external reference**: an amino-acid sequence that
-was bovine while the accompanying molecular formula was human, and a resonance frequency
-quoted to four significant figures that does not reproduce from the equation supplied in the
-same paragraph.
+**Interpretation.** The dissociation is real in the audited document and does not arise from
+absent knowledge. The same class of system surfaces the refuting trial in the first sentence
+of a neutral answer. The failure therefore appears to lie in the **generation condition** —
+a user-configured persona instructing retrieval of speculative future knowledge — rather than
+in the training distribution. **This cannot be concluded from these data**: model identity is
+fully confounded with prompting regime, since the audited document came from one model under
+a persona and the probes from another under neutral prompting. The completing 2 × 2 is
+specified and is the immediate next experiment.
 
-**Interpretation.** Accuracy degraded monotonically with distance from well-published
-mechanistic literature. The document was reliable about *why* an intervention should work,
-uniformly wrong about *whether* it does, accurate in qualitative process description and
-wrong in every quantitative value, and without basis wherever it left biology entirely. We
-propose this reflects the training distribution rather than stochastic confabulation:
-mechanistic literature vastly outnumbers published negative trials, and discontinued
-programmes cease generating publications, so a model inherits and amplifies the corpus's own
-publication bias. This makes the failure mode **predictable** — and implies that verification
-effort should be concentrated on outcome claims and numerical values, not on mechanism.
+The clinically actionable finding does not depend on resolving that confound. A patient
+arriving with AI-generated material will often be **correct about the mechanism and wrong
+about whether the treatment works** — and the refuting evidence is recoverable from the same
+class of system in a single plainly-worded question.
 
 **Funding.** None.
 
@@ -284,18 +297,29 @@ Unchanged by review — both reviewers converged on the same ordering.
 
 ## Before submission
 
-In order:
+| | Status |
+|---|---|
+| 1. **Blinded classification pass with κ** | ✅ **done** — κ = 0.977, and it changed the result |
+| 2. **Replication under neutral prompting** | ✅ **done** — 6/6, and it falsified the hypothesis |
+| 3. **Account for all 61 claims** in Methods | ✅ done via four strata |
+| 4. **Rewrite provenance honestly** | ✅ done in v2 |
+| 5. **Report clustered sensitivity analysis** | ✅ done; p-value demoted in the narrative |
+| 6. **Complete the 2 × 2** — same model under persona, other model under neutral prompt | ⬜ **the critical remaining experiment.** Resolves the confound that currently blocks the central claim |
+| 7. **Pre-register the rubric on OSF** | ⬜ retrospectively, with the κ already computed and disclosed as such |
+| 8. **Fix two errors the probes found in our own audit** | ⬜ MK-2640 is mannose-receptor-based, not PBA; add Lilly/Protomer 2021 |
+| 9. **Close two evidence gaps** in the bibliography | ⬜ Fang & Selvin 2023 (PMC10061307); current HCUP DKA data |
+| 10. **Disclose AI assistance** under ICMJE | ⬜ in Methods. AI cannot be an author |
 
-1. **Blinded classification pass with κ** — 2 days, non-negotiable
-2. **Pre-register rubric and analysis plan on OSF** — 1 day, and it makes the κ meaningful
-3. **Report both claim-level and clustered statistics**; demote the p-value in the narrative
-4. **Rewrite provenance honestly** — done in this version, must survive into the manuscript
-5. **Account for all 61 claims** in Methods — done via the four strata
-6. **Close the two evidence gaps** in the repo bibliography: national insulin-rationing
-   prevalence (Fang & Selvin 2023, PMC10061307) and current HCUP DKA cost and volume
-7. **Disclose AI assistance** under ICMJE; AI cannot be an author
-8. *Optional but transformative:* **the multi-model replication**, ~1 week, which moves the
-   paper up a tier
+**Item 6 is the only one that gates the central claim.** Everything else is tidying.
+
+### A note on items 1 and 2
+
+Both were run, and **both damaged the paper's original claims** — blinding cut the effect
+size and the replication killed the explanation. That is the correct outcome of running them,
+and reporting it is the paper's strongest signal of reliability.
+
+A reviewer who sees that the authors pre-specified a prediction, tested it, and reported its
+failure will extend more credit to the findings that survived than any p-value could buy.
 
 ---
 
