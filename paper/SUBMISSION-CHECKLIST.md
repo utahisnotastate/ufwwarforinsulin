@@ -34,7 +34,7 @@ transparency declaration · provenance and peer review · licence.
 | Positive-control ground truth, fixed before the run | `data-positive-controls-groundtruth.md` |
 | Analysis scripts | `analysis-kappa.py`, `analysis-contingency.py`, `analysis-sensitivity.py`, `analysis-positive-controls.py`, `analysis-reextraction.py` |
 | Pre-registrations, with commit timestamps | persona re-run · positive controls · re-extraction · re-classification |
-| Public corrections log, 9 entries | `../CORRECTIONS.md` |
+| Public corrections log, 11 entries | `../CORRECTIONS.md` |
 | Source document | **retained, not published**; SHA-256 given, supplied to editors and reviewers on request |
 
 ## Venue

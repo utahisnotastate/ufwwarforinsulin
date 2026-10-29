@@ -30,6 +30,29 @@ already ran, and 9 would kill an insulin-dependent reader who acted on them.
 
 ---
 
+> ## 📄 There is a paper, and a plain-English version of it
+>
+> The audit has been written up as an academic paper, currently seeking a journal.
+>
+> | | |
+> |---|---|
+> | **Start here if you want the short version** | **[The paper in plain English](paper/PLAIN-ENGLISH.md)** — no jargon, ten minutes, includes what is *weak* about it |
+> | The paper itself | **[manuscript.pdf](paper/manuscript.pdf)** — 27 pages, typeset |
+> | The source text | [MANUSCRIPT.md](paper/MANUSCRIPT.md) |
+> | Everything behind it | [data, scripts, four pre-registrations](paper/) |
+>
+> **Feedback is actively wanted and you do not need a medical degree to give it.** The plain-English
+> page ends with specific questions for people with diabetes, clinicians, statisticians and
+> AI researchers. Pick one and open an
+> [issue](https://github.com/utahisnotastate/ufwwarforinsulin/issues).
+>
+> The single most useful thing anyone could do: **nobody has audited the
+> [258-claim](paper/data-extraction-1.md) and [237-claim](paper/data-extraction-2.md)
+> independent re-extractions.** Checking even a slice of one would test this work harder than
+> anything already in it.
+
+---
+
 ## What this is
 
 A long, confident, technical-looking medical document about insulin — a "future disclosure"
@@ -84,6 +107,8 @@ people in intensive care.
 | 🧲 **Here about the frequency device** | [Why the physics layer fails](docs/technical/why-the-physics-layer-fails.md) | Worked arithmetic. It fails its own equation by a factor of hundreds |
 | 📰 **A journalist** | [INTEGRITY_AUDIT.md](INTEGRITY_AUDIT.md) → [the nine lethal claims](INTEGRITY_AUDIT.md#the-nine-sentences-that-could-kill-someone) | Everything scored, sourced, and ranked by danger |
 | 🤔 **Just curious** | [Seven things that are true and surprising](docs/all-ages/README.md) | 20 minutes, no background needed, and it ends by teaching you to check claims yourself |
+| 📄 **Here about the paper** | [The paper in plain English](paper/PLAIN-ENGLISH.md) → [manuscript.pdf](paper/manuscript.pdf) | What was found, why it might matter, and what is weak about it — ten minutes, no jargon |
+| 🔍 **Here to pick holes in it** | [Plain English → how to give feedback](paper/PLAIN-ENGLISH.md#how-to-give-feedback) → [the corrections log](CORRECTIONS.md) | Specific questions by background, and eleven mistakes already found and published |
 
 ---
 
@@ -425,14 +450,35 @@ a claim from ❌ back to ✅.
 
 **Every correction is logged publicly in [CORRECTIONS.md](CORRECTIONS.md)** with what was
 wrong, how it was caught, and what changed — annotated in place rather than silently
-overwritten. There is one entry already: this repository misattributed MK-2640's sensing
-chemistry, and was corrected by a model it was running an experiment on.
+overwritten.
+
+**There are eleven entries.** They are not cosmetic. They include: this repository
+misattributed MK-2640's sensing chemistry and was corrected by a model it was running an
+experiment on; it reported one death in a clinical trial that reported two; it claimed on
+this very page that the audited document "circulates in patient communities" when the
+document was generated here and shown to nobody; three of its own files disagreed about what
+its own verdicts were; and the paper's headline statistic turned out to rest on a definition
+that had never been written down.
+
+If that list makes the project look unreliable, read it the other way: **none of those were
+found by the project's own satisfaction with itself.** Most came from someone outside
+attacking a specific claim.
 
 Two things to know before filing:
 
 - **Every number here carries a source, or it comes out.**
 - **The ☠️ harm flags are not stylistic.** Softening a safety statement needs evidence, not
   argument.
+
+### Feedback on the paper
+
+The write-up is at [manuscript.pdf](paper/manuscript.pdf), and
+**[the plain-English version](paper/PLAIN-ENGLISH.md)** explains it without jargon in about
+ten minutes, weaknesses included. It ends with
+[specific questions](paper/PLAIN-ENGLISH.md#how-to-give-feedback) sorted by who you are —
+someone living with diabetes, a clinician, a statistician, an AI researcher, or someone who
+just thinks a sentence smells wrong. That last one is genuinely welcome; say which sentence
+and why.
 
 ## License
 
