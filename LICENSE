@@ -1,0 +1,37 @@
+MIT License
+
+Copyright (c) 2026 Utah Hans (utahisnotastate)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+ADDITIONAL NOTICE — this repository contains medical information
+
+This repository is educational material. It is not medical advice, it does not
+establish a clinician-patient relationship, and it must not be used to make
+treatment decisions. See SAFETY.md.
+
+Nothing in this repository replaces insulin. A person with Type 1 diabetes who
+stops taking insulin develops diabetic ketoacidosis within 12 to 48 hours.
+
+If you reuse this material, please carry SAFETY.md and the status labels with
+it. The verdicts are what make the rest of it safe to read, and content
+separated from them can mislead in exactly the way this repository exists to
+prevent.

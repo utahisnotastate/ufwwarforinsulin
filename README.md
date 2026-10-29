@@ -244,3 +244,32 @@ checking claims like these without a science degree.
 The harm flag is the one thing this domain required that the others didn't. A wrong claim
 about scalar waves costs you an afternoon. A wrong claim about insulin costs a life in two
 days.
+
+---
+
+## Corrections welcome
+
+Labels move with evidence, in either direction. If you have a peer-reviewed source that
+changes a verdict, open an issue or a pull request — including, and especially, one that
+moves a claim from ❌ back to ✅. Eight items this review could not resolve are listed openly
+at the end of [`references/bibliography.md`](references/bibliography.md) rather than hidden,
+and closing any of them is a genuine contribution.
+
+Two things to know before filing:
+
+- **Every number here carries a source, or it comes out.** That rule applied during writing
+  and applies to contributions.
+- **The ☠️ harm flags are not stylistic.** Changes that soften a safety statement need
+  evidence, not argument.
+
+## License
+
+[MIT](LICENSE) — use it, teach with it, translate it, remix it.
+
+If you reuse the content, please carry [`SAFETY.md`](SAFETY.md) and the status labels with
+it. The verdicts are what make the rest safe to read, and text separated from them can
+mislead in precisely the way this repository exists to prevent.
+
+**This is educational material, not medical advice.** It establishes no clinician–patient
+relationship. If you have diabetes, your endocrinologist knows your case and this repository
+does not.
