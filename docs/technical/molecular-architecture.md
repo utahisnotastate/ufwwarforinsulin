@@ -80,6 +80,93 @@ Canonical reference: UniProt **P01308** (*INS_HUMAN*), residues 90–110 (A-chai
 
 ---
 
+## 1b. The folding problem, quantified
+
+This is the conceptual core of everything downstream — the manufacturing route, the cost, the
+immunogenicity risk, and why the source's "desktop" protocol fails. Worth stating precisely.
+
+### The combinatorics
+
+Six cysteines must pair into three disulfides. The number of distinct perfect matchings on
+2n labelled points is the double factorial $(2n-1)!!$:
+
+$$(6-1)!! = 5 \times 3 \times 1 = \mathbf{15}$$
+
+**Fifteen possible disulfide isomers. One is insulin.**
+
+The other fourteen are **isobaric** — identical molecular formula, identical mass, and in
+most cases indistinguishable by SDS-PAGE or intact-mass MS. They differ only in connectivity.
+Distinguishing them requires **disulfide mapping**: proteolytic digest under non-reducing
+conditions followed by LC-MS/MS, so that the cysteine-containing peptides reveal which
+partners are actually bonded.
+
+This is why [the purity gap](../manufacturing/the-purity-gap.md) insists that a clean band on
+a gel establishes nothing. A correctly-sequenced, scrambled-disulfide molecule has near-zero
+receptor affinity and looks, by every cheap analytical method, exactly like the drug.
+
+### Why the two-chain architecture makes it worse
+
+If the A- and B-chains are expressed separately, you are not folding one molecule — you are
+attempting a **bimolecular** reaction between two short, individually unstructured peptides,
+in competition with:
+
+- intrachain misfolding within each chain
+- A–A and B–B homodimers
+- higher-order aggregates
+- and, for the B-chain especially, amyloid fibril nucleation
+
+Yield falls steeply with concentration for exactly this reason. Published refolding yields in
+the *E. coli* route span 43%–99% and are strongly concentration-dependent: roughly 50% at
+0.5 mg/mL, dropping to 30–40% at 1–2 mg/mL. That inverse scaling is the signature of
+competing bimolecular side reactions, and it is why the industrial process refolds in very
+dilute solution — which in turn is why it needs large vessels and heavy downstream
+concentration.
+
+### How nature solves it, and how industry copies the solution
+
+Evolution does not fold insulin as two chains. It folds **proinsulin** — one continuous chain
+in which the C-peptide tethers the A- and B-segments in proximity.
+
+That converts an intractable bimolecular search into a **unimolecular** one. The effective
+local concentration of the correct partners rises by orders of magnitude, and the kinetically
+accessible pathway narrows dramatically. Folding then proceeds through a well-characterized
+intermediate order, with the A20–B19 bond forming early and nucleating the hydrophobic core.
+
+The ER provides two further catalysts:
+
+- **Protein disulfide isomerase (PDI)**, which does not merely *form* disulfides but
+  **reshuffles** incorrect ones, letting the molecule escape kinetic traps and reach the
+  thermodynamic minimum
+- **An oxidizing redox environment** maintained by Ero1, providing the oxidant for bond
+  formation
+
+The single-chain insulin precursor (SCIP) used in yeast expression is a **synthetic
+restatement of the same trick**: replace the 31-residue C-peptide with a short linker that
+preserves the tethering function while being easier to excise afterward. The yeast ER then
+supplies PDI and the redox environment for free.
+
+> **This is the source document's one genuinely good technical insight**, and it is worth
+> naming precisely: *don't solve the folding problem — arrange the molecule so the folding
+> problem doesn't arise.* That is correct, elegant, and already how Novo Nordisk makes insulin.
+
+### The cost of the trick
+
+Tethering has a price, and the source misses it entirely.
+
+A linker short enough to force correct folding is also short enough to **prevent receptor
+engagement**. Insulin receptor binding requires the B-chain C-terminal segment (B24–B30) to
+detach from the hydrophobic core and swing clear, exposing the site-1 surface. A
+three-residue tether between B29 and A1 sterically forbids that motion.
+
+So the precursor folds beautifully and **does almost nothing**. Conversion — tryptic cleavage
+plus carboxypeptidase B trimming, or tryptic transpeptidation to install B30 directly — is not
+a finishing touch. It is the step that creates the drug.
+
+Which is why a gravity-filtered culture supernatant is not dilute insulin. It is a solution of
+correctly-folded, largely **inactive** precursor.
+
+---
+
 ## 2. Proinsulin and the C-peptide
 
 Insulin is not translated as two chains. The gene encodes **preproinsulin** (110 aa):
