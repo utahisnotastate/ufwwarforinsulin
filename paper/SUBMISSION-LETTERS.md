@@ -56,9 +56,16 @@ only if you want a steer; otherwise go straight to **B** or **C**.
 > insulin-specific, and it is not a reporting-threshold effect. I am attached to the title but
 > not immovable on it.
 >
-> All data, rater outputs, analysis scripts including the sensitivity analyses described above,
-> the pre-registration with its commit timestamp, and a public corrections log are openly
-> available.
+> One further thing in the paper's favour, added after the same review. The review noted that
+> the re-query experiment had no positive controls and therefore measured sensitivity without
+> specificity. I pre-registered and ran them, with ground truth verified against PubMed and
+> committed before the run: the model answered correctly in **7 of 7** concepts whose correct
+> answer is *yes*, giving perfect separation across both directions. The criterion that would
+> have voided the arm was tested and not met.
+>
+> All data, rater outputs, analysis scripts including the sensitivity analyses and the
+> specificity arm, two pre-registrations with their commit timestamps, and a public
+> corrections log are openly available.
 >
 > Yours faithfully,
 > Utah Hans
@@ -100,6 +107,13 @@ only if you want a steer; otherwise go straight to **B** or **C**.
 >    dichotomisation had been chosen silently; under the strict coding *p* = 0.068. The paper
 >    now reports both codings, makes the cut-free ordinal test primary, and leads its
 >    Limitations with the problem rather than closing with it.
+>
+> The same review identified that the re-query arm had no positive controls. I pre-registered
+> and ran them — seven concepts whose correct answer is *yes*, ground truth verified against
+> PubMed and committed before the run, three chosen deliberately to sound like the audited
+> document's register while being true. The model answered **7 of 7** correctly: sensitivity
+> 6/6, specificity 7/7, perfect separation. That one went the paper's way, and I report it in
+> the same place and the same voice as the three that did not.
 >
 > I would rather submit a paper with a smaller claim and a visible audit trail than a larger
 > claim and a fragile one.
@@ -160,10 +174,17 @@ only if you want a steer; otherwise go straight to **B** or **C**.
 > **A contamination mechanism in agent-based evaluation** that we expect will affect others
 > working in this area: subjects inferred our experimental hypothesis from passive
 > system-prompt context — a working directory name and version-control history — with no
-> subject reading any file. Four of six were contaminated. The arm was discarded, a
-> contamination check with a fixed decision rule was pre-registered before the replication ran,
-> and the replication from a neutral environment showed zero contamination. This is the part of
-> the paper we would most like to see used by other groups.
+> subject reading any file. Four of six were contaminated. The arm was discarded and a
+> contamination check with a fixed decision rule was pre-registered before the replication,
+> which came back clean.
+>
+> The sequel is the part we would most like other groups to take. Before a later arm we
+> **instrumented the subject environment instead of assuming it** — a throwaway agent, given
+> none of the experimental material, asked only what it could see. It reported the project
+> directory and the version-control log: the isolation we believed we had configured had not
+> taken effect. The probes were held. **Executing from a clean environment is not sufficient;
+> isolation has to be verified from inside the subject's context at the moment of the run**,
+> because what the researcher configures and what the subject receives can differ.
 >
 > The paper reports four analyses that damaged its own claims, including one found in
 > pre-submission peer review that showed the original headline statistic depended on an

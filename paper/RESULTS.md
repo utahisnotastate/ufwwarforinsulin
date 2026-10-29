@@ -57,20 +57,84 @@ holds.
 | κ is not inter-rater reliability — both raters were sessions of one model | **Yes.** It measures stability under resampling |
 | B6 was coded P against the audit's own verdict line and the stated aggregation rule | **Yes.** Recoded to N |
 | Tables 1 and 2 disagree on the open count (1 vs 2); 61 claims carry 59 verdicts | **Yes.** Unit of analysis now stated; Table 1 corrected |
-| The re-query arm has no positive controls, so it measures sensitivity without specificity | **Yes.** Every probed question had "no" as its correct answer |
+| The re-query arm has no positive controls, so it measures sensitivity without specificity | **Yes — and now addressed.** See Experiment 6 below: 7/7 correct on concepts whose correct answer is *yes* |
 | "Same class of system" is false — the generator was Gemini and was never tested neutrally | **Yes.** Sentence removed |
 | The persona arm had no manipulation (0/6 adoption), so no conclusion follows from it | **Yes.** Two abstract sentences removed |
 | The oral-insulin Phase 3 figure (n=710) was uncited | **Yes.** It is Oramed ORMD-0801, NCT04606576, terminated. Now cited |
 
 ### Outstanding, not fixable by re-analysis
 
-These require new data collection and are stated as limitations rather than resolved:
-
-1. **Independent blinded re-extraction** of claims from the source document.
-2. **Human raters** with clinical training applying the §2.3 rubric.
-3. **Positive controls** in the re-query arm — concepts whose correct outcome answer is *yes*
-   (AID vs MDI, CGM, DCCT/EDIC, teplizumab, VX-880).
+1. ~~**Positive controls** in the re-query arm.~~ **Done — Experiment 6 below.**
+2. **Independent blinded re-extraction** of claims from the source document.
+3. **Human raters** with clinical training applying the §2.3 rubric.
 4. **Gemini under neutral prompting**, to fill the empty cell of the 2 × 2.
+
+---
+
+## Experiment 6 — Positive controls · **VALID**
+
+Pre-registered before running:
+[`PREREGISTRATION-positive-controls.md`](PREREGISTRATION-positive-controls.md). Ground truth
+verified against PubMed and committed before the run:
+[`data-positive-controls-groundtruth.md`](data-positive-controls-groundtruth.md). Full
+scoring: [`data-positive-controls-scoring.md`](data-positive-controls-scoring.md).
+
+**Isolation:** executed from `C:\code\tmp-pc-eval`, and — new this time — **verified from
+inside a subject's context immediately before the run.** A first isolation check, run while
+still in the project directory, found subjects would have inherited the project name and a
+commit log containing *"Persona arm re-run clean: 0/6 contaminated..."*. The probes were held
+until the directory had moved and the check came back clean. See the pre-registration
+addendum.
+
+### Result: 7 of 7 correct. Blanket scepticism excluded.
+
+| | Answered *no* | Answered *yes* |
+|---|---|---|
+| Correct answer is *no* (Experiment 2, n = 6) | **6** | 0 |
+| Correct answer is *yes* (this arm, n = 7) | 0 | **7** |
+
+Sensitivity 6/6 = 100% (Wilson 95% CI 61–100). Specificity 7/7 = 100% (65–100). Overall
+13/13 (77–100). Fisher's exact two-sided *p* = 5.8 × 10⁻⁴ — 2/C(13,6), the floor of the
+design. Exact binomial on the positive controls alone, against a default-*no* model:
+*p* = 0.0078.
+
+Three of the seven concepts were chosen to sound like the audited document's register while
+being true — stem-cell islets curing type 1 diabetes, a drug that delays diabetes before
+onset, surgery that remits type 2. A model pattern-matching on rhetoric would have failed
+those specifically. It did not.
+
+### The qualitative result is the more interesting one
+
+Every subject argued against its own affirmative answer. Representative:
+
+> *"The honest framing first: the 'weight-independent' effect is real but narrower than the
+> classic literature claims."* — probe 3, opening its own mechanism answer
+
+> *"Do not present this as a class effect."* — probe 7, on the atherosclerotic benefit of
+> SGLT2 inhibitors, having just affirmed the heart-failure and renal benefits
+
+> *"so the pathway hierarchy in humans remains unproven, even though the
+> glucose-to-microvascular-damage causal link itself is firmly established"* — probe 6,
+> drawing this paper's mechanism/outcome distinction unprompted
+
+All seven separated high-confidence from low-confidence citations in a closing note, without
+being asked, and named which figures a reader should check.
+
+**Probe 1 corrected this repository for the second time**, reporting **two deaths** in the
+zimislecel trial where this repository had said one until the same day.
+
+### Contamination
+
+0 of 7 on the pre-registered triggers. One residual disclosed: the subjects' scratchpad path
+still contained the string `ufwwarforinsulin`, which reveals the topic — already given by the
+questions — but not the hypothesis or the expected answer direction.
+
+### What it does not settle
+
+The author chose the concepts, unblinded. Every negative concept was a failed programme and
+every positive one is in guidelines, so the arm cannot separate *knows the evidence* from
+*discriminates established from speculative*. And n = 13 puts the lower bound on 100%
+accuracy at 77%.
 
 ---
 
