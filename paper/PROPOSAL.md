@@ -1,7 +1,9 @@
-# Paper proposal
+# Paper proposal — v2
 
-**Status:** proposal and draft abstract. Not submitted. See
-[Before submission](#before-submission) for the work still required.
+**Status:** proposal and draft abstract. Not submitted.
+**Changes in v2:** rebuilt after external review. Four substantive changes, listed in
+[What changed and why](#what-changed-in-v2). One of them is a correction to an overstatement
+in v1's own abstract, which is noted here rather than quietly fixed.
 
 ---
 
@@ -10,29 +12,27 @@
 > # "Other Cardiometabolic Health"
 > ## Mechanism without outcome: a claim-level audit of AI-generated insulin misinformation in a disease with a 48-hour error budget
 
-### Why that title, and why it is defensible
-
 *"Other cardiometabolic health"* is the line item in **Eli Lilly's FY2025 Form 10-K into which
 insulin was collapsed.** Humalog, Humulin and Basaglar are no longer reported separately.
-Mounjaro and Zepbound are now 56% of company revenue; the entire global insulin franchise sits
-under 6%, inside a bucket beginning with the word *other*.
+Mounjaro and Zepbound are 56% of revenue; the entire global insulin franchise sits under 6%,
+inside a bucket beginning with the word *other*. The company that commercialised insulin in
+1923 has stopped counting it.
 
-The company that commercialised insulin in 1923 has stopped counting it.
+It is a quotation from an SEC filing, not an accusation — and it is load-bearing, because the
+paper argues that misinformation fills the space institutions vacate.
 
-It is a quotation from an SEC filing, not an accusation. And it is load-bearing for the
-argument: **the paper is about what fills the space when institutions become opaque about a
-drug people die without.** A reader who finishes the paper understands that the title was the
-thesis.
+### Dual-track title strategy
 
-If an editor asks you to change it, the fallback is the subtitle, which stands alone.
+Both reviewers independently recommended the same thing, so it is now the plan:
 
-### Alternates, in descending order of provocation
+| Venue type | Title to submit |
+|---|---|
+| **Narrative / analysis** (*BMJ* Analysis, *Lancet* Comment) | **Keep the 10-K title.** These venues actively seek structural critique of institutional transparency, and the title *is* the argument |
+| **Empirical digital health** (JMIR, *Lancet Digital Health*, *npj Digital Medicine*) | **Lead with the subtitle:** *"Mechanism Without Outcome: A Claim-Level Audit of AI-Generated Insulin Misinformation in Type 1 Diabetes."* Searchable, conventional, no editorial friction |
+| **Clinician-facing** (*Diabetes Care*, *Diabetic Medicine*) | *"The Model Was Right About the Mechanism"* — foregrounds the diagnostic trap |
 
-| Title | The joke | Risk |
-|---|---|---|
-| **"One Dollar, Adjusted for Inflation"** | Banting, Best and Collip sold the patent for $1 each. Humalog's list price reached **$274.70** | Sharper, but leans on a quotation whose attribution is contested — see the repo bibliography |
-| **"Seventy Percent Off a Price Nobody Had Defended"** | Lilly cut Humalog 70% in 2023 without a single new experiment | Clean, but less tied to the paper's thesis |
-| **"The Model Was Right About the Mechanism"** | none | The safe submission. Keep in reserve |
+Have the subtitle ready as primary from the start. Switching under editorial pressure looks
+like retreat; offering both at submission looks like judgement.
 
 ---
 
@@ -40,192 +40,266 @@ If an editor asks you to change it, the fallback is the subtitle, which stands a
 
 **Background.** Large language models generate medically-shaped text at negligible marginal
 cost. Existing health-misinformation taxonomies score veracity, but do not distinguish claims
-by the biological layer at which they fail, nor by how quickly acting on them causes harm.
-Type 1 diabetes offers an unusually sharp test case: insulin cessation produces ketoacidosis
+by the epistemic layer at which they fail, nor by how quickly acting on them causes harm.
+Type 1 diabetes is an unusually sharp test case: insulin cessation produces ketoacidosis
 within 12–48 hours, so the interval between believing a false claim and requiring emergency
-care is measured in hours rather than years.
+care is measured in hours.
 
-**Methods.** We performed a claim-level audit of a long AI-generated document on insulin
-therapy, presented as retrieved future knowledge and circulating in patient communities.
-Sixty-one substantive claims were extracted and assigned stable identifiers. Each was verified
-against primary literature by three independent, cross-checked literature reviews, and
-assigned a veracity verdict (verified / partly true / open / not true / no scientific basis).
-Claims were secondarily classified as describing **biological mechanism** or asserting
-**therapeutic outcome in humans**, and harm-flagged with an estimated time-to-harm where
-acting on them could cause injury.
+**Methods.** We performed an exhaustive claim-level audit of a long AI-generated document on
+insulin therapy, produced by a commercial LLM under a speculative "retrieved future knowledge"
+persona prompt. All 61 substantive claims were extracted, assigned stable identifiers, and
+verified against primary literature by three independent cross-checked reviews. Each received
+a veracity verdict and, where acting on it could cause injury, a time-to-harm estimate. Claims
+were then stratified by epistemic type into four pre-specified categories: **biological
+mechanism**, **therapeutic outcome in humans**, **technical specification**, and **physical
+theory**.
 
 **Findings.** Of 61 claims, 14 (23%) were verified, 14 (23%) partly true, 1 open, 16 (26%)
-contradicted and 16 (26%) without scientific basis. Verdicts were strongly stratified by claim
-type. **Of 14 mechanism claims, 13 (93%) were verified or partly verified. Of 13
-therapeutic-outcome claims, 0 (0%) were supported** (Fisher's exact, two-sided
-**p = 7.5 × 10⁻⁷**).
+contradicted and 16 (26%) without scientific basis. Accuracy was strongly and
+interpretably stratified by epistemic type:
 
-Every outcome claim corresponded to a real development programme that had already failed in
-human trials: C-peptide replacement (Phase 2b, placebo superior on the primary endpoint),
-glucose-responsive insulin (no glucose-dependent clearance in type 1 diabetes),
-hepato-preferential insulin (discontinued for hepatic steatosis), oral insulin (Phase 3
-primary endpoint missed), alpha-to-beta transdifferentiation (immune evasion contradicted by
-the cited source's own data), automated insulin delivery (registry evidence in the opposite
-direction), and decentralised manufacture.
+| Stratum | n | Supported |
+|---|---|---|
+| Biological mechanism | 14 | **13 (93%)** |
+| Therapeutic outcome in humans | 13 | **0 (0%)** |
+| Technical specification — qualitative | 6 | 5 (83%) |
+| Technical specification — quantitative | 11 | **0 (0%)** |
+| Physical theory | 17 | **0 (0%)** |
 
-Two classes of error were detectable **without external reference**. The document specified an
-amino-acid sequence that was bovine while quoting the molecular formula of human insulin; and
-it quoted a resonance frequency to four significant figures that does not reproduce from the
-equation supplied in the same paragraph.
+Mechanism versus outcome: Fisher's exact two-sided **p = 7.5 × 10⁻⁷** at claim level;
+**p = 5.8 × 10⁻⁴** in a conservative sensitivity analysis clustered to the seven underlying
+development programmes.
 
-**Interpretation.** This document exhibited a reproducible **mechanism–outcome dissociation**:
-accurate about why an intervention should work, uniformly wrong about whether it does. We
-propose this reflects the training distribution rather than random confabulation. Mechanistic
-literature vastly outnumbers published negative trials, and discontinued programmes stop
-generating publications — so a model trained on the corpus inherits and amplifies the
-literature's own publication bias. This predicts that AI-generated medical content will be
-most dangerous precisely where a compelling mechanism sits atop an undisclosed negative trial,
-and that **detection effort is better spent on outcome claims than on mechanism claims.**
+Failure of outcome claims took three distinct forms: a clinical programme that had already
+failed before the document was generated (C-peptide replacement, glucose-responsive insulin,
+hepato-preferential insulin, oral insulin, alpha-to-beta transdifferentiation); contradiction
+by positive evidence pointing the opposite way (automated insulin delivery, insulin therapy in
+type 2 diabetes); and **assertion with no supporting study of any kind** in any species
+(acetate as an insulin substitute).
+
+Two error classes were detectable **without external reference**: an amino-acid sequence that
+was bovine while the accompanying molecular formula was human, and a resonance frequency
+quoted to four significant figures that does not reproduce from the equation supplied in the
+same paragraph.
+
+**Interpretation.** Accuracy degraded monotonically with distance from well-published
+mechanistic literature. The document was reliable about *why* an intervention should work,
+uniformly wrong about *whether* it does, accurate in qualitative process description and
+wrong in every quantitative value, and without basis wherever it left biology entirely. We
+propose this reflects the training distribution rather than stochastic confabulation:
+mechanistic literature vastly outnumbers published negative trials, and discontinued
+programmes cease generating publications, so a model inherits and amplifies the corpus's own
+publication bias. This makes the failure mode **predictable** — and implies that verification
+effort should be concentrated on outcome claims and numerical values, not on mechanism.
 
 **Funding.** None.
 
 ---
 
-## What is actually novel here
+## What changed in v2
 
-Stated plainly, because most of the underlying repository is synthesis of existing literature
-and a reviewer will ask.
+### 1. The 34 unaccounted claims — the best catch in review, and it improves the paper
 
-| Contribution | Novel? | Why |
+A reviewer noted that 14 mechanism + 13 outcome = 27, leaving **34 of 61 claims
+unaccounted for**, and warned this invites a cherry-picking charge. Correct, and it would
+have been fatal at review.
+
+The 34 are not a residual. They are **two further strata**, and both support the thesis:
+
+| | Claims | Pattern |
 |---|---|---|
-| **The mechanism–outcome dissociation, quantified** | **Yes** | We are not aware of prior work stratifying AI medical misinformation by biological layer. The effect is large, clean, and has a p-value |
-| **Amplified publication bias as the mechanism** | **Yes** | Reframes LLM medical error from "hallucination" (random, unpredictable) to a *structured, predictable* inheritance of a known bias in the source corpus. This is the paper's main intellectual claim |
-| **Internal inconsistency as a reference-free detection signal** | **Partly** | Self-consistency checking exists in the ML literature; applying it to *specification* errors in medical text — a sequence that contradicts its own stated formula — appears new |
-| **Time-to-harm as a severity axis** | **Yes** | Misinformation taxonomies score truth. Adding "how long until this hospitalises someone" is a different and more actionable axis, and type 1 diabetes anchors the short end |
-| The individual corrections | No | All are in the literature. Their value is as the worked example |
+| **Technical specification** (n=17) | C1–C13, D2, D4, D5, A2, B4, B5 | Qualitative descriptions mostly right; **every quantitative value wrong** |
+| **Physical theory** (n=17) | X1–X17 | 15 of 17 with no scientific basis; the two exceptions are established mathematics with unsupported extrapolation |
 
-**The one-sentence contribution:** *LLM medical error is not random — it is the publication
-bias of the training corpus, rendered confident, and it therefore fails in a specific place
-you can predict and check.*
+### 2. The third dissociation, which v1 missed entirely
+
+Splitting the specification stratum by whether a claim is qualitative or numerical produces a
+second clean separation:
+
+| Qualitative process claims | Verdict |
+|---|---|
+| Disulfide topology A6–A11, A7–B7, A20–B19 | ✅ |
+| *Pichia* folds the precursor co-translationally | ✅ |
+| Secretion eliminates lysis and chaotropic denaturation | ✅ |
+| *E. coli* inclusion-body chemistry | ✅ |
+
+| Quantitative values | Verdict | Error |
+|---|---|---|
+| A-chain sequence | ❌ | bovine, not human |
+| ">92% pure after 0.22 µm filtration" | ❌ | a filter removes cells, not solutes |
+| "Single gravity pass, >95% conversion" | ❌ | 6–200× too fast vs. published kinetics |
+| "1.5 g/L from a desktop reactor" | 🟡 | conflates two different published figures |
+| "<$0.008 per 1,000 IU vial" | ❌ | 86× below the raw API cost alone |
+| "0.1 M zinc acetate" | ❌ ☠️ | 218–436× commercial; would precipitate the drug and injure tissue |
+
+**Prose reproduced from the corpus is reliable. Numbers are not.** This is consistent with
+known LLM numerical behaviour, but here it is quantified in a specification context where the
+consequence is a wrong protein or a necrotising injection.
+
+### 3. Clustered sensitivity analysis
+
+Both reviewers flagged pseudoreplication: the 13 outcome claims draw on ~7 distinct
+literatures, so claim-level Fisher's exact overstates significance. One reviewer supplied the
+program-level alternative, **which I verified independently — it is arithmetically correct**:
+
+```
+                supported   unsupported
+  mechanism         7            0
+  outcome           0            7
+
+  C(14,7) = 3432 ;  two-sided p = 2/3432 = 1/1716 = 5.83e-04
+```
+
+**Both will be reported, with the clustered figure as primary.** Following the second
+reviewer's advice, the p-value is also demoted in the narrative: the raw split (13/14 versus
+0/13) is persuasive on its own, and leaning on a very small p-value computed on non-independent
+observations is an invitation.
+
+### 4. Provenance — a correction to v1, stated openly
+
+**v1's abstract said the document was "circulating in patient communities." I could not
+substantiate that, and it should not have been written.** It is the single most serious
+problem in v1 and exactly the kind of unsupported outcome-level assertion this paper is
+about — which is either embarrassing or instructive, and probably both.
+
+**The verifiable provenance:** the document was produced by a commercial LLM (Google Gemini)
+operating under a user-configured persona prompt instructing it to retrieve medical knowledge
+from future timelines. It was generated in a private session. No dissemination to patients was
+observed, and none is claimed.
+
+This must be stated plainly in Methods. Any claim about real-world circulation requires
+evidence we do not have.
+
+**And the honest framing is stronger than the false one.** A document someone found is an
+anecdote: unreproducible, unknown provenance, n=1 forever. A document *generated under a
+recorded prompt* is an **experimental artifact** — the generating procedure is known, the
+prompt is available, and the result is **reproducible across models**.
+
+That converts the reviewers' central objection into the paper's natural next experiment,
+described below.
 
 ---
 
-## Structure
+## Addressing the n = 1 objection
 
-### 1. Introduction
-The volume and persuasiveness problem. Why 25%-correct is more dangerous than 0%-correct. Why
-type 1 diabetes is the sharp case: 12–48 hours from cessation to ketoacidosis, 2.1 million
-Americans with type 1, and a documented history of cost-driven rationing establishing that
-this population already deviates from prescribed therapy under pressure.
+Both reviewers identified this as the gating issue, and both proposed the same remedy. With
+honest provenance it becomes straightforward.
 
-### 2. Methods
-Source selection and provenance. Claim extraction and identifier assignment (the inventory is
-published). Three parallel independent verification passes with cross-checking. Verdict
-taxonomy. Secondary classification into mechanism versus outcome. Harm flagging and
-time-to-harm. **Pre-state the classification rule** — see *Before submission*.
+**The replication study.** Take the seven underlying therapeutic concepts — C-peptide
+replacement, glucose-responsive insulin, hepato-preferential delivery, oral insulin,
+alpha-to-beta transdifferentiation, non-insulin glucose disposal, decentralised manufacture —
+and query current frontier models with **neutral clinical prompts**, no speculative persona.
+Score mechanism and outcome accuracy separately, blinded.
 
-### 3. Results
+The prediction is specific and falsifiable: **mechanism accuracy will remain high and outcome
+accuracy will remain low even without adversarial prompting**, because the dissociation
+originates in the training corpus rather than the persona.
 
-**Table 1.** Verdict distribution across 61 claims.
+- **If it replicates**, the paper becomes a multi-model empirical study and *Lancet Digital
+  Health* or *npj Digital Medicine* become realistic.
+- **If it does not**, that is also publishable and arguably more useful: it localises the
+  effect to adversarial prompting, which is an actionable safety finding.
 
-**Table 2 — the paper's central result.**
-
-| | Supported (verified or partly) | Not supported | |
-|---|---|---|---|
-| **Mechanism claims** | **13** | 1 | 14 |
-| **Therapeutic-outcome claims** | **0** | **13** | 13 |
-
-Fisher's exact, two-sided **p = 7.5 × 10⁻⁷**.
-
-**Table 3.** Each outcome claim mapped to the trial that refutes it, with registration number
-and result. This table is the emotional centre of the paper: seven rows, seven real
-programmes, seven failures, all public before the document was generated.
-
-**Table 4.** Reference-free inconsistencies — the bovine/human sequence contradiction, and the
-frequency that fails its own equation.
-
-**Table 5.** Harm-flagged claims ranked by time-to-harm.
-
-### 4. The physics case study
-A short worked section, because it makes the self-consistency argument concrete and
-non-specialist reviewers find it persuasive. The quoted frequency sits 267× below the lowest
-rotational transition the molecule can have; thermal energy exceeds the quantum by 5.65 × 10⁸;
-skin depth at that frequency is 3.84 m, so the elaborate transdermal coupling mechanism
-addresses a problem that does not exist. All arithmetic reproducible from stated constants.
-
-### 5. Discussion
-Amplified publication bias as the generating mechanism. Why this predicts *where* to look.
-Implications for clinicians (the patient will be right about the mechanism, which is why
-dismissal fails and concession works), for platforms, and for model developers. The
-institutional-opacity argument that the title points at: trust vacuums are filled, and the
-insulin pricing history is the clearest available example of a vacuum being created.
-
-### 6. Limitations
-Stated prominently. See below.
+Either way the experiment resolves the objection. It is roughly a week of work.
 
 ---
 
 ## Honest limitations
 
-A reviewer will find these. Better to own them.
+1. **n = 1 source document.** Stated in the abstract, not buried. The replication study above
+   is the fix.
+2. **Classification was not blinded.** Same team assigned verdicts and strata. **Non-negotiable
+   before submission** — see the protocol below.
+3. **Claims are not independent.** Addressed by the clustered analysis; the claim-level p-value
+   is reported as secondary.
+4. **Verification was partly AI-assisted** with human cross-checking. Disclosed in Methods per
+   ICMJE. Given the subject matter, concealing it would be both wrong and trivially attackable.
+5. **Selection effect.** The document was audited because it looked dangerous.
+6. **Single disease, single language, single model, single generation.**
 
-1. **n = 1 document.** The dissociation is observed in a single source. Generalisation requires
-   a corpus. **This is the single biggest weakness** and it should appear in the abstract, not
-   only in the limitations section.
-2. **Classification was not blinded.** Mechanism-versus-outcome classification was performed
-   by the same team that assigned verdicts. The effect is large enough that bias is unlikely to
-   explain it entirely, but it cannot be excluded. **Fixable — see below.**
-3. **Claims are not independent.** They cluster by topic; seven outcome claims draw on perhaps
-   five distinct literatures. Fisher's exact assumes independence, so the true p-value is
-   larger than stated. The direction and magnitude of the effect do not depend on the test.
-4. **Verification was partly AI-assisted**, with human cross-checking. This must be disclosed
-   in Methods. It is also, unavoidably, a little funny.
-5. **Selection effect on the source.** The document was audited *because* it looked dangerous.
-   A randomly sampled corpus may behave differently.
-6. **Single disease, single language, single model generation.**
+---
+
+## Blinded classification protocol
+
+To run before submission. Addresses limitation 2.
+
+**Rubric, pre-registered before any rater sees a claim:**
+
+| Stratum | Decision rule |
+|---|---|
+| **Mechanism** | Asserts how a biological system behaves, with no claim about a clinical result in humans |
+| **Therapeutic outcome** | Asserts that an intervention produces a clinical benefit, or that an established therapy is harmful or inferior, **in humans** |
+| **Technical specification** | States a sequence, concentration, process parameter, yield, duration or cost |
+| **Physical theory** | Asserts a physical law, constant, or mechanism outside biology |
+
+**Procedure.** Two raters with relevant background, blinded to all verdicts, independently
+classify all 61 claims from the published claim inventory using the rubric alone. Disagreements
+resolved by a third rater. Report **Cohen's κ**, target ≥ 0.80. Pre-register the rubric and
+analysis plan on OSF before the first rating.
+
+The claim inventory is already published with stable IDs, which makes this cheap and makes the
+pre-registration verifiable after the fact.
+
+---
+
+## Structure
+
+1. **Introduction** — volume and persuasiveness; why 25%-correct is more dangerous than
+   0%-correct; why type 1 diabetes is the sharp case
+2. **Methods** — provenance (honestly), extraction, three-pass verification, verdict taxonomy,
+   pre-registered strata, blinded classification, time-to-harm, AI-assistance disclosure
+3. **Results**
+   - *Table 1* — verdict distribution, all 61 claims
+   - *Table 2* — **accuracy by epistemic stratum** (the central result)
+   - *Table 3* — each outcome claim mapped to the trial that refutes it, with registration IDs
+   - *Table 4* — the qualitative/quantitative split within specification claims
+   - *Table 5* — reference-free internal inconsistencies
+   - *Table 6* — harm-flagged claims ranked by time-to-harm
+4. **The physics case study** — short, worked, concrete; makes self-consistency checking legible
+   to non-specialists
+5. **Discussion** — amplified publication bias; why it predicts *where* to look; implications
+   for clinicians (the patient will be right about the mechanism, which is why dismissal fails
+   and concession works), for platforms, for model developers; the institutional-opacity
+   argument the title points at
+6. **Limitations**
 
 ---
 
 ## Target journals
 
-| Journal | Fit | Why |
+Unchanged by review — both reviewers converged on the same ordering.
+
+| Journal | Fit | Note |
 |---|---|---|
-| **JMIR** (*J Med Internet Res*) | ★★★★★ | Publishes health-misinformation methodology, fast, open access, receptive to novel taxonomies. **Best first target.** Most likely to accept the title |
-| ***BMJ* Analysis** | ★★★★★ | Built for exactly this argument, large clinical readership, and *BMJ* has real appetite for a pointed title. Strongest venue if they take it |
-| ***Lancet Digital Health*** | ★★★★ | Correct subject, high impact. Likely to want the corpus study first |
-| ***npj Digital Medicine*** | ★★★★ | Good fit, open access, AI-in-medicine focus |
-| ***Diabetes Care* / *Diabetic Medicine*** | ★★★ | Reaches the clinicians who will meet these patients. Narrower framing, and they will want the title changed |
-| ***JAMA Intern Med* Viewpoint** | ★★★ | High impact, but 1,200 words — the data would have to go elsewhere |
+| ***BMJ* Analysis** | ★★★★★ | Takes the current form with no expansion. Right home for the 10-K title and the institutional argument |
+| **JMIR** | ★★★★★ | Receptive to novel misinformation taxonomies. Expect a request to lead with the subtitle |
+| ***Lancet Digital Health*** | ★★★★ | **Only viable with the multi-model replication.** Do not submit n=1 |
+| ***npj Digital Medicine*** | ★★★★ | Same condition |
+| ***Diabetes Care*** | ★★★ | Reaches the clinicians who will meet these patients |
 
-**Recommended sequence:** *BMJ* Analysis → JMIR → *Lancet Digital Health*.
-
-**Preprint:** post to medRxiv at submission. All six targets permit it, and for this subject
-matter the priority claim is worth having.
+**Sequence:** *BMJ* Analysis → JMIR → (with replication) *Lancet Digital Health*.
+**Preprint to medRxiv at submission.** All targets permit it.
 
 ---
 
 ## Before submission
 
-Four things, roughly in order of how much they strengthen the paper.
+In order:
 
-**1. Fix the blinding problem.** Have two people with relevant background, blinded to the
-verdicts, independently classify all 61 claims as mechanism or outcome against a written rule
-agreed in advance. Report inter-rater agreement (Cohen's κ). This converts the central result
-from "suggestive" to "robust" and costs perhaps two days.
-
-**2. Add a second document.** Even one more audited source turns n=1 into a replication and
-answers the biggest limitation. A third makes it a small corpus study and probably moves the
-venue up a tier.
-
-**3. Close the two outstanding evidence gaps** flagged in the repository bibliography — the
-national insulin-rationing prevalence figure, and current DKA cost and volume data. Both are
-needed for the introduction's framing and both are one database query away.
-
-**4. Decide on authorship and disclose AI assistance.** Three verification passes were
-AI-assisted with human cross-checking. ICMJE guidance is explicit: AI cannot be an author, and
-its use must be described in Methods. Disclose it plainly — given the subject, concealing it
-would be both wrong and remarkably easy to attack.
+1. **Blinded classification pass with κ** — 2 days, non-negotiable
+2. **Pre-register rubric and analysis plan on OSF** — 1 day, and it makes the κ meaningful
+3. **Report both claim-level and clustered statistics**; demote the p-value in the narrative
+4. **Rewrite provenance honestly** — done in this version, must survive into the manuscript
+5. **Account for all 61 claims** in Methods — done via the four strata
+6. **Close the two evidence gaps** in the repo bibliography: national insulin-rationing
+   prevalence (Fang & Selvin 2023, PMC10061307) and current HCUP DKA cost and volume
+7. **Disclose AI assistance** under ICMJE; AI cannot be an author
+8. *Optional but transformative:* **the multi-model replication**, ~1 week, which moves the
+   paper up a tier
 
 ---
 
 ## A note on the title, for when an editor pushes back
-
-The response to have ready:
 
 > *The title is a direct quotation from Eli Lilly's FY2025 Form 10-K. Insulin — Humalog,
 > Humulin, Basaglar — is no longer reported as a separate line; it now sits inside "other
@@ -234,8 +308,7 @@ The response to have ready:
 > The paper argues that AI-generated medical misinformation flourishes in the space left by
 > institutional opacity about a drug people die without. A company ceasing to report the
 > molecule it commercialised in 1923 is the cleanest available illustration of that space. I
-> am happy to defend it, and happy to change it if you would prefer the subtitle alone.*
+> am happy to defend it, and happy to switch to the subtitle if you would prefer.*
 
-That answer is accurate, sourced, and concedes gracefully. Which is the right posture: **the
-title is allowed to be the one place you show off, and only because everything under it is
-checkable.**
+Accurate, sourced, concedes gracefully. Which is the right posture: **the title is the one
+place to show off, and it earns that only because everything underneath it is checkable.**
