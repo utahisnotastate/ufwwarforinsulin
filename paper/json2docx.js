@@ -16,7 +16,10 @@ const {
 } = require('docx');
 
 const BUILD = __dirname.endsWith('build') ? __dirname : path.join(__dirname, 'build');
-const blocks = JSON.parse(fs.readFileSync(path.join(BUILD, 'manuscript.json'), 'utf8'));
+// node json2docx.js [stem] [--supplement]
+const STEM = (process.argv[2] && !process.argv[2].startsWith('--')) ? process.argv[2] : 'manuscript';
+const SUPPLEMENT = process.argv.includes('--supplement');
+const blocks = JSON.parse(fs.readFileSync(path.join(BUILD, STEM + '.json'), 'utf8'));
 
 const FONT = 'Cambria';
 const MONO = 'Consolas';
@@ -119,7 +122,7 @@ for (const b of blocks) {
       break;
     case 'p':
       children.push(new Paragraph({
-        spacing: { before: 0, after: 180, line: 480 },   // double-spaced
+        spacing: { before: 0, after: 180, line: SUPPLEMENT ? 300 : 480 },
         children: toRuns(b.runs),
       }));
       break;
@@ -149,6 +152,18 @@ for (const b of blocks) {
       }
       children.push(buildTable(b));
       children.push(new Paragraph({ spacing: { before: 0, after: 220 }, children: [new TextRun('')] }));
+      break;
+    case 'code':
+      b.lines.forEach(ln => children.push(new Paragraph({
+        spacing: { before: 0, after: 0, line: 200 },
+        shading: { type: ShadingType.CLEAR, fill: 'F6F6F6' },
+        indent: { left: convertInchesToTwip(0.15) },
+        children: [new TextRun({
+          text: ln.length ? ln : ' ',
+          font: MONO, size: 15, color: '000000',
+        })],
+      })));
+      children.push(new Paragraph({ spacing: { before: 0, after: 160 }, children: [new TextRun('')] }));
       break;
     case 'rule':
       children.push(new Paragraph({
@@ -190,7 +205,9 @@ const doc = new Document({
         size: { width: PAGE_W, height: 15840 },
         margin: { top: MARGIN, bottom: MARGIN, left: MARGIN, right: MARGIN },
       },
-      lineNumbers: { countBy: 1, restart: LineNumberRestartFormat.CONTINUOUS, distance: 360 },
+      ...(SUPPLEMENT ? {} : {
+        lineNumbers: { countBy: 1, restart: LineNumberRestartFormat.CONTINUOUS, distance: 360 },
+      }),
     },
     footers: {
       default: new Footer({
@@ -205,7 +222,7 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buf => {
-  const out = path.join(BUILD, 'manuscript.docx');
+  const out = path.join(BUILD, STEM + '.docx');
   fs.writeFileSync(out, buf);
   console.log('wrote', out, (buf.length / 1024).toFixed(0) + ' KB');
   console.log('blocks rendered:', children.length);

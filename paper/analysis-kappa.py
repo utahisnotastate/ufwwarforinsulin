@@ -1,4 +1,4 @@
-﻿import sys, re, json
+import sys, re, json
 from math import comb
 from collections import Counter
 
@@ -44,6 +44,8 @@ if __name__ == "__main__":
     dis = [i for i in ids if A[i]!=B[i]]
     print("")
     print("  disagreements (%d): %s" % (len(dis), ", ".join("%s[A=%s/B=%s]"%(i,A[i][:4],B[i][:4]) for i in dis) if dis else "none"))
-    json.dump({"A":A,"B":B,"kappa":k,"agreement":po,"disagreements":dis}, open(sys.argv[3],"w"), indent=1)
-    print("\n  -> saved %s" % sys.argv[3])
+    if len(sys.argv) > 3:
+        json.dump({"A": A, "B": B, "kappa": k, "agreement": po,
+                   "disagreements": dis}, open(sys.argv[3], "w"), indent=1)
+        print("\n  -> saved %s" % sys.argv[3])
 

@@ -7,11 +7,15 @@ out what it is given.
 
     python paper/md2json.py        ->  paper/build/manuscript.json
 """
-import io, re, json, os
+import io, re, json, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, 'MANUSCRIPT.md')
-OUT = os.path.join(HERE, 'build', 'manuscript.json')
+# python md2json.py [input.md] [stem]
+_IN = sys.argv[1] if len(sys.argv) > 1 else 'MANUSCRIPT.md'
+SRC = _IN if os.path.isabs(_IN) else os.path.join(HERE, _IN)
+_STEM = sys.argv[2] if len(sys.argv) > 2 else \
+    os.path.splitext(os.path.basename(SRC))[0].lower().replace('_', '-')
+OUT = os.path.join(HERE, 'build', _STEM + '.json')
 
 
 def runs(text):
@@ -69,7 +73,10 @@ def parse(md):
                                'runs': runs(m.group(2))})
                 continue
             cur.append(l)
-            if ' '.join(cur).count('*') % 2 == 0:
+            joined = ' '.join(cur)
+            bold_open = joined.count('**') % 2 == 1
+            ital_open = joined.replace('**', '').count('*') % 2 == 1
+            if not bold_open and not ital_open:
                 groups.append(cur); cur = []
         if cur:
             groups.append(cur)
@@ -122,6 +129,18 @@ def parse(md):
 
     while i < len(lines):
         t = lines[i].rstrip()
+
+        # fenced code block -> preformatted, lines preserved verbatim
+        if t.lstrip().startswith('```'):
+            flush_para(); flush_list(); flush_quote()
+            i += 1
+            buf = []
+            while i < len(lines) and not lines[i].lstrip().startswith('```'):
+                buf.append(lines[i].rstrip('\n').rstrip())
+                i += 1
+            i += 1
+            blocks.append({'k': 'code', 'lines': buf})
+            continue
 
         if t.startswith('|') and i + 1 < len(lines) and re.match(r'^\|[\s:|-]+\|?\s*$', lines[i + 1]):
             flush_para(); flush_list(); flush_quote()
