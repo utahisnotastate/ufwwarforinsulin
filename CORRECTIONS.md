@@ -8,6 +8,48 @@ Newest first.
 
 ---
 
+## 2026-10-29 · Three errors in the manuscript's Eli Lilly paragraph
+
+**Severity:** high — one factual, one a pharmacology error in a medical manuscript, one an
+inference the record contradicts.
+**Found by:** verifying the claim against primary SEC filings before submission, after an
+external reviewer questioned it on accounting grounds.
+
+| Error | Correction |
+|---|---|
+| *"under 6% of revenue"* | **Wrong.** $4,006M / $65,179M = **6.15%** — over six. And read as describing insulin rather than the line item, the FY2025 insulin figure **is not disclosed in the filing** and cannot be asserted at all |
+| *"two GLP-1 products"* | Mounjaro and Zepbound are two brands of **one molecule, tirzepatide**, a **dual GIP/GLP-1 receptor agonist**. Lilly's own 10-K describes it that way. A pharmacology error in a medical manuscript |
+| *"has stopped counting it"* | An inference the filing contradicts. Lilly reduced product-level detail **across the whole portfolio** in FY2025 — Cyramza, Olumiant, Emgality, Zyprexa and Baqsimi went too, and the management discussion fell from 18 product lines to 4. Insulin was not singled out |
+
+**The reviewer's own accounting argument was also wrong**, in the opposite direction. ASC
+280-10-50-40 requires product-level revenue disclosure with **no quantitative threshold**; the
+10% figures govern reportable segments and major customers, not products; Regulation S-K
+carries no numeric threshold since 2020; and ASU 2023-07 *increased* the obligation. In the
+same year **Merck disclosed 30 products, the smallest at 0.26% of revenue.** The aggregation
+is not routine.
+
+**Net effect on the argument: stronger.** Insulin's disappearance is a by-product of a
+disclosure architecture reorganised around two growth assets, which is more defensible than
+concealment and makes the same point.
+
+## 2026-10-29 · The polishing plan misstated the BMJ Analysis word limit
+
+**Severity:** moderate — it would have produced an unnecessarily severe compression.
+
+An earlier version of [`paper/POLISHING-PLAN.md`](paper/POLISHING-PLAN.md) stated the limit as
+**1,500–1,800 words** and asserted this was "worse than the review says." The live BMJ page
+specifies **2,000 words**.
+
+The error came from relying on 2007-dated guidance retrieved via PMC after BMJ's current
+author page refused automated retrieval twice. **The reviewer's figure was closer than mine,
+and the plan contradicted them on the basis of stale data.**
+
+Also missed in that version, and more consequential than the word count: BMJ states the
+Analysis section does not consider *"manuscripts containing primary research data."* This
+manuscript reports four experiments. See POLISHING-PLAN Part A2.
+
+---
+
 ## 2026-10-29 · Understated the contamination in the persona arm: "at least two," actually four
 
 **Severity:** minor factually, notable in kind — it is an error in the direction that

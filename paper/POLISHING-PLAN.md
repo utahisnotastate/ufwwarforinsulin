@@ -9,32 +9,74 @@ reasons.**
 
 ---
 
-## Part A — The catch that matters most
+## Part A — Verified requirements, and an eligibility problem
 
-### A1. The word limit, and it is worse than the review says
+### A1. The actual spec — and a correction to an earlier version of this plan
 
-The review states 1,800–2,000 words, 20–25 references, 2–3 display items. BMJ's own
-advice-to-authors for Analysis articles specifies:
+Retrieved from BMJ's live author page. **Verbatim:**
 
-| | Specification |
+> *"Analysis papers should be 2000 words with 20 references and up to 3 non-text items (box,
+> figure, or table)."*
+
+| Element | Requirement |
 |---|---|
-| **Length** | **1,500–1,800 words**, under informative subheadings |
-| **Introduction** | 100–150 words, stating what the paper is about and why it matters |
-| **References** | **No more than 20**, Vancouver style |
-| **Summary box** | **Up to five short, single sentences** |
-| **Display items** | **Up to three** tables, boxes or illustrations *combined* |
+| **Length** | **2,000 words** |
+| **References** | **20**, Vancouver style, "kept to a minimum" |
+| **Non-text items** | **Up to 3** — box, figure *or* table combined |
+| **Words in boxes and tables** | **Excluded from the body word count** |
+| **Standfirst** | Required — an *italicised single sentence* after the title, encapsulating the central message |
+| **Introduction** | A brief paragraph capturing attention, stating the aim and **"why now"** |
+| **Text** | Sub-headings giving logical narrative structure; evidence explicit and referenced; **strength** of evidence made clear; "balanced, even-handed look at the evidence rather than selectively citing evidence that supports a particular view" |
+| **Key messages box** | **At the end**, **3–4 points**. Entered in the abstract field at submission |
+| **Contributors and sources** | **100–150 words, excluded from word count.** Must state each author's expertise and contribution, the sources used, and nominate a **guarantor** |
+| Also required | Patient involvement statement · competing interests · BMJ licence statement (exact wording specified) |
+| Peer review | **Fully open** — review history published alongside accepted articles |
+| Template | BMJ provides an *Analysis article template* and recommends using it |
 
-⚠️ **This is 2007-dated guidance retrieved via PMC. BMJ's current author hub returned HTTP
-403 and bot protection to automated retrieval. Confirm against the live page before
-submitting** — a human with a browser can do this in thirty seconds, and everything in Part C
-depends on it.
+> **⚠️ Correction to an earlier version of this plan.** It stated the limit was **1,500–1,800
+> words** and said this was "worse than the review says." That came from 2007-dated guidance
+> retrieved via PMC after BMJ's live page refused automated retrieval. **The current figure is
+> 2,000 words, and the reviewer's "1,800–2,000" was closer than mine.** Logged in
+> [`../CORRECTIONS.md`](../CORRECTIONS.md).
 
-**Current draft: ~4,100 words, 6 tables, 11 references.** That is **2.3× the ceiling** on
-length and **double** the display-item allowance.
+**Two consequences that make compression easier than feared:**
 
-The review is right that submitting the full text with a note saying "see §7 for how to
-shorten it" invites administrative rejection. **An editor should never be asked to do the
-cutting.** §7 is deleted and the compression executed.
+1. **2,000 not 1,750** — 250 words of headroom recovered.
+2. **Box and table words don't count.** Box 1 (Methods), Box 2 (Key messages), and both
+   tables sit outside the 2,000. The real cut is body prose only.
+
+**Current draft: ~4,100 words of body text, 6 tables, 13 references.** References are
+compliant. The cut is **~2,100 words of prose**, not 2,350.
+
+### A2. ⚠️ The eligibility problem — read before doing any of the compression
+
+BMJ states that the Analysis section **does not consider**:
+
+> *"Manuscripts containing primary research data (such papers should be submitted as
+> research)."*
+
+**This manuscript reports four experiments**: a claim audit, a blinded classification with
+κ, and two re-query experiments. That is primary research data on any reading.
+
+Neither the external review nor the earlier version of this plan caught it, and it is more
+likely to trigger an administrative rejection than the word count.
+
+**Three options:**
+
+| Option | Assessment |
+|---|---|
+| **A. Submit to BMJ *Research* instead** | BMJ Research sets **no fixed word limit** — "we do not set fixed word count limits for research articles." Requires IMRaD, a structured 250–300 word abstract, a "what is already known / what this study adds" box, data sharing and **code sharing** statements (already satisfied — the repository has both), and a transparency declaration. **The manuscript already has this shape.** Highest-integrity route |
+| **B. Restructure as a genuine Analysis** | Move all four experiments to the repository and cite them as supporting data, making the piece an argument *about* the finding rather than a report *of* it. Legitimate — but the empirical work is the contribution, and burying it to fit a section is the wrong trade |
+| **C. Empirical venue instead** | JMIR or *npj Digital Medicine*. No eligibility conflict, accustomed to this kind of methodology, and the title can lead with the subtitle |
+
+**Recommendation: A or C, not B.** The paper's value is the data. Analysis is the wrong
+section for it, and discovering that now is worth more than a polished submission to the
+wrong desk.
+
+**A pre-submission enquiry resolves this in one email.** BMJ explicitly invites them for
+Analysis: a short form, answered by the Head of Scholarly Comment or an analysis editor.
+**Send that before doing any compression work** — it costs nothing and could save the entire
+exercise.
 
 ---
 
@@ -156,56 +198,118 @@ current list is grouped thematically, which will not pass.
 
 ## Part D — The 10-K argument, de-risked
 
-### The problem the review identified
+### The review's accounting defence is wrong — but the wording was still vulnerable
 
 > *"Under GAAP and SEC Regulation S-K, collapsing revenue streams under 6% into an 'Other'
 > line item is standard accounting reporting threshold practice, not intentional
 > obscuration."*
 
-**This is a serious catch and it is probably right.** The current wording —
-*"The company that commercialised insulin in 1923 has stopped counting it"* — implies
-deliberate concealment. If aggregation below a materiality threshold is routine, that
-implication is both unfair and legally exposed, and BMJ's legal desk will find it.
+**Verified against the primary filings on EDGAR. This is incorrect**, and it imports a
+segment-level threshold into a product-level requirement where none exists:
 
-*Verification of the exact 10-K label, its location, and whether the treatment is routine is
-in progress; this section will be finalised against it.*
+- **ASC 280-10-50-40:** an entity *"shall report the revenues from external customers for each
+  product and service... unless it is impracticable to do so."* **No percentage threshold.**
+  The only escape is impracticability, which must itself be disclosed. Lilly claims none.
+- The **10% figures** in ASC 280 govern *reportable segments* (50-12) and *major customers*
+  (50-42). Neither determines whether Humalog gets a line.
+- **Regulation S-K Item 101** contains **no numeric revenue threshold** — the quantitative
+  tests were deleted by the 2020 Modernization amendments and replaced with a
+  principles-based materiality test.
+- **ASU 2023-07 cuts the other way.** Effective FY2024 and adopted by Lilly then, it requires
+  a single-reportable-segment entity to provide *all* Topic 280 disclosures — **increasing**
+  the product-revenue obligation in the year before product detail was cut.
+- **The comparator is decisive.** In the same reporting year **Merck separately disclosed 30
+  products, the smallest at 0.26% of revenue — including its own declining Januvia and
+  Janumet diabetes franchise at 2.5% and 1.5%.** AbbVie disclosed 25 lines, BMS 18. Lilly's
+  management discussion carries **four**. Novo Nordisk and Sanofi both still report insulin in
+  full, Sanofi down to products at 0.02% of revenue.
 
-### The reframe, which is rhetorically stronger anyway
+**So the aggregation is not routine.** But three things in the current wording are still
+wrong, and two are the kind a fact-checker catches immediately.
 
-Do not allege concealment. Allege **immateriality** — which is worse, truer, and
-unimpeachable:
+### Three errors found, all now corrected in the manuscript
 
-> *Insulin is no longer separately reported in Eli Lilly's annual filing. This is not
-> concealment: a product below the threshold at which disaggregated disclosure is
-> conventional is routinely aggregated, and Lilly's treatment appears consistent with normal
-> practice. That is the point. **The drug that founded the company's diabetes franchise has
-> become financially immaterial to it** — appearing inside "other cardiometabolic health" at
-> under 6% of revenue while two GLP-1 products account for 56%. No rule was broken. A
-> hundred-year-old life-sustaining biologic simply stopped being big enough to name.*
+| Error | Correction |
+|---|---|
+| *"under 6% of revenue"* | **Wrong.** $4,006M / $65,179M = **6.15%** — *over* six. And if it was meant to describe insulin rather than the line, the FY2025 insulin figure **is not disclosed** and cannot be asserted |
+| *"two GLP-1 products"* | **A pharmacology error, in a medical journal.** Mounjaro and Zepbound are two brands of **one molecule, tirzepatide**, a **dual GIP/GLP-1 receptor agonist**. Lilly's own 10-K says so |
+| *"has stopped counting it"* | **An inference the record contradicts.** Lilly cut product detail across the entire portfolio in FY2025 — Cyramza, Olumiant, Emgality, Zyprexa and Baqsimi went too; the management discussion fell from 18 product lines to 4. Insulin was not singled out |
+
+### The verified facts, which are stronger than the error was
+
+| | |
+|---|---|
+| FY2024 | Humalog $2,324.8M + Humulin $917.1M + Basaglar $676.9M = **$3.92bn, 8.7% of revenue**, each a named line |
+| FY2025 | No revenue figure anywhere in the filing. Absorbed into *"other cardiometabolic health"* **$4,006M, 6.15%**, Note 2 p.65 |
+| XBRL | `HumalogMember`, `HumulinMember`, `BasaglarMember` present in the FY2024 taxonomy, **absent from FY2025** — machine-verifiable |
+| Tirzepatide | Mounjaro $22,965M + Zepbound $13,542M = **56.01%**, Lilly's own stated figure |
+| Reconciliation | Insulin was **87.9%** of the restated FY2024 bucket. The FY2025 share **cannot be assumed forward** |
+
+### The reframe, now in the manuscript
+
+The portfolio-wide finding does not weaken the argument — **it improves it.** Insulin's
+disappearance is a by-product of a disclosure architecture reorganised around two growth
+assets. That is a better and more defensible thesis than concealment:
+
+> *No rule was broken. The company that commercialised insulin in 1923 simply no longer
+> reports what it earns from it — not because insulin was singled out, but because a
+> disclosure architecture reorganised around two growth assets swept it up with everything
+> else that had stopped growing.*
+
+Every number is from a filing, the pharmacology is correct, the threshold defence is
+pre-empted in the text, and the final sentence makes the same point as "stopped counting it"
+while being literally true.
+
+**Keep the title.** With the body stating the qualifications, *"Other Cardiometabolic Health"*
+reads as elegy, and a legal desk finds the text has already conceded everything it might
+have raised.
+
+**One item still open for the legal desk:** the pre-2020 text of Regulation S-K Item 101(c)
+could not be retrieved from a primary source (eCFR and the Federal Register both refused
+automated access). If the historical threshold point is used, source it to Release 33-10825,
+85 FR 63726, 8 October 2020.
+
+> **Deleted:** an earlier version of this section proposed conceding that the aggregation was
+> *"consistent with normal practice"* and arguing immateriality instead. **Verification showed
+> that concession would have been false** — the aggregation is not routine, as the Merck
+> comparator demonstrates — and the draft wording repeated both the 6% and the GLP-1 errors.
+> The accurate reframe is the one above and in the manuscript.
 >
-> *Institutions withdraw attention before they withdraw products, and the space that leaves
-> is where fluent synthetic medicine arrives.*
-
-**Why this is better:** it concedes the accounting point up front, which removes the attack
-surface entirely; "no rule was broken" is more damning than an accusation; and it connects
-directly to the paper's thesis rather than being a swipe.
-
-**Keep the title.** With the body reframed this way, *"Other Cardiometabolic Health"* reads
-as elegy rather than accusation — and a legal desk reviewing it will find the text concedes
-the point the title might otherwise raise.
+> Worth noting as a pattern: that block was written to satisfy a reviewer's objection *before*
+> the objection was checked. It would have put a false concession into a paper about
+> unverified claims.
 
 ---
 
 ## Part E — Pre-submission checklist
 
+### Do this first — it may moot everything below
+
+- [ ] **Send a pre-submission enquiry to BMJ** asking whether a manuscript reporting four
+      experiments is eligible for Analysis, or should go to Research. BMJ invites these via a
+      short form, answered by the Head of Scholarly Comment. **One email. Do it before any
+      compression work.**
+
 ### Must do
 
-- [ ] **Confirm current BMJ Analysis specs** against the live author hub. Everything in Part C depends on numbers from 2007-dated guidance
-- [ ] Cut body text to **≤1,800 words**
-- [ ] Reduce to **3 display items**; move the rest to the repository supplement
-- [ ] Add **Box 2 — Key messages**, five single sentences, with the B3 correction
-- [ ] Rewrite §4.4 per Part D; **cite the 10-K precisely** — item, page, exhibit
+- [x] ~~Confirm current BMJ Analysis specs~~ — **done, verified from the live page:
+      2,000 words, 20 references, 3 non-text items, box/table words excluded**
+- [x] ~~Verify the 10-K claim~~ — **done against primary EDGAR filings; three errors found
+      and corrected**
+- [ ] Cut body text to **≤2,000 words**
+- [ ] Reduce to **3 non-text items**; move the rest to the repository supplement
+- [ ] Add **Key messages box at the end, 3–4 points** (not five), with the B3 correction.
+      Paste it into the abstract field at submission
+- [ ] Write the **standfirst** — one italicised sentence carrying the central message
+- [ ] Write **Contributors and sources**, 100–150 words, naming the **guarantor**
+- [x] ~~Rewrite §4.4 per Part D~~ — **done**, with precise citation to Note 2 p.65 and
+      accession 0000059478-26-000013
 - [ ] Reformat references to **Vancouver, order of appearance**
+- [ ] Add the **BMJ licence statement** in the exact wording the page specifies
+- [ ] Add a **patient involvement** statement
+- [ ] Download and work from BMJ's **Analysis article template**
+- [ ] Note that peer review is **fully open** — the review history publishes alongside the
+      article, which suits a paper whose argument is that corrections should be visible
 - [ ] Verify the AI disclosure states AI systems were **tools and experimental subjects, not authors** (already does — confirm it survives compression)
 - [ ] Add a **supplementary materials** statement pointing at the repository
 - [ ] Delete §7

@@ -22,14 +22,19 @@ n = 1 — were addressed by running the experiments rather than promising them. 
 > # "Other Cardiometabolic Health"
 > ## Mechanism without outcome: a claim-level audit of AI-generated insulin misinformation in a disease with a 48-hour error budget
 
-*"Other cardiometabolic health"* is the line item in **Eli Lilly's FY2025 Form 10-K into which
-insulin was collapsed.** Humalog, Humulin and Basaglar are no longer reported separately.
-Mounjaro and Zepbound are 56% of revenue; the entire global insulin franchise sits under 6%,
-inside a bucket beginning with the word *other*. The company that commercialised insulin in
-1923 has stopped counting it.
+*"Other cardiometabolic health"* is the line item in **Note 2 of Eli Lilly's FY2025 Form 10-K
+into which insulin revenue was absorbed.** Humalog, Humulin and Basaglar were three named
+lines totalling $3.92bn — 8.7% of revenue — as recently as FY2024. In FY2025 they carry no
+revenue figure anywhere in the filing, and their XBRL tags are gone. Two brands of a single
+dual GIP/GLP-1 agonist, tirzepatide, are 56% of revenue.
 
 It is a quotation from an SEC filing, not an accusation — and it is load-bearing, because the
 paper argues that misinformation fills the space institutions vacate.
+
+**The qualifications are in the text, and they strengthen it.** The change was not
+insulin-specific — Lilly cut product detail across the whole portfolio — and it is not a
+reporting-threshold effect, since ASC 280-10-50-40 sets no threshold and Merck disclosed
+products at 0.26% of revenue the same year. See [POLISHING-PLAN.md](POLISHING-PLAN.md) Part D.
 
 ### Dual-track title strategy
 
@@ -325,14 +330,21 @@ failure will extend more credit to the findings that survived than any p-value c
 
 ## A note on the title, for when an editor pushes back
 
-> *The title is a direct quotation from Eli Lilly's FY2025 Form 10-K. Insulin — Humalog,
-> Humulin, Basaglar — is no longer reported as a separate line; it now sits inside "other
-> cardiometabolic health," under 6% of revenue, while two GLP-1 products account for 56%.
+> *The title is a direct quotation from Note 2 of Eli Lilly's FY2025 Form 10-K. Humalog,
+> Humulin and Basaglar were reported as three named revenue lines in FY2024, together $3.92bn
+> or 8.7% of revenue. In FY2025 they carry no revenue figure anywhere in the filing, and their
+> XBRL tags are gone.*
 >
-> The paper argues that AI-generated medical misinformation flourishes in the space left by
-> institutional opacity about a drug people die without. A company ceasing to report the
-> molecule it commercialised in 1923 is the cleanest available illustration of that space. I
-> am happy to defend it, and happy to switch to the subtitle if you would prefer.*
+> *The paper states the qualifications rather than leaving them for a reader to find: the
+> change was portfolio-wide rather than insulin-specific, and it is not a reporting-threshold
+> effect, since ASC 280-10-50-40 sets no quantitative threshold for product revenue and Merck
+> disclosed products at 0.26% of revenue in the same year.*
+>
+> *The argument is that AI-generated medical misinformation flourishes in space institutions
+> vacate, and a disclosure architecture reorganised around two growth assets — sweeping up a
+> hundred-year-old biologic along with everything else that stopped growing — is the cleanest
+> available illustration. I am happy to defend it, and happy to switch to the subtitle if you
+> would prefer.*
 
 Accurate, sourced, concedes gracefully. Which is the right posture: **the title is the one
 place to show off, and it earns that only because everything underneath it is checkable.**

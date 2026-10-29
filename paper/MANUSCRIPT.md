@@ -12,8 +12,14 @@ Independent researcher
 > **Submission note.** For empirical venues (JMIR, *Lancet Digital Health*, *npj Digital
 > Medicine*) lead with the subtitle as the title. The quoted title is for narrative venues
 > (*BMJ* Analysis, *Lancet* Comment), where the institutional argument in §5.4 carries it.
-> *"Other cardiometabolic health"* is the line item in Eli Lilly's FY2025 Form 10-K into which
-> insulin was collapsed. A short-form version for *BMJ* Analysis is described in §7.
+> *"Other cardiometabolic health"* is the line item in Note 2 of Eli Lilly's FY2025 Form 10-K
+> into which insulin revenue was absorbed, having been reported as three named brands a year
+> earlier. See §4.4, which states the qualifications.
+>
+> ⚠️ **Eligibility check required before submitting to Analysis.** BMJ states that the
+> Analysis section does not consider "manuscripts containing primary research data (such
+> papers should be submitted as research)." This manuscript reports four experiments. See
+> [POLISHING-PLAN.md](POLISHING-PLAN.md) Part A2.
 
 ---
 
@@ -410,13 +416,33 @@ The economic grievance animating this document is legitimate and documented. Pub
 production cost for regular human insulin is $2.28–3.37 per vial [11]; US list prices exceeded
 $250 before reductions of 70–78% in 2023–24. Patients rationed.
 
-The title of this paper is a line item. Insulin — Humalog, Humulin, Basaglar — is no longer
-reported separately in Eli Lilly's annual filing; it sits inside *"other cardiometabolic
-health,"* under 6% of revenue, while two GLP-1 products account for 56%. The company that
-commercialised insulin in 1923 has stopped counting it.
+The title of this paper is a line item. Insulin — Humalog, Humulin, Basaglar — appeared as
+three separate revenue lines in Eli Lilly's Form 10-K as recently as FY2024, together $3.92bn,
+8.7% of revenue [12]. In the FY2025 10-K they appear in no revenue table at all, absorbed into
+*"other cardiometabolic health"* ($4.0bn, 6.1% of revenue) in Note 2, and into *"other
+products"* in the management discussion [13]. The three brands are also absent from the FY2025
+XBRL taxonomy, which carried a tag for each of them a year earlier. Over the same period two
+brands of a single dual GIP/GLP-1 receptor agonist, tirzepatide, grew to 56% of revenue —
+Lilly's own figure.
 
-That is not an accusation, and it is not illegal. It is an illustration of the space a
-document like this fills.
+**Three qualifications matter, and each strengthens rather than weakens the point.** The
+change is not insulin-specific: Lilly reduced product-level detail across its whole portfolio
+in FY2025, and Cyramza, Olumiant, Emgality and Zyprexa disappeared from the tables alongside
+the insulins, the management discussion falling from eighteen product lines to four. Nor is it
+a reporting-threshold effect — ASC 280-10-50-40 sets no quantitative threshold for
+product-level revenue, and in the same reporting year Merck separately disclosed products down
+to 0.26% of revenue, including its own declining diabetes franchise, while Novo Nordisk and
+Sanofi each continued to report insulin revenue in full. And the FY2025 insulin figure is not
+derivable from the filing; insulin was 87.9% of the restated FY2024 bucket, but that share
+cannot be assumed forward.
+
+No rule was broken. The company that commercialised insulin in 1923 simply no longer reports
+what it earns from it — not because insulin was singled out, but because a disclosure
+architecture reorganised around two growth assets swept it up with everything else that had
+stopped growing.
+
+That is the shape of institutional withdrawal, and it is the space a document like the one
+audited here arrives to fill.
 
 ### 4.5 Implications for evaluation methodology
 
@@ -522,6 +548,11 @@ The institutional argument in §4.4 becomes the closing rather than a subsection
     2022;116(2):335–361. PMID 35388874
 11. Gotham D, Barber MJ, Hill A. Production costs and potential prices for biosimilars of
     human insulin and insulin analogues. *BMJ Glob Health* 2018;3(5):e000850
+12. Eli Lilly and Company. Form 10-K for the fiscal year ended 31 December 2024. SEC accession
+    0000059478-25-000067, filed 19 February 2025. Item 7 revenue table and Note 2
+13. Eli Lilly and Company. Form 10-K for the fiscal year ended 31 December 2025. SEC accession
+    0000059478-26-000013, filed 12 February 2026. **Note 2 (Revenue), "Disaggregation of
+    Revenue," p.65**; management discussion revenue table p.49
 
 *Full bibliography with 96 entries, PMID-verified citations marked separately from
 secondary-source citations, and eight unresolved items listed openly:*
