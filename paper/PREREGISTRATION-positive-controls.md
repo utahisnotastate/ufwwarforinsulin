@@ -127,8 +127,8 @@ Before running this arm we **checked that assumption instead of repeating it**. 
 agent, given none of the seven concepts, was asked only to report what it could see of its
 own environment. It reported:
 
-- primary working directory 
-- a version-control status block, branch 
+- primary working directory `C:\code\ufwwarforinsulin`
+- a version-control status block, branch `main`
 
 The directory change requested for this run had **not yet taken effect**. Had the probes been
 launched at that moment they would have inherited the project name and a commit log whose
@@ -148,5 +148,5 @@ they have configured and the environment the subject actually receives can diffe
 ### Ground truth
 
 The correct answer for each of the seven concepts, with its primary citation and key figures,
-is fixed in [](data-positive-controls-groundtruth.md),
+is fixed in [`data-positive-controls-groundtruth.md`](data-positive-controls-groundtruth.md),
 verified against PubMed and committed before the run.
