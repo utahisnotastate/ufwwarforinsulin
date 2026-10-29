@@ -8,6 +8,26 @@ Newest first.
 
 ---
 
+## 2026-10-29 · Understated the contamination in the persona arm: "at least two," actually four
+
+**Severity:** minor factually, notable in kind — it is an error in the direction that
+flattered the work.
+**Found by:** re-auditing the probe transcripts before acting on the result.
+
+[`paper/RESULTS.md`](paper/RESULTS.md) reported that "at least two of the six" persona-arm
+subjects inferred the experimental hypothesis. **Four did.** The original count caught the two
+that quoted the working-directory path and missed two that referenced the paper proposal and
+`CORRECTIONS.md` without naming the path.
+
+"At least two" was technically true and substantively misleading. The corrected figure makes
+the arm less salvageable, not more: the uncontaminated subset is **n = 2**, which cannot
+support a claim about model behaviour.
+
+Corrected in place in `paper/RESULTS.md` and `paper/PROPOSAL.md`, with the original figure
+quoted rather than overwritten.
+
+---
+
 ## 2026-10-29 · MK-2640 was described as a phenylboronic-acid insulin. It is not.
 
 **Severity:** moderate — a mechanism misattribution, not a safety error.

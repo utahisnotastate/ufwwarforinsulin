@@ -304,7 +304,7 @@ Unchanged by review — both reviewers converged on the same ordering.
 | 3. **Account for all 61 claims** in Methods | ✅ done via four strata |
 | 4. **Rewrite provenance honestly** | ✅ done in v2 |
 | 5. **Report clustered sensitivity analysis** | ✅ done; p-value demoted in the narrative |
-| 6. **Complete the 2 × 2** — same model under persona, other model under neutral prompt | ⚠️ **attempted and discarded.** The persona cell was run (6/6 refused the persona, 6/6 accurate) but **at least two subjects inferred the hypothesis from the working directory and git history** — demand characteristics. Must be re-run in a clean environment with no inferable research context. **Still the critical remaining experiment** |
+| 6. **Complete the 2 × 2** — same model under persona, other model under neutral prompt | ⚠️ **attempted and discarded.** The persona cell was run (6/6 refused the persona, 6/6 accurate) but **four of six subjects inferred the hypothesis from the working directory and git commit messages** — demand characteristics, one stating the hypothesis outright. Uncontaminated subset is n=2, too small to use. Must be re-run from a neutral directory with no git history. **Still the critical remaining experiment** |
 | 7. **Pre-register the rubric on OSF** | ⬜ retrospectively, with the κ already computed and disclosed as such |
 | 8. **Fix two errors the probes found in our own audit** | ⬜ MK-2640 is mannose-receptor-based, not PBA; add Lilly/Protomer 2021 |
 | 9. **Close two evidence gaps** in the bibliography | ⬜ Fang & Selvin 2023 (PMC10061307); current HCUP DKA data |
