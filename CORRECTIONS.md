@@ -8,6 +8,75 @@ Newest first.
 
 ---
 
+## 2026-10-29 · The claim count is not reproducible. Two blind extractors found ~250, not 61.
+
+**Severity:** high. It does not overturn the paper's central comparison, but it invalidates
+every count and percentage quoted from the inventory.
+**Found by:** running the independent blinded re-extraction that external review ranked first.
+
+Two extractors, independent of each other and blind to the inventory, the verdicts, the
+taxonomy, the hypothesis and the aggregation rule, were given the source document and the
+definition of a substantive factual claim from the manuscript's Methods.
+
+| Extractor | Claims | vs 61 |
+|---|---|---|
+| **This repository** | **61** | — |
+| Independent extractor 1 | **258** | 4.2× |
+| Independent extractor 2 | **237** | 3.9× |
+
+**They agree with each other to 8.5% while both sit near four times this repository's count.**
+A large gap with scattered extractors would be definitional noise. A large gap with clustered
+extractors means the extraction here was **systematically coarse**. The divergence is widest
+in the physics block (≈ 6–7×) and narrowest in pathophysiology (≈ 3–4×), and is driven by
+finer splitting, not broader scope.
+
+**What this invalidates.** "61 claims." "14 verified, 13 partly true, 16 not true, 16 no
+basis." "0 of 9 quantitative specifications." "2 of 17 physical-theory claims." Each is a
+statement about this repository's segmentation as much as about the document, and none should
+be quoted to two significant figures. The scoreboard on the front page is in that category.
+
+**What survives.** The mechanism/outcome dissociation, tested ordinally, held under every
+decomposition available — including the reviewer's own construction and a version more
+hostile than it (*p* = 0.0045 to 0.020). And the specific objection it was run to test did not
+succeed: the reviewer argued that splitting claim A3 would put a verified sub-claim (renal
+sodium retention) into the outcome column. **A3 does split — both extractors split it into the
+same five claims — but neither isolated the verified component.** Both left it bundled with
+two false ones. The split the objection requires is one no hypothesis-blind party made.
+
+**What is untested.** Only A3 could be re-analysed, because only A3 had published sub-claim
+verdicts. **Nobody has audited the ~250-claim inventories.** Both are published so that
+someone can.
+
+**A deviation, reported rather than buried.** The isolation check failed for the second time —
+the extractors inherited the project directory and a commit log naming this very experiment.
+They were run anyway rather than holding a third time. The leak revealed no taxonomy, no
+verdict, no aggregation rule and nothing identifying A3, and its plausible bias runs against
+this repository: a subject told granularity is under study splits more finely, and finer
+splitting is what would have broken the result. It did not.
+
+---
+
+## 2026-10-29 · The source document was never archived
+
+**Severity:** high, and structural rather than factual.
+**Found by:** preparing the re-extraction above, which needed the source and could not find it.
+
+Until today this repository contained only **its own extraction** of the audited document
+([archive/source-claim-inventory.md](archive/source-claim-inventory.md)), not the document.
+The extraction step — the one that sets the denominator of every figure here — was therefore
+**not checkable by anyone.** That is a stronger version of the reviewer's objection than the
+reviewer made; they assumed the source was available.
+
+A repository whose entire argument is that claims should be checkable had made its own first
+step uncheckable, and nobody noticed for the whole of its existence.
+
+The document has been recovered in full from the session record (20,089 words, unaltered).
+Archiving it publicly, redacted of the device-construction and firmware sections per
+[SAFETY.md](SAFETY.md), is **pending** — it is a publication decision about dual-use material
+and belongs to the repository owner, not in a commit made on the owner's behalf.
+
+---
+
 ## 2026-10-29 · The paper's headline statistic depended on an undisclosed analytic choice, and does not survive removing it
 
 **Severity:** the most serious error logged here. It is not a factual slip; it is the kind of
