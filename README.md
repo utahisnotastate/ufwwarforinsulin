@@ -125,11 +125,15 @@ helped patients with poor control and **harmed** those with good control. Zero a
 "Smart insulin" switches itself on when glucose rises and off when it falls. The chemistry is
 real and the conjugation site is right.
 
-**No glucose-responsive insulin has ever worked in a human.** Merck spent over half a billion
-dollars; in people with Type 1, MK-2640 showed **no glucose-dependent change in clearance at
-all** and was 25× less potent than regular insulin. Novo's NNC2215 (*Nature*, 2024) is a
-genuine advance and across the glucose range that actually occurs in a body it's about a
-**3× modulator, not a switch** — rats and pigs only.
+**No glucose-responsive insulin has ever worked in a human — and the chemistry the source
+describes has never even been tried in one.** Merck spent over half a billion dollars on
+MK-2640, which used *different* sensing chemistry (a mannose-receptor mechanism, not
+boronate); in people with Type 1 it showed **no glucose-dependent change in clearance at all**
+and was 25× less potent than regular insulin. **Every boronate construct remains
+preclinical.** Novo's NNC2215 (*Nature*, 2024) is a genuine advance and across the glucose
+range that actually occurs in a body it's about a **3× modulator, not a switch** — rats and
+pigs only. Lilly paid up to ~$1bn for Protomer in 2021 to enter the field; still no human
+efficacy data.
 
 And the "one shot lasts weeks" idea runs backwards: the longest-acting insulins we have are
 *weekly*, and in Type 1 they **increase** severe hypoglycemia — **10% vs 3%**.
@@ -361,7 +365,10 @@ someone out of the dangerous parts, counterproductive.
 README.md                  ← you are here
 SAFETY.md                  ← read first if insulin is part of your life
 INTEGRITY_AUDIT.md         ← all 61 claims, scored, with PMIDs
+CORRECTIONS.md             ← errors found in this repo, logged publicly
 disclosure1–5.md           ← the 15 disclosures, by layer
+
+paper/                     ← the publishable finding, with raw data and analysis scripts
 
 docs/
   kids/                    ← ages 7–12, four pages, structure-first
@@ -392,6 +399,11 @@ insulin resistance as adaptation, it is — it says that too, with the papers on
 Labels move with evidence, in either direction. If you have a peer-reviewed source that
 changes a verdict, open an issue or a pull request — including, and especially, one that moves
 a claim from ❌ back to ✅.
+
+**Every correction is logged publicly in [CORRECTIONS.md](CORRECTIONS.md)** with what was
+wrong, how it was caught, and what changed — annotated in place rather than silently
+overwritten. There is one entry already: this repository misattributed MK-2640's sensing
+chemistry, and was corrected by a model it was running an experiment on.
 
 Two things to know before filing:
 

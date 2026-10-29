@@ -446,17 +446,45 @@ than glucose** (so exercise, sepsis, or metformin perturb the sensor); unmodifie
 pKa > 8.5 and bind diols poorly at physiological pH; and most published responsiveness is
 measured at non-physiological glucose (~167 mM vs the real 4–20 mM range).
 
+> **⚠️ Correction, 29 October 2026.** An earlier version of this audit discussed **MK-2640
+> under this heading, implying it was the clinical test of PBA chemistry. It was not.**
+> MK-2640 is a **mannose-functionalised** insulin cleared via the **mannose receptor
+> (MRC1 / CD206)**; glucose was intended to compete it off that receptor and slow clearance.
+> Different sensing chemistry, different mechanism of action.
+>
+> The corrected statement is **stronger**, not weaker: **no phenylboronic-acid-based
+> glucose-responsive insulin has entered human testing at all.** Every PBA construct —
+> Ins-PBA-F, boronate hydrogels, boronate micelles — remains preclinical. The chemistry the
+> source document specifies has never been given to a person.
+>
+> See [`CORRECTIONS.md`](CORRECTIONS.md).
+
 ### D6 — Hypoglycemia is chemically impossible; a single depot lasts weeks ☠️
 **⛔ NO BASIS as stated**
 
-**No glucose-responsive insulin has ever worked in a human.** The one that was tested:
+**No glucose-responsive insulin has ever worked in a human.** The only one with published
+human data:
 
 > Krug AW et al., *"Clinical Evaluation of MK-2640: An Insulin Analog With Glucose-Responsive
 > Properties."* **Clin Pharmacol Ther 2019;105(2):417–425 (PMID 30125349)**
 
-Merck acquired SmartCells for >$500M in potential milestones. In 16 adults with Type 1 diabetes,
-MK-2640 showed **no detectable glucose-dependent change in clearance**, and was **~25-fold less
-potent** than regular human insulin. Discontinued on efficacy grounds.
+Merck acquired SmartCells for >$500M in potential milestones. MK-2640 is a
+**mannose-functionalised insulin** cleared through the **mannose receptor (MRC1 / CD206)** —
+rising glucose was meant to compete it off the receptor, slowing clearance and raising
+exposure. Rodent and minipig studies showed clear responsiveness. In 16 adults with Type 1
+diabetes, it showed **no detectable glucose-dependent change in clearance**, and was
+**~25-fold less potent** than regular human insulin. Discontinued on efficacy grounds.
+
+**Note the implication for the source's specific claim.** The source describes PBA conjugation
+at B29. That chemistry has **never reached a human trial.** The one GRI that did reach humans
+used entirely different chemistry and still failed. So the claim is not merely unproven — the
+proposed mechanism is two steps away from any human evidence.
+
+Also relevant and absent from earlier versions: **Eli Lilly acquired Protomer Technologies in
+2021** in a deal worth up to ~$1 billion, specifically to enter the glucose-sensing insulin
+race behind Novo Nordisk. Protomer was preclinical at acquisition and **no human
+glucose-responsiveness data have been published.** The field has attracted a billion dollars
+and produced no human efficacy.
 
 Novo's **NNC2215** (*Nature* 2024;634:944–951, PMID 39415004) is a genuine advance and is
 frequently misreported. From the paper itself: receptor affinity rose 12.5-fold from 0→20 mM

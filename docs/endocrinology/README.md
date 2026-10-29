@@ -28,7 +28,7 @@ corresponds to a real programme, and every one of those programmes failed:
 |---|---|
 | C-peptide co-administration reverses microangiopathy | **Cebix Phase 2b, n=250, 52 wk: placebo beat drug on sural NCV.** Company dissolved Feb 2015 |
 | Restore portal delivery | **Peglispro discontinued Dec 2015** — hepatic fat and ALT, despite superior glycemia. HDV-insulin still pre-Phase 3 after 7 years |
-| Glucose-responsive insulin makes hypoglycemia impossible | **MK-2640: no glucose-dependent clearance in T1D**, 25× less potent. Discontinued |
+| Glucose-responsive insulin makes hypoglycemia impossible | **MK-2640: no glucose-dependent clearance in T1D**, 25× less potent. Discontinued — and it was a mannose-receptor construct, **not** the boronate chemistry the source describes, which has never reached human testing |
 | Oral/plant insulin eliminates injection and cold chain | **Oramed Phase 3 (n=710) missed primary endpoint, Jan 2023.** Novo's oral 338 was dropped on cost-of-goods. Daniell's chloroplast insulin never entered human efficacy trials |
 | Alpha-to-beta transdifferentiation cures T1D without immunosuppression | **Furuyama 2019 Fig. 5: converted α-cells are killed by PPI-directed CTLs "similar to β-cells."** NOD mice relapse at ~4 months |
 

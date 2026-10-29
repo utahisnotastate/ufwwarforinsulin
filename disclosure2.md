@@ -50,11 +50,20 @@ open and the insulin goes to work. The feedback loop lives in the chemistry.
 **Status.** ✅ chemistry · ✅ animals · ❌ **humans** · ⛔ "hypoglycemia becomes impossible"
 
 The chemistry is real and the B29 site is right. But **no glucose-responsive insulin has ever
-worked in a human.** Merck spent over half a billion dollars on MK-2640; in people with Type 1
+worked in a human** — and here is the part that surprised us when we checked it properly:
+**the boronate chemistry the source describes has never been given to a person at all.**
+
+Merck spent over half a billion dollars on MK-2640, the only GRI with published human data —
+and it wasn't a boronate. It used a mannose-receptor mechanism instead. In people with Type 1
 diabetes it showed **no glucose-dependent change in clearance at all** and was 25× less potent
 than regular insulin. Novo's NNC2215 (*Nature*, 2024) is a genuine advance — and across the
 glucose range that actually occurs in a body, it's about a **3× modulator, not a switch.** Rats
-and pigs only.
+and pigs only. Lilly bought Protomer in 2021 for up to ~$1bn to get into this race; still
+nothing in humans.
+
+So the claim isn't just unproven. **The proposed mechanism is two steps from any human
+evidence**, and roughly a billion dollars has gone into the field without producing a single
+successful human trial.
 
 **And the "one shot lasts weeks" idea runs backwards.** The longest-acting insulins we have are
 *weekly*, and in Type 1 diabetes they **increase** severe hypoglycemia — 10% vs 3% in QWINT-5.

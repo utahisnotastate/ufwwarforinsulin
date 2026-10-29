@@ -164,6 +164,16 @@ confirmed. Check these before relying on them in anything consequential.
   doi:10.1016/S0140-6736(24)01804-X
 - ⚠️ *Advances in the Design of Phenylboronic Acid-Based Glucose-Sensitive Hydrogels.* Polymers
   2023;15(3):582
+- ⚠️ **Eli Lilly acquisition of Protomer Technologies, announced July 2021** — deal worth up to
+  ~$1 billion, following an earlier 14% equity stake taken alongside the JDRF T1D Fund.
+  Protomer (Pasadena, founded 2015) was preclinical at acquisition; **no human
+  glucose-responsiveness data published.** Trade press, not a primary filing — verify against
+  Lilly's 8-K or press release before citing
+
+> **Note on MK-2640's chemistry.** MK-2640 is a **mannose-functionalised** insulin cleared via
+> the mannose receptor (MRC1 / CD206) — **not** a phenylboronic acid conjugate. An earlier
+> version of this repository conflated the two. **No PBA-based glucose-responsive insulin has
+> entered human testing.** See [`../CORRECTIONS.md`](../CORRECTIONS.md).
 
 ## Regeneration, islets, immunotherapy
 
