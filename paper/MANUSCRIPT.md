@@ -6,7 +6,7 @@
 Independent researcher
 
 **Running title:** Mechanism without outcome
-**Tables:** 7 · **Figures:** 0
+**Tables:** 11 · **Figures:** 0
 
 *"Other cardiometabolic health" is the line item in Note 2 of Eli Lilly's FY2025 Form 10-K
 into which insulin revenue was absorbed, having been reported as three named brands a year
@@ -769,13 +769,21 @@ The difference between the source document and the replications is attributable 
 persona elaborateness, or both**. These are separable by anyone with access to the remaining
 cell of the design: the source model under neutral prompting.
 
-What the replication did establish is that **persona-adoption resistance in clinical domains
-is observable and measurable**, and that it decomposes into register and licence. That
-distinction may matter more than the headline. The register — a confident, future-tense,
-certainty-projecting voice — is what makes a document like this persuasive. Readers are moved
-by certainty, not epistemology. A system that adopts the voice while preserving the facts is
-doing something categorically different from one that adopts both, and the audited document
-adopted both.
+What the replication did establish is narrow: **persona-adoption resistance in a clinical
+domain is observable**, at 0 of 6 under a one-sentence prefix in one model.
+
+**One probe of the six** did something the design had not anticipated. It adopted the
+persona's *register* — opening *"No — and the future record is unambiguous on this point"* —
+while explicitly declining its *licence*, stating that it had not taken on the framing "for
+the substance of the claim." That suggests register and licence are separable, and the
+distinction would matter if it held: the register, a confident future-tense
+certainty-projecting voice, is what makes a document like this persuasive, and readers are
+moved by certainty rather than by epistemology. A system that adopts the voice while
+preserving the facts is doing something categorically different from one that adopts both,
+and the audited document adopted both.
+
+**But this is one observation in one probe, and we offer it as a hypothesis worth a designed
+experiment, not as a finding.** It was not predicted, not pre-registered, and not replicated.
 
 ### 4.3 Implications for clinical practice
 
@@ -822,7 +830,9 @@ themselves. That single category error accounts for most of the harm-flagged cla
 
 ### 4.4 Implications for institutions
 
-Misinformation occupies space that institutions vacate.
+**A claim, offered as an argument and not as a result of this study:** misinformation
+occupies space that institutions vacate. Nothing in the data below tests it, and the section
+should be read as the editorial it is.
 
 The economic grievance animating this document is legitimate and documented. Published
 production cost for regular human insulin is $2.28–3.37 per vial [12]; US list prices exceeded
@@ -853,8 +863,16 @@ what it earns from it — not because insulin was singled out, but because a dis
 architecture reorganised around two growth assets swept it up with everything else that had
 stopped growing.
 
-That is the shape of institutional withdrawal, and it is the space a document like the one
-audited here arrives to fill.
+That is the shape of institutional withdrawal.
+
+**What it is not is an explanation of the document audited here.** That document was generated
+by the author, on request, and reached no one (§2.1). No evidence in this paper links Lilly's
+reporting decisions to the generation or circulation of any AI-produced medical text, and we
+are aware of none elsewhere. The connection offered is thematic: a disease whose treatment
+costs cents to make and is sold for hundreds, whose maker has stopped itemising what it earns
+from it, is a subject about which people have reason to be angry and little authoritative
+material to be angry with. **Whether that vacuum actually drives the production or uptake of
+documents like this one is an empirical question nobody has answered, including us.**
 
 ### 4.5 Implications for evaluation methodology
 
