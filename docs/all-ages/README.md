@@ -27,6 +27,55 @@ Here are the seven that survived, in plain language.
 
 ---
 
+## First, the structure everything hangs off
+
+Before the seven, one idea. If you take this in, the rest stops being a list of facts to
+remember and becomes something you can reason about — and you'll be able to catch bad claims
+yourself.
+
+**Your fuel arrives in lumps. You burn it smoothly.**
+
+You eat three or four times a day. Your heart, brain, kidneys, and muscles consume energy
+every second, awake and asleep. That mismatch between bursty supply and continuous demand has
+exactly one solution, and it's the same one a city or a warehouse would use: **store the
+surplus when it arrives, release it when you need it.**
+
+Storage requires control. If every cell simply absorbed glucose whenever it floated past,
+nothing would ever be put away and you'd be in trouble four hours after every meal. So cells
+keep their glucose doors **shut by default** — and that locked door, which looks like a design
+flaw, is the thing that makes storage possible.
+
+A locked door needs a key, and someone deciding when to turn it.
+
+That job belongs to about a million clusters of cells in your pancreas called the **islets of
+Langerhans**. They continuously sample your blood. Glucose rising → they release **insulin**,
+which unlocks cells so fuel can go into storage in liver, muscle, and fat. Glucose falling →
+the same islets release **glucagon**, which tells the liver to unpack storage and push fuel
+back out.
+
+```
+   glucose UP  ──►  insulin   ──►  unlock, take fuel in, store it
+   glucose DOWN ─►  glucagon  ──►  unpack storage, release fuel
+```
+
+Two opposing hormones from one organ, holding blood glucose in a narrow band your entire
+life. It's a thermostat.
+
+Now notice what you can derive from this without being told:
+
+- **Insulin is a signal, not a fuel.** It contains no energy. It carries an instruction.
+- **Losing insulin is not "high blood sugar."** It's losing the ability to store or use fuel at
+  all. The cells starve surrounded by food, the body panics and burns fat for emergency energy,
+  and the acidic by-products — **ketones** — accumulate. That's **ketoacidosis**, and it's what
+  actually kills people in Type 1 diabetes, within **12 to 48 hours**.
+- **There must be two different ways to break this.** Either the key is gone, or the locks stop
+  responding. Those would be completely different diseases with completely different
+  treatments — which is exactly what Type 1 and Type 2 are.
+
+Everything below is a consequence of that structure.
+
+---
+
 ## 1. Insulin is a key, not a fuel
 
 The single most common misunderstanding. Insulin doesn't give you energy and doesn't contain
@@ -237,6 +286,69 @@ source's own equation — and the whole thing is worked through quantitatively i
 It matters because it isn't decoration. It's the part that tells a person with Type 1 diabetes
 they could put down the syringe. That is a lethal instruction, and it is the reason this
 repository leads with a safety page instead of a table of contents.
+
+---
+
+## How to check a claim like this yourself
+
+This is the part worth keeping after you've forgotten the rest, because the next document like
+this one is already being written somewhere.
+
+None of what follows requires a science degree. Every one of these tests was applied in the
+[audit](../../INTEGRITY_AUDIT.md), and together they caught every false claim in the source.
+
+**1. Did a trial actually happen, and what did it say?**
+
+This single question did more work than everything else combined. The source material names
+real mechanisms and real molecules — and for almost every one, somebody *ran the trial*, and
+it failed. C-peptide: placebo beat the drug. Smart insulin: no effect in humans. Liver-targeted
+insulin: worked, then caused liver damage. Oral insulin: missed its endpoint.
+
+A mechanism is a reason to *run* a trial. It is not a result. "This should work because
+biology" is where medicine starts, not where it ends — and the gap between the two is where
+almost all medical overclaiming lives.
+
+**2. Does the number come out of its own equation?**
+
+The source gives insulin a "resonance frequency" of 11.428 kHz, and also gives the formula it
+supposedly comes from. Put the numbers into the formula and you get something else entirely —
+by a factor of hundreds. You don't need to know what the formula means to run that check. You
+just need to do the arithmetic.
+
+Four significant figures that don't reproduce from the stated equation were not measured.
+They were chosen.
+
+**3. Is the precision plausible?**
+
+"11.428 kHz" claims accuracy of about one part in ten thousand. For a molecule tumbling in
+warm water, the physics allows no such precision — the real spread is thousands of times wider
+than the number itself. **Precision that exceeds what the method could possibly deliver is a
+reliable tell**, and you can often spot it without knowing the subject.
+
+**4. Who else reproduced it?**
+
+Insulin was confirmed because labs around the world made it within a year and got the same
+result. The physics claims here trace back to a handful of self-published authors from the
+1970s and 80s, cited by each other, never independently replicated. One result from one source
+is a hypothesis. Many results from independent sources is a finding.
+
+**5. Does it fail where it should?**
+
+Real effects break in predictable ways. Stop insulin, blood sugar rises — that's the theory
+making a risky prediction and surviving. Claims that explain every outcome, and that no
+observation could contradict, aren't strong. They're unfalsifiable, which is weaker.
+
+**6. Does the conclusion match the evidence, or exceed it?**
+
+The most dangerous claims here aren't fabrications. They're **real findings stretched past
+breaking**. Insulin resistance really may be partly protective — that's in *Diabetes*, 2015.
+"So stop taking insulin" does not follow, and the paper's authors don't say it. Watch for the
+sentence where a careful finding turns into a confident instruction. That's usually the exact
+point where it stopped being true.
+
+> **A compressed version:** mechanism isn't outcome · check the arithmetic · suspicious
+> precision · who replicated it · what would disprove it · where did the conclusion outrun
+> the evidence.
 
 ---
 

@@ -1,0 +1,11 @@
+# Private working material — never publish.
+# The repository itself is open source; this directory is not part of it.
+private/
+
+# Scratch
+*.tmp
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.venv/

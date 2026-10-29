@@ -47,7 +47,7 @@ The original claims, inventoried and numbered: **[archive/](archive/source-claim
 
 | If you are… | Go to | Time |
 |---|---|---|
-| **A kid (7–12)**, or reading with one | [docs/kids/](docs/kids/README.md) | 15 min |
+| **A kid (7–12)**, or reading with one | [docs/kids/](docs/kids/README.md) | 25 min |
 | **Curious, no science background** | [docs/all-ages/](docs/all-ages/README.md) | 20 min |
 | **A scientist or engineer** | [docs/technical/](docs/technical/README.md) | 45 min |
 | **An endocrinologist** | [docs/endocrinology/](docs/endocrinology/README.md) | 40 min |
@@ -187,7 +187,7 @@ INTEGRITY_AUDIT.md         ← all 61 claims, scored, with PMIDs
 disclosure1–5.md           ← the 15 disclosures, by layer
 
 docs/
-  kids/                    ← ages 7–12, three pages
+  kids/                    ← ages 7–12, four pages, structure-first
   all-ages/                ← general adult reader
   technical/               ← molecular architecture, signaling, the physics teardown
   endocrinology/           ← hyperinsulinemia debate, C-peptide, the regenerative frontier
@@ -230,7 +230,16 @@ were reached independently.
 | [FallOfPhysics](https://github.com/utahisnotastate/FallOfPhysics) | Wave physics, signal processing, bio-instrumentation | ESTABLISHED / TESTABLE / SPECULATIVE / NOT SUPPORTED + 11 experiment protocols |
 | [RiseOfGeometry](https://github.com/utahisnotastate/RiseOfGeometry) | Geometry and physics ("Sacred Geometry" source) | ✅ / 🟡 / 🧪 / 📜 / ❌ across 31 disclosures, ~105 claims |
 | [ufwwaragainstthemitochondria](https://github.com/utahisnotastate/ufwwaragainstthemitochondria) | Cell biology and metabolism | 15 disclosures + integrity audit + academic formalisms |
+| [ufwwaragainstmemorization](https://github.com/utahisnotastate/ufwwaragainstmemorization) | Chemistry pedagogy | Teach the organizing structure, not the list |
 | **ufwwarforinsulin** *(this one)* | Insulin: biochemistry, manufacturing, clinical | 61 claims scored, six audience tiers, **harm flags** |
+
+The fourth contributed the teaching method rather than content: **give the reader the
+structure that generates the facts, instead of the facts.** The [kids'
+set](docs/kids/README.md) is built that way — one organizing problem (fuel arrives in lumps,
+you burn it smoothly, so you must store it) from which insulin, glucagon, ketoacidosis, and
+both diseases can be derived rather than memorized. The [all-ages
+doc](docs/all-ages/README.md) opens the same way and closes with a six-point method for
+checking claims like these without a science degree.
 
 The harm flag is the one thing this domain required that the others didn't. A wrong claim
 about scalar waves costs you an afternoon. A wrong claim about insulin costs a life in two

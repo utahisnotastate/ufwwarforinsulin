@@ -1,6 +1,7 @@
 # Helping a friend who has diabetes
 
-← [Back to: Insulin, for kids](README.md) · ← [How we make it](how-we-make-it.md)
+← [Back to: Insulin, for kids](README.md) · [How we make it](how-we-make-it.md) ·
+[How we found out](how-we-know.md)
 
 If someone in your class or your family has Type 1 diabetes, this page is worth knowing by
 heart. Most of the time nothing happens and your friend is just a normal kid. But once in a

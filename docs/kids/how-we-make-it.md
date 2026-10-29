@@ -53,6 +53,27 @@ Insulin isn't a straight string. It's two short strings folded together and pinn
 little clasps — chemical staples called **disulfide bonds**. They have to go in exactly the
 right three places, or the insulin is just a useless tangle.
 
+### The number that explains why this is hard
+
+Six special spots on those strings, called **cysteines**, can form clasps. Three clasps have
+to form, and each one joins exactly two spots. So how many ways are there to pair six spots
+into three clasps?
+
+Pick a partner for the first spot: **5 choices**. Of the four left, pick a partner for the
+next: **3 choices**. The final two have no choice: **1**.
+
+$$5 \times 3 \times 1 = \mathbf{15}$$
+
+**Fifteen possible ways to pin it together. Exactly one of them is insulin.**
+
+The other fourteen are junk — and here's the nasty part: they have the *same atoms* and the
+*same weight* as real insulin. You often can't tell them apart without expensive instruments.
+They just don't work.
+
+So the hard part was never making the string. It's making sure that out of fifteen ways to
+fold it, you got the one. Keep that number in mind for the rest of this page — it's why yeast
+turns out to matter so much.
+
 Bacteria don't do this folding step. They crank out the string and dump it in a heap inside
 themselves — scientists call these heaps **inclusion bodies**. So the factory has to burst the
 bacteria open, dissolve the heaps with harsh chemicals, and then very carefully coax the
@@ -141,4 +162,5 @@ and that's great work. But it belongs in a lab with real testing equipment, not 
 **The trick everyone misses:** making the molecule is easy. Making it *safe* is the hard part,
 and it's the part worth respecting.
 
-← [Back to start](README.md) · **Next:** [Helping a friend →](helping-a-friend.md)
+← [Back to start](README.md) · [How we found out →](how-we-know.md) ·
+[Helping a friend →](helping-a-friend.md)
