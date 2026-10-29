@@ -104,3 +104,62 @@ No human has validated this taxonomy. Every rater in this study, in every arm, h
 language model, and the verification behind every verdict was AI-assisted. A good result here
 narrows the objection to the *blinding*; it does not touch the objection to the *species of
 rater*. That limitation stands in §5.3 whatever this experiment returns.
+
+
+---
+
+## Addendum, 2026-10-29 — not executed. Isolation could not be achieved.
+
+**This arm was not run.** Recorded here rather than quietly dropped, because a pre-registration
+that only ever reports completed arms is not a pre-registration.
+
+The isolation check specified above was run and **failed for the third consecutive time in
+this project.** The requested working-directory change had not taken effect, and the raters
+would have inherited:
+
+- primary working directory `C:\code\ufwwarforinsulin`
+- a version-control log whose most recent entries include
+  **"Independent re-extraction: counts do not reproduce, dissociation does."** and
+  **"Pre-register the de-prefixed re-classification before running it"**
+
+### Why this leak is disqualifying for *this* arm specifically
+
+Earlier arms were run despite a comparable leak, on the reasoning that its plausible bias ran
+against the hypothesis. That reasoning does not hold here.
+
+The word **"dissociation"** appears in the log alongside a rubric, supplied to the rater, that
+contains MECHANISM and OUTCOME as adjacent categories. A rater could infer the axis under
+test. It would not need the verdicts to bias the result: assigning grandiose, cure-shaped
+claims to OUTCOME correlates with assigning false claims to OUTCOME, and that is precisely the
+bias §3.2 documents in this project's own unblinded pass.
+
+**Contaminating the one experiment designed to measure contamination would be worse than not
+running it.** The arm is therefore not run, and no result from it is reported.
+
+### What stands in its place
+
+The leak-free estimate already computed and reported in the manuscript: **κ = 0.928 on the 31
+claims whose block prefix does not determine the answer** (30 of 61 were prefix-determined and
+are excluded). This is a measurement of agreement on exactly the claims where the leak could
+not have operated, and it is the figure the manuscript treats as honest. It is not equivalent
+to a full de-prefixed re-run, because it cannot detect whether claims would *migrate* between
+strata once the prefix is removed — that question remains open.
+
+The blinded input is built and deposited regardless, so that anyone with a clean environment
+can run this arm as specified: the de-prefixed shuffled claims, the published seed
+`random.Random(20261029)`, and the shuffle map in
+[`data-claims-deprefixed-map.txt`](data-claims-deprefixed-map.txt).
+
+### The methodological point, which is the part worth keeping
+
+Three arms of this study attempted the same isolation procedure. **It silently failed every
+time**, and was caught every time only because a throwaway subject was asked what it could see
+before the real subjects ran. On the first two occasions the leak was judged tolerable; on this
+one it was not, and the arm was abandoned.
+
+This strengthens the recommendation in §4.5 past where it stood. It is not enough to execute
+from a clean environment, and not enough to verify isolation once. **In an agent-based
+evaluation the researcher's configuration and the subject's actual context can diverge
+repeatedly and without warning, and the only reliable guard is an instrumented check
+immediately before every single run, with a pre-committed willingness to abandon the arm.**
+This project abandoned one.

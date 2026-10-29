@@ -42,8 +42,9 @@ below were added after external peer review and are deposited as a runnable scri
 **Findings.** Of 61 claims, 14 (23%) were verified, 12 (20%) partly true, 2 open, 17 (28%)
 contradicted and 16 (26%) without scientific basis. Classification into strata (mechanism
 n = 21, outcome n = 8, specification n = 15, physical theory n = 17) was performed blind to
-all verdicts; agreement was 60/61, κ = 0.977, falling to κ = 0.928 on the 31 claims whose
-identifier prefix does not predict the answer.
+all verdicts. **κ = 0.928** on the 31 claims whose identifier prefix does not predict the
+answer; the κ = 0.977 across all 61 is inflated, because 30 classifications were derivable
+from the prefix alone, and should not be used.
 
 **No therapeutic-outcome claim was supported under any analysis, and no quantitative
 specification was.** Mechanism claims scored far better, but *how much* better depends on a
@@ -365,11 +366,23 @@ did not reproduce (§3.8).**
 
 ### 3.2 Blinded classification, and the bias it removed
 
-Agreement was **60 of 61 (98.4%), κ = 0.977**, with a single disagreement (D4: specification
-versus mechanism). Restricted to the 31 claims whose block prefix does not determine the
-answer (§2.3), agreement was **30 of 31, κ = 0.928**. **The restricted figure should be read
-as the real one.** Both are stability-under-resampling for a single model, not inter-rater
-reliability between independent judges.
+Agreement across all 61 claims was 60 of 61, κ = 0.977. **That figure is inflated and should
+not be used.** Thirty of the 61 classifications were derivable from the claim identifier's
+block prefix without reading the claim (§2.3).
+
+**The figure to use is κ = 0.928** — agreement of 30 of 31 on the claims whose prefix does not
+determine the answer. It is a measurement taken on exactly the subset where the leak could not
+operate.
+
+Both remain stability-under-resampling for a single model, not inter-rater reliability between
+independent judges, and neither has been validated by a human (§5.3).
+
+A de-prefixed, shuffled re-classification was designed and pre-registered to settle this
+properly, and **was not run**: the isolation check failed for the third time in this study,
+and the leak on that occasion included the word "dissociation" in a version-control log
+visible to the raters. Contaminating the experiment meant to measure contamination would have
+been worse than abandoning it. The blinded input, the shuffle seed and the map are deposited
+so that anyone with a clean environment can run it.
 
 The blinded classification **differed materially from an earlier unblinded pass**:
 
@@ -861,8 +874,14 @@ by then contained an entry reading *"Persona arm re-run clean: 0/6 contaminated,
 than the one that voided the first arm, and one that would have biased the result toward the
 hypothesis we held. The probes were held until the check came back clean.
 
-Four recommendations follow for agent-based evaluation, of which the third is the one we
-would not have written before this study:
+It then failed twice more. Across this study the same isolation procedure was attempted
+before three separate arms and **silently failed every time**, caught on each occasion only
+because a throwaway subject was asked what it could see before the real subjects ran. By the
+third attempt the version-control log visible to subjects contained the word *"dissociation"*
+— the axis under test — and that arm was **abandoned rather than run** (§3.2).
+
+Five recommendations follow for agent-based evaluation. The third is the one we would not have
+written before this study, and the fifth is the one we learned by having to use it:
 
 1. Execute from environments with no inferable research context.
 2. Pre-specify a contamination check and apply it before scoring.
@@ -870,15 +889,25 @@ would not have written before this study:
    throwaway subject given none of the experimental material. The environment a researcher
    configures and the environment a subject receives can differ, and nothing warns you.
 4. Report contamination as a measured variable rather than assuming isolation.
+5. **Commit in advance to abandoning an arm whose isolation check fails**, and then do it.
+   A check with no consequence attached is a formality. This study ran two arms under a leak
+   judged tolerable and abandoned a third under a leak that was not, and the judgement in each
+   case is recorded with the reasoning rather than the conclusion alone.
 
-Our first attempt assumed isolation and undercounted its own contamination by half. Our
-second verified it and found the configuration had silently not applied. In both cases the
-error ran toward the hypothesis, which is what one should expect of errors that nobody is
-checking for.
+A particular trap is worth naming. Version-control messages are written for collaborators and
+are **not** thought of as experimental material, but in agent-based evaluation they are part
+of the subject's context. The commit messages that contaminated this study were honest
+descriptions of the work, written with no thought that a subject would read them. **A
+pre-registration that improves the integrity of the record can simultaneously degrade the
+isolation of the next arm**, and we know of no tidy resolution except to check every time.
 
-A residual we could not remove is reported rather than omitted: in the final arm the
-subjects' scratchpad path still contained the project name. It reveals the topic, which the
-questions themselves already reveal, and not the hypothesis or the expected direction.
+Our first attempt assumed isolation and undercounted its own contamination by half. Our second
+verified it and found the configuration had silently not applied. In both cases the error ran
+toward the hypothesis, which is what one should expect of errors that nobody is checking for.
+
+A residual we could not remove is reported rather than omitted: in the positive-control arm
+the subjects' scratchpad path still contained the project name. It reveals the topic, which
+the questions themselves already reveal, and not the hypothesis or the expected direction.
 
 ---
 
