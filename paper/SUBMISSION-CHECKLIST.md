@@ -14,6 +14,8 @@ Last checked 29 October 2026, against the current `MANUSCRIPT.md`.
 | Every PMID confirmed against PubMed | ✅ |
 | Every statistic reproduced by a deposited script | ✅ 4 scripts |
 | Body word count | ~11,000 |
+| Word (.docx) for submission | [manuscript.docx](manuscript.docx) — 49pp, double-spaced, continuous line numbers; schema-validated |
+| PDF for reading / preprint | [manuscript.pdf](manuscript.pdf) — 27pp, typeset |
 
 ## Mandatory declarations present
 
